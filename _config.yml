@@ -103,5 +103,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Westlifers/Westliers.github.io.git
+  repo: git@github.com:Westlifers/Westliers.github.io.git
   branch: master
