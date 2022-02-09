@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://hexo.yougi.top/categories/数学/高等代数/"/>
+  <link rel="canonical" href="http://hexo.yougi.top/categories/screeps/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,16 +20,16 @@
   <meta content="Yougi&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1644404353637" as="style">
+  <link rel="preload" href="/css/style.css?time=1644404353613" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>分类：高等代数 - Yougi's Blog</title>
+  <title>分类：Screeps - Yougi's Blog</title>
   <meta name="keywords" content="null">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Yougi&#39;s Blog">
-<meta property="og:url" content="http://hexo.yougi.top/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/index.html">
+<meta property="og:url" content="http://hexo.yougi.top/categories/Screeps/index.html">
 <meta property="og:site_name" content="Yougi&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1774,8 +1774,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1644404353637" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1644404353637"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1644404353613" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1644404353613"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2646,6 +2646,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
       
     
     
@@ -2653,7 +2657,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/">
+  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Yougi's Blog">
   </span>
@@ -2667,16 +2671,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/"  itemprop="url">
-        一道经典反对称矩阵题目
+      <a href="/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/"  itemprop="url">
+        Screeps入门教程3-升级者
       </a>
     </h2>
   
   <div class='md' itemprop="articleBody">
     
       
-        原题目：$$设\mathbb{F}为一数域，A\in M_n(\mathbb{F})为反对称阵且可逆，B=\begin{pmatrix}    A&amp;\gamma\\    \gamma^\top&amp;a\end{pmatrix}\in M_{n+1}(\mathbb{F})\\证明：B可逆，当且仅当a\neq 0.$$
-一个解答先证明：$$\forall\alpha\in\mat...
+        本文将介绍房间等级，控制器，最终实现一个智能升级者
+房间等级（RCL, Room Controller Level）每个房间都有对应的等级，顾名思义，房间等级实际是由一个控制器决定，我们马上就会提到。房间等级决定了房间拥有者在此房间可以使用的武器/建筑。
+控制器（controller）在你的新房间中，有一个闪着微弱红光的结构，这是房间的控制器。控制器有等级，体现在周围一圈的白色分段进度条上。...
       
     
   </div>
@@ -2684,24 +2689,142 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-01-27T17:27:45+08:00">2022-01-27</time>
+        <time itemprop="dateCreated datePublished" datetime="2022-02-07T18:05:26+08:00">2022-02-07</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数</a>
+          <a class="category-link" href="/categories/Screeps/">Screeps</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" itemprop="url"><span itemprop="name">高等代数</span></a>
+              <a href="/categories/Screeps/" itemprop="url"><span itemprop="name">Screeps</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/' itemprop="url">
+          <a class='readmore' href='/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Yougi's Blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/"  itemprop="url">
+        Screeps入门教程2-农民
+      </a>
+    </h2>
+  
+  <div class='md' itemprop="articleBody">
+    
+      
+        本文将介绍基本的兵种分类，能量的来源、用处，最终学会如何生产一个智能农民进行能量采集。
+兵种前文提到，爬根据身体部件的不同，分为多个兵种，但实际上官方并没有给出固定的兵种，其划分是取决于个人的。但在这里我们仍然要提到一些最基本且被广泛接受的一些兵种。本文涉及到：农民（harvester）
+能量与spawn在正式开始编写代码之前，我们要先了解spawn与能量
+能量每个房间有一些黄色的闪烁的点，...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-02-07T14:25:09+08:00">2022-02-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Screeps/">Screeps</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Screeps/" itemprop="url"><span itemprop="name">Screeps</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/02/05/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1-%E6%B8%B8%E6%88%8F%E7%AE%80%E4%BB%8B/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Yougi's Blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/02/05/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1-%E6%B8%B8%E6%88%8F%E7%AE%80%E4%BB%8B/"  itemprop="url">
+        Screeps入门教程1-游戏简介
+      </a>
+    </h2>
+  
+  <div class='md' itemprop="articleBody">
+    
+      
+        真正的编程游戏Screeps是一款编程策略游戏，之所以称它为“真正的编程游戏“，是因为在游戏中，玩家将使用自己编写的javascript代码来控制和管理所有的爬（creep）以及其它游戏元素，以进行房间能量内循环、能量或矿物产出、交易和战略攻防、扩张等操作。正因为此，在Screeps中，你的一切都由你的代码决定，自由度较高，灵活性好，同时给玩家带来的成就感也很高。
+游戏基本元素爬（creep...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-02-05T15:01:06+08:00">2022-02-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Screeps/">Screeps</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Screeps/" itemprop="url"><span itemprop="name">Screeps</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2022/02/05/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1-%E6%B8%B8%E6%88%8F%E7%AE%80%E4%BB%8B/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3064,8 +3187,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353613')
+      volantis.js('/js/message.js?time=1644404353613', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3110,8 +3233,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353613')
+      volantis.js('/js/message.js?time=1644404353613', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3170,8 +3293,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353613')
+      volantis.js('/js/message.js?time=1644404353613', () => {
         hideMessage(done);
       });
     } else {
@@ -3429,7 +3552,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-    volantis.js('/js/rightMenu.js?time=1644404353637')
+    volantis.js('/js/rightMenu.js?time=1644404353613')
   </script>
 
 
@@ -3542,19 +3665,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1644404353637")
+        volantis.js("/js/plugins/sites.js?time=1644404353613")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1644404353637")
+        volantis.js("/js/plugins/friends.js?time=1644404353613")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1644404353637")
+        volantis.js("/js/plugins/contributors.js?time=1644404353613")
       }
     
   };
@@ -3626,7 +3749,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/aplayer.js?time=1644404353639')
+    await volantis.js('/js/aplayer.js?time=1644404353622')
     volantis.APlayerController.music = true;
   
   })();
@@ -3760,7 +3883,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1644404353637.js"></script>
+<script src="/js/app.js?time=1644404353613.js"></script>
 
 
 <!-- optional -->
@@ -3773,7 +3896,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1644404353637");
+    return volantis.js("/js/search/hexo.js?time=1644404353613");
   }
 
   function loadSearchService() {
@@ -3857,7 +3980,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3898,7 +4021,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1644404353637').then(()=>{
+    volantis.js('/js/parallax.js?time=1644404353613').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4092,7 +4215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/高等代数/","name":"高等代数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Yougi's Blog","url":"http://hexo.yougi.top/","keywords":null,"description":"","author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","description":""},"publisher":{"@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hexo.yougi.top?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/Screeps/","name":"Screeps"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Yougi's Blog","url":"http://hexo.yougi.top/","keywords":null,"description":"","author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","description":""},"publisher":{"@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hexo.yougi.top?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
 
 
 <!-- more -->

@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://hexo.yougi.top/categories/数学/高等代数/"/>
+  
+  <link rel="canonical" href="http://hexo.yougi.top/2022/02/07/screeps入门教程3-升级者/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Yougi&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1644404353637" as="style">
+  <link rel="preload" href="/css/style.css?time=1644404353456" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>分类：高等代数 - Yougi's Blog</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yougi&#39;s Blog">
-<meta property="og:url" content="http://hexo.yougi.top/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/index.html">
+  <title>Screeps入门教程3-升级者 - Yougi's Blog</title>
+  <meta name="keywords" content="游戏,null">
+  <meta name="description" content="本文将介绍房间等级，控制器，最终实现一个智能升级者 房间等级（RCL, Room Controller Level）每个房间都有对应的等级，顾名思义，房间等级实际是由一个控制器决定，我们马上就会提到。房间等级决定了房间拥有者在此房间可以使用的武器&#x2F;建筑。 控制器（controller）在你的新房间中，有一个闪着微弱红光的结构，这是房间的控制器。控制器有等级，体现在周围一圈的白色分段进度条上。而控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Screeps入门教程3-升级者">
+<meta property="og:url" content="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/index.html">
 <meta property="og:site_name" content="Yougi&#39;s Blog">
+<meta property="og:description" content="本文将介绍房间等级，控制器，最终实现一个智能升级者 房间等级（RCL, Room Controller Level）每个房间都有对应的等级，顾名思义，房间等级实际是由一个控制器决定，我们马上就会提到。房间等级决定了房间拥有者在此房间可以使用的武器&#x2F;建筑。 控制器（controller）在你的新房间中，有一个闪着微弱红光的结构，这是房间的控制器。控制器有等级，体现在周围一圈的白色分段进度条上。而控制">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-02-07T10:05:26.000Z">
+<meta property="article:modified_time" content="2022-02-07T13:44:32.691Z">
 <meta property="article:author" content="杨荻">
+<meta property="article:tag" content="游戏">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1774,8 +1779,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1644404353637" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1644404353637"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1644404353456" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1644404353456"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2575,7 +2580,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2635,97 +2640,261 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Yougi's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/"  itemprop="url">
-        一道经典反对称矩阵题目
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        原题目：$$设\mathbb{F}为一数域，A\in M_n(\mathbb{F})为反对称阵且可逆，B=\begin{pmatrix}    A&amp;\gamma\\    \gamma^\top&amp;a\end{pmatrix}\in M_{n+1}(\mathbb{F})\\证明：B可逆，当且仅当a\neq 0.$$
-一个解答先证明：$$\forall\alpha\in\mat...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        Screeps入门教程3-升级者
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://user-images.githubusercontent.com/44914308/151318627-8b8bd8ec-287b-4747-94b5-f90b65f2dcde.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/44914308/151318627-8b8bd8ec-287b-4747-94b5-f90b65f2dcde.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+    <p itemprop="name">杨荻</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Screeps/">Screeps</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Screeps/" itemprop="url"><span itemprop="name">Screeps</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-01-27T17:27:45+08:00">2022-01-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url"><span itemprop="name">数学</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" itemprop="url"><span itemprop="name">高等代数</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-02-07T18:05:26+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年2月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>本文将介绍房间等级，控制器，最终实现一个智能升级者</p>
+<h2 id="房间等级（RCL-Room-Controller-Level）"><a href="#房间等级（RCL-Room-Controller-Level）" class="headerlink" title="房间等级（RCL, Room Controller Level）"></a>房间等级（RCL, Room Controller Level）</h2><div class="story post-story"><p>每个房间都有对应的等级，顾名思义，房间等级实际是由一个控制器决定，我们马上就会提到。房间等级决定了房间拥有者在此房间可以使用的武器/建筑。</p>
+</div><h2 id="控制器（controller）"><a href="#控制器（controller）" class="headerlink" title="控制器（controller）"></a>控制器（controller）</h2><div class="story post-story"><p>在你的新房间中，有一个闪着微弱红光的结构，这是房间的控制器。控制器有等级，体现在周围一圈的白色分段进度条上。而控制器的经验来自于升级者的贡献（后文马上会提到）<br>需要注意的是，如果长期没有升级者贡献经验，控制器会在一定时间（取决于你的rcl）内衰退（decay），届时你的rcl将减一。如果持续没有经验输入，rcl会持续降低，直到0。届时你将失去对房间的控制。</p>
+</div><h2 id="增加一个新兵种"><a href="#增加一个新兵种" class="headerlink" title="增加一个新兵种"></a>增加一个新兵种</h2><div class="story post-story"><p>有了上一篇文章的经验，你应该已经学会如何生产新的爬了。在控制台中生产一个与前文一致的爬，但名称改为Upgrader1，内存中的role改为upgrader。然后，让我们编写upgrader的逻辑。<br>请模仿上一节增加harvester的流程，新建一个role.upgrader.js模块，它输出roleUpgrader对象，此对象包括一个run方法，我们随后在这里增加逻辑。然后在main.js中增加相应的运行此逻辑的代码（自行研究）</p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/01/27/%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E5%8F%8D%E5%AF%B9%E7%A7%B0%E9%A2%98%E7%9B%AE/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>始终坚持社会主义核心价值观</p>
+
+              
+            
+              
+                <p>本文永久链接：<a href=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/>http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-02-07T21:44:32+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年2月7日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%B8%B8%E6%88%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>游戏</p></a></div>
+  <span hidden itemprop="keywords">游戏</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/&title=Screeps入门教程3-升级者 - Yougi's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/&title=Screeps入门教程3-升级者 - Yougi's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/'>
+          <p class='title'>Screeps入门教程2-农民<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>本文将介绍基本的兵种分类，能量的来源、用处，最终学会如何生产一个智能农民进行能量采集。
+兵种前文提到，爬根据身体部件的不同，分为多个兵种，但实际上官方并没有给出固定的兵种，其划分是取决于个人的。...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'YougiTalk/community'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%BF%E9%97%B4%E7%AD%89%E7%BA%A7%EF%BC%88RCL-Room-Controller-Level%EF%BC%89"><span class="toc-text">房间等级（RCL, Room Controller Level）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%88controller%EF%BC%89"><span class="toc-text">控制器（controller）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E5%85%B5%E7%A7%8D"><span class="toc-text">增加一个新兵种</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
   
     
     
@@ -2795,98 +2964,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
 
-  
-    
-    
-  
-
-  <section class="widget category shadow blur desktop pjax">
-    
-  <header>
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'YougiTalk/community'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-    
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Minecraft/" href="/categories/Minecraft/"
-            active-action="action-categoriesMinecraft"
-            ><div class='name'>Minecraft</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Screeps/" href="/categories/Screeps/"
-            active-action="action-categoriesScreeps"
-            ><div class='name'>Screeps</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/"
-            active-action="action-categoriesE695B0E5ADA6E9AB98E7AD89E4BBA3E695B0"
-            ><div class='name'>高等代数</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/"
-            active-action="action-categoriesE69C8DE58AA1E599A8E4BDBFE794A8"
-            ><div class='name'>服务器使用</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE6B58BE8AF95"
-            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow blur desktop mobile pjax">
-    
-  <header>
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'YougiTalk/community'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 14px; color: #999">期末考试</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 24px; color: #555">游戏</a>
-    </div>
-  </section>
-
-
-  
-
-  
-
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2915,14 +2998,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Screeps入门教程3-升级者";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3064,8 +3148,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353456')
+      volantis.js('/js/message.js?time=1644404353456', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3110,8 +3194,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353456')
+      volantis.js('/js/message.js?time=1644404353456', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3170,8 +3254,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1644404353637')
-      volantis.js('/js/message.js?time=1644404353637', () => {
+      volantis.css('/css/message.css?time=1644404353456')
+      volantis.js('/js/message.js?time=1644404353456', () => {
         hideMessage(done);
       });
     } else {
@@ -3429,7 +3513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-    volantis.js('/js/rightMenu.js?time=1644404353637')
+    volantis.js('/js/rightMenu.js?time=1644404353456')
   </script>
 
 
@@ -3542,19 +3626,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1644404353637")
+        volantis.js("/js/plugins/sites.js?time=1644404353456")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1644404353637")
+        volantis.js("/js/plugins/friends.js?time=1644404353456")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1644404353637")
+        volantis.js("/js/plugins/contributors.js?time=1644404353456")
       }
     
   };
@@ -3626,7 +3710,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/aplayer.js?time=1644404353639')
+    await volantis.js('/js/aplayer.js?time=1644404353459')
     volantis.APlayerController.music = true;
   
   })();
@@ -3760,7 +3844,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1644404353637.js"></script>
+<script src="/js/app.js?time=1644404353456.js"></script>
 
 
 <!-- optional -->
@@ -3773,7 +3857,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1644404353637");
+    return volantis.js("/js/search/hexo.js?time=1644404353456");
   }
 
   function loadSearchService() {
@@ -3857,7 +3941,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3898,7 +3982,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1644404353637').then(()=>{
+    volantis.js('/js/parallax.js?time=1644404353456').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4092,7 +4176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/高等代数/","name":"高等代数"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Yougi's Blog","url":"http://hexo.yougi.top/","keywords":null,"description":"","author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","description":""},"publisher":{"@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hexo.yougi.top?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/Screeps/","name":"Screeps"}},{"@type":"ListItem","position":3,"item":{"@id":"http://hexo.yougi.top/2022/02/07/Screeps入门教程3-升级者/","name":"Screeps入门教程3-升级者"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Screeps入门教程3-升级者","description":"","datePublished":"2022-02-07T10:05:26.000Z","dateModified":"2022-02-07T13:44:32.691Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/"},"author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/"},"publisher":{"@type":"Organization","name":"Yougi's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/","wordCount":0,"articleSection":"Screeps","keywords":"游戏","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->

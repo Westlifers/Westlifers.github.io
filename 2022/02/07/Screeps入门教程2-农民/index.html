@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://hexo.yougi.top/tags/minecraft/"/>
+  
+  <link rel="canonical" href="http://hexo.yougi.top/2022/02/07/screeps入门教程2-农民/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,25 @@
   <meta content="Yougi&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1643436465820" as="style">
+  <link rel="preload" href="/css/style.css?time=1644404353461" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>标签：Minecraft - Yougi's Blog</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yougi&#39;s Blog">
-<meta property="og:url" content="http://hexo.yougi.top/tags/Minecraft/index.html">
+  <title>Screeps入门教程2-农民 - Yougi's Blog</title>
+  <meta name="keywords" content="游戏,null">
+  <meta name="description" content="本文将介绍基本的兵种分类，能量的来源、用处，最终学会如何生产一个智能农民进行能量采集。 兵种前文提到，爬根据身体部件的不同，分为多个兵种，但实际上官方并没有给出固定的兵种，其划分是取决于个人的。但在这里我们仍然要提到一些最基本且被广泛接受的一些兵种。本文涉及到：农民（harvester） 能量与spawn在正式开始编写代码之前，我们要先了解spawn与能量 能量每个房间有一些黄色的闪烁的点，这叫做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Screeps入门教程2-农民">
+<meta property="og:url" content="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/index.html">
 <meta property="og:site_name" content="Yougi&#39;s Blog">
+<meta property="og:description" content="本文将介绍基本的兵种分类，能量的来源、用处，最终学会如何生产一个智能农民进行能量采集。 兵种前文提到，爬根据身体部件的不同，分为多个兵种，但实际上官方并没有给出固定的兵种，其划分是取决于个人的。但在这里我们仍然要提到一些最基本且被广泛接受的一些兵种。本文涉及到：农民（harvester） 能量与spawn在正式开始编写代码之前，我们要先了解spawn与能量 能量每个房间有一些黄色的闪烁的点，这叫做">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-02-07T06:25:09.000Z">
+<meta property="article:modified_time" content="2022-02-09T10:50:20.046Z">
 <meta property="article:author" content="杨荻">
+<meta property="article:tag" content="游戏">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1774,8 +1779,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1643436465820" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1643436465820"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1644404353461" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1644404353461"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2575,7 +2580,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2635,104 +2640,302 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/01/29/mc%E5%BC%80%E6%9C%8D%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Yougi's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/01/29/mc%E5%BC%80%E6%9C%8D%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/"  itemprop="url">
-        mc开服的基本方法
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        在云服务器上安装Java环境下载JavaJAVA8：（Minecraft 1.16及以下请使用这个版本）
-JAVA16：（Minecraft 1.17及以上请使用这个版本）
-如国外网站访问速度慢，可以在此网盘下载
+    
+      <h1 class="title" itemprop="name headline">
+        Screeps入门教程2-农民
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://user-images.githubusercontent.com/44914308/151318627-8b8bd8ec-287b-4747-94b5-f90b65f2dcde.png" class="lazyload" data-srcset="https://user-images.githubusercontent.com/44914308/151318627-8b8bd8ec-287b-4747-94b5-f90b65f2dcde.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+    <p itemprop="name">杨荻</p>
+  </a>
+</div>
 
-注：1.18及以上使用Java18似乎报错，待查
-
-安装Java
-上传安装包到服务器/usr/local/java目录
-使用以下命令解压该压缩包 1tar zxvf 文件名.tg...
-      
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Screeps/">Screeps</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Screeps/" itemprop="url"><span itemprop="name">Screeps</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-01-29T12:44:08+08:00">2022-01-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Minecraft/">Minecraft</a><span class="sep"></span><a class="category-link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/">服务器使用</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Minecraft/" itemprop="url"><span itemprop="name">Minecraft</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/" itemprop="url"><span itemprop="name">服务器使用</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-02-07T14:25:09+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年2月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>本文将介绍基本的兵种分类，能量的来源、用处，最终学会如何生产一个智能农民进行能量采集。</p>
+<h2 id="兵种"><a href="#兵种" class="headerlink" title="兵种"></a>兵种</h2><div class="story post-story"><p>前文提到，爬根据身体部件的不同，分为多个兵种，但实际上官方并没有给出固定的兵种，其划分是取决于个人的。但在这里我们仍然要提到一些最基本且被广泛接受的一些兵种。<br>本文涉及到：农民（harvester）</p>
+</div><h2 id="能量与spawn"><a href="#能量与spawn" class="headerlink" title="能量与spawn"></a>能量与spawn</h2><div class="story post-story"><p>在正式开始编写代码之前，我们要先了解spawn与能量</p>
+<h3 id="能量"><a href="#能量" class="headerlink" title="能量"></a>能量</h3><p>每个房间有一些黄色的闪烁的点，这叫做资源点（energy source），所有的能量均来自农民对它的开采。生产爬（以及其他后文提到的一些操作）需要消耗能量。</p>
+<h3 id="spawn"><a href="#spawn" class="headerlink" title="spawn"></a>spawn</h3><p>每个拥有主人的房间至少拥有一个spawn，spawn是生产爬的必须结构。<br>在进入服务器后，选择一个有两个资源点的房间，进入，系统会要求你放置一个spawn。选择一个合适的位置，放置，命名之（今后以名称Spawn举例）这样就得到了一个spawn<br>当房间中spawn与extension（后面会提到）储存的能量和小于300时，你的spawn会每t回复1点能量，直到满300。</p>
+</div><h2 id="生产你的第一只爬！"><a href="#生产你的第一只爬！" class="headerlink" title="生产你的第一只爬！"></a>生产你的第一只爬！</h2><div class="story post-story"><p>在游戏界面的下方有游戏面板，分为三栏：script、console和memory。第一个用于编辑你的文件，第二个是控制台，第三个用于管理内存。现在我们先关注console。与浏览器的console一样，在这里执行的代码仅会执行一次。<br>向console输入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Game.spawns[<span class="string">&#x27;Spawn&#x27;</span>].spawnCreep(</span><br><span class="line">    [WORK, CARRY, MOVE],</span><br><span class="line">    <span class="string">&#x27;Harvester1&#x27;</span>,</span><br><span class="line">    &#123;<span class="attr">memory</span>: &#123;<span class="attr">role</span>: <span class="string">&#x27;harvester&#x27;</span>&#125;&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>等待一段时间，spawn旁就会出现一只名为Harvester的爬</p>
+<h3 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h3><p>Game.spawns是一个全局对象，key是你的所有spawn的名字，value是对应的spawn对象。<br>spawnCreep(body, name, memory)方法是用来生产爬的函数，接收三个参数，body是身体部件，name是名字，memory是内存（每个爬都自带一个内存）。<br>在本例中，有三个身体部件：WORK, CARRY, MOVE。分别用于开采能量，携带能量，行走。每个身体部件消耗不同的能量值：WORK-100，CARRY-50，MOVE-50。所以这个爬消耗200个能量。<br>name不多说，在爬很多的情况下为了防止重名的手段之后会介绍。<br>memory中，一般要包含一个role属性，用来标记这只爬的兵种，方便后续搜索之。</p>
+</div><h2 id="让你的爬动起来！"><a href="#让你的爬动起来！" class="headerlink" title="让你的爬动起来！"></a>让你的爬动起来！</h2><div class="story post-story"><p>为了让你的爬动起来，你要给它赋予一定的逻辑，每t运行这个逻辑。这就要用到script面板</p>
+<h3 id="规划运行代码"><a href="#规划运行代码" class="headerlink" title="规划运行代码"></a>规划运行代码</h3><p>在编写逻辑之前，我们要好好规划一下代码结构，方便后续增添其他的逻辑<br>新建一个文件role.harvester.js，注意如果直接在面板中新建模块，省略后面的.js。在文件中写下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> roleHarvester = &#123;</span><br><span class="line">    <span class="attr">run</span>: <span class="function"><span class="keyword">function</span>(<span class="params">creep</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 我们稍后在这里添加逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = roleHarvester</span><br></pre></td></tr></table></figure>
+<p>这个模块输出了一个roleHarvester对象，有一个run函数，接受一个爬作为参数。我们将在main文件中接受农民作为参数后调用这个函数来运行农民的逻辑<br>然后在main.js中添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> roleHarvester = <span class="built_in">require</span>(<span class="string">&#x27;role.harvester&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.loop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里是主循环，需要循环的代码写在这里</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> name <span class="keyword">in</span> Game.creeps)&#123;</span><br><span class="line">        <span class="comment">//遍历所有的爬，对不同兵种的爬调用不同的运行代码，这样方便以后增加更多的兵种</span></span><br><span class="line">        creep = Game.creeps[name]</span><br><span class="line">        <span class="keyword">if</span> (creep.memory.role == <span class="string">&#x27;harvester&#x27;</span>)&#123;</span><br><span class="line">            roleHarvester.run(creep)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如此这般，你在run中写的逻辑代码每个t都会被执行一次。你也许会问为什么不直接在main里面写逻辑，别问，有本事你写在里面试试。哈哈，这样子以后兵种增加后main会变得巨大无比，模块化编程可以减少代码间的耦合度，使得修改和维护变得简单。</p>
+<h3 id="设计农民逻辑"><a href="#设计农民逻辑" class="headerlink" title="设计农民逻辑"></a>设计农民逻辑</h3><p>一个可行的农民基本逻辑是这样的：</p>
+<pre class="mermaid">graph TD
+自检1{检查自身能量状态} -.-> 状态1[携带能量为已满]
+状态1 --> 调整1[restoring = true]
+调整1 --> 自检
+自检1 -.-> 状态3[其它情况]
+状态3 --> 自检
+自检1 -.-> 状态2[携带能量为0]
+状态2 --> 调整2[restoring = false]
+调整2 --> 自检
+自检{检查restoring状态} --false--> 工作1[查找周围的资源点]  
+工作1 --> 工作2[尝试移动到资源点并开采]  
+自检 --true--> 储存1[查找spawn]  
+储存1 --> 储存2[尝试移动到spawn并储存能量]</pre>
+<p>这样子，农民会实时更新自己的状态变量restoring，然后做出对应的操作。<br>现在我们分别进行代码实现和讲解。</p>
+<h3 id="实现农民逻辑"><a href="#实现农民逻辑" class="headerlink" title="实现农民逻辑"></a>实现农民逻辑</h3><h4 id="状态更新"><a href="#状态更新" class="headerlink" title="状态更新"></a>状态更新</h4><p>废话少说，先贴上代码再讲解涉及到的各种方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!creep.memory.restoring &amp;&amp; creep.store.getFreeCapacity() == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">// 如果正处于开采状态且背包已满，切换到储存状态</span></span><br><span class="line">    creep.memory.restoring = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (creep.memory.restoring &amp;&amp; creep.store[RESOURCE_ENERGY] == <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">// 如果正处于储存状态且背包已空，切换到开采状态</span></span><br><span class="line">    creep.memory.restoring = <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整体来说，这部分只是一个简单的判断，只是需要注意获取爬的背包空闲空间与获取爬携带资源的方法，以后会很常用。建筑的获取基本相同 以后会提到。<br>如果你足够细心，可以发现两个判断条件其实都可以删去前半部分对restoring的判断，不影响程序运行。我们加上这一段判断的目的是防止每次运行到这里都会进入判断设置一次restoring。想象一下，程序不断地将一个为false的值赋成false，这是很消耗资源的。加上我们这里的判断，就可以避免这种情况发生。</p>
+<h4 id="开采"><a href="#开采" class="headerlink" title="开采"></a>开采</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!creep.memory.restoring)&#123;</span><br><span class="line">    <span class="comment">// 如果是开采状态，执行下面的逻辑</span></span><br><span class="line">    <span class="comment">// 查找</span></span><br><span class="line">    <span class="keyword">let</span> target = creep.room.find(FIND_SOURCES)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> (creep.harvest(target) == ERR_NOT_IN_RANGE)&#123;</span><br><span class="line">        creep.moveTo(target)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里涉及到一些新的函数和方法。  </p>
+<ol>
+<li>find函数。房间room对象有一个find方法，它接收一个必选参数find_type和一个可选参数filter。find_type是一系列的FIND_*常量，表示你要找的对象；filter是一个对象，包含一个箭头函数，这个箭头函数对接收的参数提出要求condition{filter: (type) =&gt; conditions}。而其中filter对应的箭头函数有两种写法，请不要混淆。<br>此外，find函数返回的是一个数组，请注意要检索或者遍历才获取到真正要用的对象（即使只有一个对象）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">filter</span>: <span class="function">(<span class="params">type</span>) =&gt;</span> condition&#125;</span><br><span class="line">&#123;<span class="attr">filter</span>: <span class="function">(<span class="params">type</span>) =&gt;</span> &#123;<span class="keyword">return</span> condition&#125;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>harvest函数。不仅是这个函数，任何类似的对某个游戏对象进行操作的函数都是类似使用，先执行，然后判断返回值是不是ERR_NOT_IN_RANGE（距离太远），如果是，用moveTo函数让爬移动过去。<h4 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 寻找spawn</span></span><br><span class="line">    <span class="keyword">var</span> to_fill_target = creep.room.find(FIND_STRUCTURES, &#123;</span><br><span class="line">        <span class="attr">filter</span>: <span class="function">(<span class="params">structure</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> structure.structureType == STRUCTURE_SPAWN</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">// 如果找到了</span></span><br><span class="line">    <span class="keyword">if</span> (to_fill_target)&#123;</span><br><span class="line">        <span class="comment">// 和刚刚的harvest函数使用方法类似</span></span><br><span class="line">        <span class="keyword">if</span> (creep.transfer(to_fill_target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)&#123;</span><br><span class="line">        creep.moveTo(to_fill_target)&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这里我们用了一个判断：<code>if (to_fill_target)</code>，其实可以删去，使用它是想提醒读者，有时候需要对find函数（以及其它函数）的返回值做监测，防止空值报错！<br>至此，我们已经完成了农民的最基本逻辑：从资源点采集能量，然后转移到spawn中。请将上述逻辑代码顺序拼接到农民的逻辑中。</li>
+</ol>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2022/01/29/mc%E5%BC%80%E6%9C%8D%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/' itemprop="url">
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>始终坚持社会主义核心价值观</p>
+
+              
+            
+              
+                <p>本文永久链接：<a href=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/>http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-02-09T18:50:20+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年2月9日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%B8%B8%E6%88%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>游戏</p></a></div>
+  <span hidden itemprop="keywords">游戏</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/&title=Screeps入门教程2-农民 - Yougi's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/&title=Screeps入门教程2-农民 - Yougi's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B3-%E5%8D%87%E7%BA%A7%E8%80%85/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Screeps入门教程3-升级者</p>
+          <p class='content'>本文将介绍房间等级，控制器，最终实现一个智能升级者
+房间等级（RCL, Room Controller Level）每个房间都有对应的等级，顾名思义，房间等级实际是由一个控制器决定，我们马上就会...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/02/05/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1-%E6%B8%B8%E6%88%8F%E7%AE%80%E4%BB%8B/'>
+          <p class='title'>Screeps入门教程1-游戏简介<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>真正的编程游戏Screeps是一款编程策略游戏，之所以称它为“真正的编程游戏“，是因为在游戏中，玩家将使用自己编写的javascript代码来控制和管理所有的爬（creep）以及其它游戏元素，以...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'YougiTalk/community'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B5%E7%A7%8D"><span class="toc-text">兵种</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E4%B8%8Espawn"><span class="toc-text">能量与spawn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E9%87%8F"><span class="toc-text">能量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spawn"><span class="toc-text">spawn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E5%8F%AA%E7%88%AC%EF%BC%81"><span class="toc-text">生产你的第一只爬！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="toc-text">代码解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9%E4%BD%A0%E7%9A%84%E7%88%AC%E5%8A%A8%E8%B5%B7%E6%9D%A5%EF%BC%81"><span class="toc-text">让你的爬动起来！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%92%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">规划运行代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%86%9C%E6%B0%91%E9%80%BB%E8%BE%91"><span class="toc-text">设计农民逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%86%9C%E6%B0%91%E9%80%BB%E8%BE%91"><span class="toc-text">实现农民逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%9B%B4%E6%96%B0"><span class="toc-text">状态更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E9%87%87"><span class="toc-text">开采</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%82%A8%E5%AD%98"><span class="toc-text">储存</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
   
     
     
@@ -2802,93 +3005,12 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
 
   
 
-  
-    
-    
-  
-
-  <section class="widget category shadow blur desktop pjax">
-    
-  <header>
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'YougiTalk/community'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-    
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Minecraft/" href="/categories/Minecraft/"
-            active-action="action-categoriesMinecraft"
-            ><div class='name'>Minecraft</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-            active-action="action-categoriesE695B0E5ADA6"
-            ><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" href="/categories/%E6%95%B0%E5%AD%A6/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/"
-            active-action="action-categoriesE695B0E5ADA6E9AB98E7AD89E4BBA3E695B0"
-            ><div class='name'>高等代数</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/"
-            active-action="action-categoriesE69C8DE58AA1E599A8E4BDBFE794A8"
-            ><div class='name'>服务器使用</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE6B58BE8AF95"
-            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow blur desktop mobile pjax">
-    
-  <header>
-    <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'YougiTalk/community'
-      };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Minecraft/" style="font-size: 14px; color: #999">Minecraft</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" style="font-size: 14px; color: #999">期末考试</a>
-    </div>
-  </section>
-
-
-  
-
-  
-
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2917,14 +3039,15 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Screeps入门教程2-农民";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3020,6 +3143,14 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
   </footer>
 
 
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
         <a id="s-top" class="fas fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
       </div>
     </div>
@@ -3058,8 +3189,8 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1643436465820')
-      volantis.js('/js/message.js?time=1643436465820', () => {
+      volantis.css('/css/message.css?time=1644404353461')
+      volantis.js('/js/message.js?time=1644404353461', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3104,8 +3235,8 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1643436465820')
-      volantis.js('/js/message.js?time=1643436465820', () => {
+      volantis.css('/css/message.css?time=1644404353461')
+      volantis.js('/js/message.js?time=1644404353461', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3164,8 +3295,8 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1643436465820')
-      volantis.js('/js/message.js?time=1643436465820', () => {
+      volantis.css('/css/message.css?time=1644404353461')
+      volantis.js('/js/message.js?time=1644404353461', () => {
         hideMessage(done);
       });
     } else {
@@ -3423,7 +3554,7 @@ JAVA16：（Minecraft 1.17及以上请使用这个版本）
     
     
     
-    volantis.js('/js/rightMenu.js?time=1643436465820')
+    volantis.js('/js/rightMenu.js?time=1644404353461')
   </script>
 
 
@@ -3536,19 +3667,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1643436465820")
+        volantis.js("/js/plugins/sites.js?time=1644404353461")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1643436465820")
+        volantis.js("/js/plugins/friends.js?time=1644404353461")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1643436465820")
+        volantis.js("/js/plugins/contributors.js?time=1644404353461")
       }
     
   };
@@ -3620,7 +3751,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/aplayer.js?time=1643436465827')
+    await volantis.js('/js/aplayer.js?time=1644404353464')
     volantis.APlayerController.music = true;
   
   })();
@@ -3754,7 +3885,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1643436465820.js"></script>
+<script src="/js/app.js?time=1644404353461.js"></script>
 
 
 <!-- optional -->
@@ -3767,7 +3898,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1643436465820");
+    return volantis.js("/js/search/hexo.js?time=1644404353461");
   }
 
   function loadSearchService() {
@@ -3851,7 +3982,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp"];
+  let imgs = ["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp","https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3892,7 +4023,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1643436465820').then(()=>{
+    volantis.js('/js/parallax.js?time=1644404353461').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4086,7 +4217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/tags/Minecraft/","name":"Minecraft"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Yougi's Blog","url":"http://hexo.yougi.top/","keywords":null,"description":"","author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","description":""},"publisher":{"@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://hexo.yougi.top?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/Screeps/","name":"Screeps"}},{"@type":"ListItem","position":3,"item":{"@id":"http://hexo.yougi.top/2022/02/07/Screeps入门教程2-农民/","name":"Screeps入门教程2-农民"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Screeps入门教程2-农民","description":"","datePublished":"2022-02-07T06:25:09.000Z","dateModified":"2022-02-09T10:50:20.046Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/"},"author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/"},"publisher":{"@type":"Organization","name":"Yougi's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://hexo.yougi.top/2022/02/07/Screeps%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B2-%E5%86%9C%E6%B0%91/","wordCount":0,"articleSection":"Screeps","keywords":"游戏","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
