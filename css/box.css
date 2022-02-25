@@ -1,0 +1,39 @@
+.big-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.box-container{
+    background-color: #232427;
+    border-radius: 15px;
+    width: 100px;
+    padding: 5px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+                inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+                5px 5px 15px rgba(0, 0, 0, 0.3),
+                -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+.box-container h3{
+    font-size: medium;
+    color: #a38e8e;
+}
+
+.box-container select{
+    color: #a38e8e;
+    border-radius: 5px;
+    background: transparent;
+    border: 0;
+}
+
+.box-container option{
+    background-color: #232427;
+    border-radius: 5px;
+}
