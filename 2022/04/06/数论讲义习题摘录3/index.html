@@ -20,7 +20,7 @@
   <meta content="Yougi&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649411439540" as="style">
+  <link rel="preload" href="/css/style.css?time=1649591959920" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -36,7 +36,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-04-06T15:15:43.000Z">
-<meta property="article:modified_time" content="2022-04-08T07:40:17.296Z">
+<meta property="article:modified_time" content="2022-04-10T10:28:51.414Z">
 <meta property="article:author" content="杨荻">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1778,8 +1778,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649411439540" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649411439540"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649591959920" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649591959920"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2743,7 +2743,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   \equiv& 0\mod n-1
 \end{aligned}</script><p>这就证得$n-1|[\frac{(n-1)!}{n}]$</p>
 </div><h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><div class="story post-story"><script type="math/tex; mode=display">
-证明：\sum\limits_{d=1}^{n}\varphi(d)[\frac{n}{d}]=\frac{n(n+1)}{2}</script><p>本题不太涉及欧拉函数的本质，而是技巧性强，其中对$[\frac{n}{d}]$的和式改写与交换求和的技巧十分漂亮</p>
+证明：\sum\limits_{d=1}^{n}\varphi(d)[\frac{n}{d}]=\frac{n(n+1)}{2}</script><p>本题不太涉及欧拉函数的本质，而是技巧性强，其中对$[\frac{n}{d}]$的和式改写与交换求和的技巧十分漂亮  </p>
+<p>灵感来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36745053">知乎：莫比乌斯函数一例 by后缀自动机·张</a></p>
 <p>证明：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -2755,7 +2756,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 \end{aligned}</script><blockquote>
 <p>注：关于第二个等号的交换求和，要好好想清楚，最朴素的交换方法是画成一个方阵，两种求和顺序分别是先横向求和在纵向求和与先纵向求和再横向求和</p>
 </blockquote>
-</div><h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><div class="story post-story">
+</div><h2 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h2><div class="story post-story"><script type="math/tex; mode=display">
+求\mu*\omega(n)，其中\omega(n)表示n的不同素因子个数</script><p>初写时思路比较混乱，细节处理不好，做了不少没必要的讨论。下面的证明是反复打磨过的结果</p>
+<p>解：对$n$做分解$n=\prod\limits_{i=1}^sp_i\prod\limits_{j=1}^tq_j^{e_i}$这里$e_i\ge2$</p>
+<p>Case 1，若$s\neq0，t\neq0$则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+  \omega*\mu(n)=&\sum\limits_{d|n}\omega(d)\mu(\frac{n}{d})\\
+  =&\sum\limits_{d|n\atop q_1^{e_1-1}...q_t^{e_t-1}|d}\omega(d)\mu(\frac{n}{d})，记Q=q_1^{e_1-1}...q_t^{e_t-1}\\
+  =&\sum\limits_{d'|rad(n)}\omega(Qd')\mu(\frac{n}{Qd'})\\
+  =&\sum\limits_{d_1|p_1...p_s}\sum\limits_{d2|q_1...q_t}\omega(Qd_1d_2)\mu(\frac{n}{Qd_1d_2})\\
+  (注意到&\omega(Qd_1d_2)=\omega(Qd_1))\\
+  =&\sum\limits_{d_1|p_1...p_s}\omega(Qd_1)\sum\limits_{d2|q_1...q_t}\mu(\frac{p_1...p_s}{d_1}\frac{q_1...q_t}{d_2})\\
+  =&\sum\limits_{d_1|p_1...p_s}\omega(Qd_1)\mu(\frac{p_1...p_s}{d_1})\sum\limits_{d_2|q_1...q_t}\mu(\frac{q_1...q_t}{d_2})\\
+  (注意到&\sum\limits_{d_2|q_1...q_t}\mu(\frac{q_1...q_t}{d_2})=0)\\
+  =&0
+\end{aligned}</script><p>Case 2，若$s=0$或$t=0$但不全为$0$，则$n=p^\alpha$，此时：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+  \omega*\mu(n)=&\sum\limits_{d|n}\omega(d)\mu(\frac{n}{d})\\
+  =&\omega(n)\mu(1)+\omega(1)\mu(n)\\
+  =&1
+\end{aligned}</script><p>Case 3，若$s=t=0$，即$n=1$，显然$\omega*\mu(n)=0$</p>
+<p>综上：</p>
+<script type="math/tex; mode=display">
+\omega*\mu(n)=
+\begin{cases}
+  0，若n=1或\omega(n)\ge2\\
+  1，若\omega(n)=1
+\end{cases}</script>
 </div>
   </div>
   
@@ -2796,10 +2825,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-08T15:40:17+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-10T18:28:51+08:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月8日</p>
+    <p>更新于：2022年4月10日</p>
   </a>
 </div>
 
@@ -3047,7 +3076,7 @@ github地址
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>13.8k 字</div>
+          <div>14.1k 字</div>
         </div>
       
 
@@ -3059,8 +3088,8 @@ github地址
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Apr 08 2022 17:50:39 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2022-04-08 日</div>
+            <div id="last-update" style="display: none;">Sun Apr 10 2022 19:59:19 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2022-04-10 日</div>
           
         </div>
         
@@ -3110,7 +3139,7 @@ github地址
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-04-08 日';
+            document.getElementById('last-update-show').innerHTML = '2022-04-10 日';
           }
         </script>
         
@@ -3315,8 +3344,8 @@ github地址
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649411439540')
-      volantis.js('/js/message.js?time=1649411439540', () => {
+      volantis.css('/css/message.css?time=1649591959920')
+      volantis.js('/js/message.js?time=1649591959920', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3361,8 +3390,8 @@ github地址
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649411439540')
-      volantis.js('/js/message.js?time=1649411439540', () => {
+      volantis.css('/css/message.css?time=1649591959920')
+      volantis.js('/js/message.js?time=1649591959920', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3421,8 +3450,8 @@ github地址
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1649411439540')
-      volantis.js('/js/message.js?time=1649411439540', () => {
+      volantis.css('/css/message.css?time=1649591959920')
+      volantis.js('/js/message.js?time=1649591959920', () => {
         hideMessage(done);
       });
     } else {
@@ -3680,7 +3709,7 @@ github地址
     
     
     
-    volantis.js('/js/rightMenu.js?time=1649411439540')
+    volantis.js('/js/rightMenu.js?time=1649591959920')
   </script>
 
 
@@ -3793,19 +3822,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649411439540")
+        volantis.js("/js/plugins/sites.js?time=1649591959920")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649411439540")
+        volantis.js("/js/plugins/friends.js?time=1649591959920")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649411439540")
+        volantis.js("/js/plugins/contributors.js?time=1649591959920")
       }
     
   };
@@ -3877,7 +3906,7 @@ volantis.pjax.push(bindToggleButton);
     await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/aplayer.js?time=1649411439542')
+    await volantis.js('/js/aplayer.js?time=1649591959923')
     volantis.APlayerController.music = true;
   
   })();
@@ -4011,7 +4040,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1649411439540.js"></script>
+<script src="/js/app.js?time=1649591959920.js"></script>
 
 
 <!-- optional -->
@@ -4024,7 +4053,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649411439540");
+    return volantis.js("/js/search/hexo.js?time=1649591959920");
   }
 
   function loadSearchService() {
@@ -4149,7 +4178,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/parallax.js?time=1649411439540').then(()=>{
+    volantis.js('/js/parallax.js?time=1649591959920').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
@@ -4397,7 +4426,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/数学/","name":"数学"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/数学/数论/","name":"数论"}},{"@type":"ListItem","position":3,"item":{"@id":"http://hexo.yougi.top/2022/04/06/数论讲义习题摘录3/","name":"数论讲义习题摘录3"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数论讲义习题摘录3","description":"","datePublished":"2022-04-06T15:15:43.000Z","dateModified":"2022-04-08T07:40:17.296Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2022/04/06/%E6%95%B0%E8%AE%BA%E8%AE%B2%E4%B9%89%E4%B9%A0%E9%A2%98%E6%91%98%E5%BD%953/"},"author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/"},"publisher":{"@type":"Organization","name":"Yougi's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://hexo.yougi.top/2022/04/06/%E6%95%B0%E8%AE%BA%E8%AE%B2%E4%B9%89%E4%B9%A0%E9%A2%98%E6%91%98%E5%BD%953/","wordCount":0,"articleSection":"数学","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Yougi's Blog","url":"http://hexo.yougi.top/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://hexo.yougi.top/","name":"Yougi's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/数学/","name":"数学"}},{"@type":"ListItem","position":2,"item":{"@id":"http://hexo.yougi.top/categories/数学/数论/","name":"数论"}},{"@type":"ListItem","position":3,"item":{"@id":"http://hexo.yougi.top/2022/04/06/数论讲义习题摘录3/","name":"数论讲义习题摘录3"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数论讲义习题摘录3","description":"","datePublished":"2022-04-06T15:15:43.000Z","dateModified":"2022-04-10T10:28:51.414Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2022/04/06/%E6%95%B0%E8%AE%BA%E8%AE%B2%E4%B9%89%E4%B9%A0%E9%A2%98%E6%91%98%E5%BD%953/"},"author":{"@type":"Person","name":"杨荻","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://hexo.yougi.top/"},"publisher":{"@type":"Organization","name":"Yougi's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://hexo.yougi.top/2022/04/06/%E6%95%B0%E8%AE%BA%E8%AE%B2%E4%B9%89%E4%B9%A0%E9%A2%98%E6%91%98%E5%BD%953/","wordCount":0,"articleSection":"数学","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
