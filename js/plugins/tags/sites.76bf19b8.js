@@ -1,4 +1,4 @@
-const FriendsJS = {
+const SitesJS = {
   requestAPI: (url, callback, timeout) => {
     let retryTimes = 5;
 
@@ -45,19 +45,22 @@ const FriendsJS = {
   },
   layout: (cfg) => {
     const el = cfg.el;
-    FriendsJS.requestAPI(cfg.api, function (data) {
+    SitesJS.requestAPI(cfg.api, function (data) {
       el.querySelector('.loading-wrap').remove();
       const arr = data.content;
       var cellALL = "";
       arr.forEach((item, i) => {
-        var user = '<div class="user-card">';
-        user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
-        user += ' href="' + item.url + '">';
-        user += '<img alt="' + item.title + '" src="' + (item.avatar || cfg.avatar) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.avatar + '\';">';
-        user += '<div class="name"><span>' + item.title + '</span></div>';
-        user += '</a>';
-        user += '</div>';
-        cellALL += user;
+        var cell = '<div class="site-card">';
+        cell += '<a class="card-link" target="_blank" rel="external noopener noreferrer" href="' + item.url + '">';
+        cell += '<img alt="' + item.title + '" src="' + (item.screenshot || ('https://image.thum.io/get/width/1024/crop/768/' + item.url)) + '" onerror="errorImgCover(this)"/>';
+        cell += '<div class="info">';
+        cell += '<img alt="' + item.title + '" src="' + (item.avatar || cfg.avatar) + '" onerror="errorImgAvatar(this)"/>';
+        cell += '<span class="title">' + item.title + '</span>';
+        cell += '<span class="desc">' + (item.description || item.url) + '</span>';
+        cell += '</div>';
+        cell += '</a>';
+        cell += '</div>';
+        cellALL += cell;
       });
       el.querySelector('.group-body').innerHTML = cellALL;
     }, function () {
@@ -67,8 +70,8 @@ const FriendsJS = {
       } catch (e) { }
     });
   },
-  start: () => {
-    const els = document.getElementsByClassName('friendsjs-wrap');
+  start: (cfg) => {
+    const els = document.getElementsByClassName('sitesjs-wrap');
     for (var i = 0; i < els.length; i++) {
       const el = els[i];
       const api = el.getAttribute('api');
@@ -76,18 +79,18 @@ const FriendsJS = {
         continue;
       }
       var cfg = new Object();
+      cfg.class = el.getAttribute('class');
       cfg.el = el;
       cfg.api = api;
-      cfg.class = el.getAttribute('class');
-      cfg.avatar = 'https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg';
-      FriendsJS.layout(cfg);
+      cfg.avatar = volantis.GLOBAL_CONFIG.default.link;
+      cfg.screenshot = volantis.GLOBAL_CONFIG.default.cover;
+      SitesJS.layout(cfg);
     }
   }
 }
 
 
-
-FriendsJS.start();
+SitesJS.start();
 document.addEventListener('pjax:complete', function () {
-  FriendsJS.start();
+  SitesJS.start();
 });

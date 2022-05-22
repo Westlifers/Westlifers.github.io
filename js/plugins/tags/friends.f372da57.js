@@ -1,4 +1,4 @@
-const ContributorsJS = {
+const FriendsJS = {
   requestAPI: (url, callback, timeout) => {
     let retryTimes = 5;
 
@@ -45,15 +45,16 @@ const ContributorsJS = {
   },
   layout: (cfg) => {
     const el = cfg.el;
-    ContributorsJS.requestAPI(cfg.api, function (data) {
+    FriendsJS.requestAPI(cfg.api, function (data) {
       el.querySelector('.loading-wrap').remove();
+      const arr = data.content;
       var cellALL = "";
-      (data || []).forEach((item, i) => {
+      arr.forEach((item, i) => {
         var user = '<div class="user-card">';
         user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
-        user += ' href="' + item.html_url + '">';
-        user += '<img alt="' + item.login + '" src="' + (item.avatar_url || cfg.avatar) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.avatar + '\';">';
-        user += '<div class="name"><span>' + item.login + '</span></div>';
+        user += ' href="' + item.url + '">';
+        user += '<img alt="' + item.title + '" src="' + (item.avatar || cfg.avatar) + '" onerror="errorImgAvatar(this)">';
+        user += '<div class="name"><span>' + item.title + '</span></div>';
         user += '</a>';
         user += '</div>';
         cellALL += user;
@@ -67,7 +68,7 @@ const ContributorsJS = {
     });
   },
   start: () => {
-    const els = document.getElementsByClassName('contributorsjs-wrap');
+    const els = document.getElementsByClassName('friendsjs-wrap');
     for (var i = 0; i < els.length; i++) {
       const el = els[i];
       const api = el.getAttribute('api');
@@ -78,15 +79,15 @@ const ContributorsJS = {
       cfg.el = el;
       cfg.api = api;
       cfg.class = el.getAttribute('class');
-      cfg.avatar = 'https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg';
-      ContributorsJS.layout(cfg);
+      cfg.avatar = volantis.GLOBAL_CONFIG.default.avatar;
+      FriendsJS.layout(cfg);
     }
   }
 }
 
 
 
-ContributorsJS.start();
+FriendsJS.start();
 document.addEventListener('pjax:complete', function () {
-  ContributorsJS.start();
+  FriendsJS.start();
 });

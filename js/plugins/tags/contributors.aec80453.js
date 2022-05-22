@@ -1,4 +1,4 @@
-const SitesJS = {
+const ContributorsJS = {
   requestAPI: (url, callback, timeout) => {
     let retryTimes = 5;
 
@@ -45,22 +45,18 @@ const SitesJS = {
   },
   layout: (cfg) => {
     const el = cfg.el;
-    SitesJS.requestAPI(cfg.api, function (data) {
+    ContributorsJS.requestAPI(cfg.api, function (data) {
       el.querySelector('.loading-wrap').remove();
-      const arr = data.content;
       var cellALL = "";
-      arr.forEach((item, i) => {
-        var cell = '<div class="site-card">';
-        cell += '<a class="card-link" target="_blank" rel="external noopener noreferrer" href="' + item.url + '">';
-        cell += '<img alt="' + item.title + '" src="' + (item.screenshot || ('https://image.thum.io/get/width/1024/crop/768/' + item.url)) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.screenshot + '\';"/>';
-        cell += '<div class="info">';
-        cell += '<img alt="' + item.title + '" src="' + (item.avatar || cfg.avatar) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.avatar + '\';"/>';
-        cell += '<span class="title">' + item.title + '</span>';
-        cell += '<span class="desc">' + (item.description || item.url) + '</span>';
-        cell += '</div>';
-        cell += '</a>';
-        cell += '</div>';
-        cellALL += cell;
+      (data || []).forEach((item, i) => {
+        var user = '<div class="user-card">';
+        user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
+        user += ' href="' + item.html_url + '">';
+        user += '<img alt="' + item.login + '" src="' + (item.avatar_url || cfg.avatar) + '" onerror="errorImgAvatar(this)">';
+        user += '<div class="name"><span>' + item.login + '</span></div>';
+        user += '</a>';
+        user += '</div>';
+        cellALL += user;
       });
       el.querySelector('.group-body').innerHTML = cellALL;
     }, function () {
@@ -70,8 +66,8 @@ const SitesJS = {
       } catch (e) { }
     });
   },
-  start: (cfg) => {
-    const els = document.getElementsByClassName('sitesjs-wrap');
+  start: () => {
+    const els = document.getElementsByClassName('contributorsjs-wrap');
     for (var i = 0; i < els.length; i++) {
       const el = els[i];
       const api = el.getAttribute('api');
@@ -79,18 +75,18 @@ const SitesJS = {
         continue;
       }
       var cfg = new Object();
-      cfg.class = el.getAttribute('class');
       cfg.el = el;
       cfg.api = api;
-      cfg.avatar = 'https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/link/8f277b4ee0ecd.svg';
-      cfg.screenshot = 'https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/cover/76b86c0226ffd.svg';
-      SitesJS.layout(cfg);
+      cfg.class = el.getAttribute('class');
+      cfg.avatar = volantis.GLOBAL_CONFIG.default.avatar;
+      ContributorsJS.layout(cfg);
     }
   }
 }
 
 
-SitesJS.start();
+
+ContributorsJS.start();
 document.addEventListener('pjax:complete', function () {
-  SitesJS.start();
+  ContributorsJS.start();
 });

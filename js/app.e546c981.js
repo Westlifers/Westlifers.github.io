@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
   volantis.requestAnimationFrame(() => {
     VolantisApp.init();
     VolantisApp.subscribe();
-    volantisFancyBox.loadFancyBox();
+    VolantisFancyBox.init();
     highlightKeyWords.startFromURL();
     locationHash();
 
     volantis.pjax.push(() => {
       VolantisApp.pjaxReload();
+      VolantisFancyBox.init();
       sessionStorage.setItem("domTitle", document.title);
-      highlightKeyWords.startFromURL()
-      volantisFancyBox.pjaxReload()
+      highlightKeyWords.startFromURL();
     }, 'app.js');
     volantis.pjax.send(() => {
       volantis.dom.switcher.removeClass('active'); // 关闭移动端激活的搜索框
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*锚点定位*/
+/* 锚点定位 */
 const locationHash = () => {
   if (window.location.hash) {
     let locationID = decodeURI(window.location.hash.split('#')[1]).replace(/\ /g, '-');
@@ -29,20 +29,21 @@ const locationHash = () => {
     if (target) {
       setTimeout(() => {
         if (window.location.hash.startsWith('#fn')) { // hexo-reference https://github.com/volantis-x/hexo-theme-volantis/issues/647
-          volantis.scroll.to(target,{addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant'})
+          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant', observer:true })
         } else {
           // 锚点中上半部有大片空白 高度大概是 volantis.dom.header.offsetHeight
-          volantis.scroll.to(target,{addTop: 5, behavior: 'instant'})
+          volantis.scroll.to(target, { addTop: 5, behavior: 'instant', observer:true })
         }
       }, 1000)
     }
   }
 }
+Object.freeze(locationHash);
 
-
+/* Main */
 const VolantisApp = (() => {
   const fn = {},
-    COPYHTML = '<button class="btn-copy" data-clipboard-snippet=""><i class="fas fa-copy"></i><span>COPY</span></button>';
+    COPYHTML = '<button class="btn-copy" data-clipboard-snippet=""><i class="fa-solid fa-copy"></i><span>COPY</span></button>';
   let scrollCorrection = 80;
 
   fn.init = () => {
@@ -62,13 +63,34 @@ const VolantisApp = (() => {
         fn.setHeaderSearch();
       }
     }
-    volantis.scroll.push(fn.scrollEventCallBack,"scrollEventCallBack")
+    volantis.scroll.push(fn.scrollEventCallBack, "scrollEventCallBack")
   }
 
   fn.event = () => {
     volantis.dom.$(document.getElementById("scroll-down")).on('click', function () {
       fn.scrolltoElement(volantis.dom.bodyAnchor);
     });
+
+    // 站点信息 最后活动日期
+    if (volantis.GLOBAL_CONFIG.sidebar.for_page.includes('webinfo') || volantis.GLOBAL_CONFIG.sidebar.for_post.includes('webinfo')) {
+      const lastupd = volantis.GLOBAL_CONFIG.sidebar.webinfo.lastupd;
+      if (!!document.getElementById('last-update-show') && lastupd.enable && lastupd.friendlyShow) {
+        document.getElementById('last-update-show').innerHTML = fn.utilTimeAgo(volantis.GLOBAL_CONFIG.lastupdate);
+      }
+    }
+
+    // 站点信息 运行时间
+    if (!!document.getElementById('webinfo-runtime-count')) {
+      let BirthDay = new Date(volantis.GLOBAL_CONFIG.sidebar.webinfo.runtime.data);
+      let timeold = (new Date().getTime() - BirthDay.getTime());
+      let daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+      document.getElementById('webinfo-runtime-count').innerHTML = `${daysold} ${volantis.GLOBAL_CONFIG.sidebar.webinfo.runtime.unit}`;
+    }
+
+    // 消息提示 复制时弹出
+    document.body.oncopy = function () {
+      fn.messageCopyright()
+    };
   }
 
   fn.restData = () => {
@@ -87,7 +109,7 @@ const VolantisApp = (() => {
 
   // 校正页面定位（被导航栏挡住的区域）
   fn.scrolltoElement = (elem, correction = scrollCorrection) => {
-    volantis.scroll.to(elem,{
+    volantis.scroll.to(elem, {
       top: elem.offsetTop - correction
     })
   }
@@ -148,6 +170,7 @@ const VolantisApp = (() => {
       }
     }
   }
+
   // 设置滚动锚点
   fn.setScrollAnchor = () => {
     // click topBtn 滚动至bodyAnchor 【移动端 PC】
@@ -168,7 +191,7 @@ const VolantisApp = (() => {
     if (!pdata.ispage) return;
 
     // 填充二级导航文章标题 【移动端 PC】
-    volantis.dom.wrapper.find('.nav-sub .title').html(pdata.postTitle);
+    volantis.dom.wrapper.find('.nav-sub .title').html(document.title.split(" - ")[0]);
 
     // ====== bind events to every btn =========
     // 评论按钮 【移动端 PC】
@@ -181,7 +204,7 @@ const VolantisApp = (() => {
         fn.scrolltoElement(volantis.dom.commentTarget);
         e.stopImmediatePropagation();
       });
-    } else volantis.dom.comment.style.display='none'; // 关闭了评论，则隐藏评论按钮
+    } else volantis.dom.comment.style.display = 'none'; // 关闭了评论，则隐藏评论按钮
 
     // 移动端toc目录按钮 【移动端】
     if (volantis.isMobile) {
@@ -202,7 +225,7 @@ const VolantisApp = (() => {
           }
           volantis.dom.toc.removeClass('active');
         });
-      } else volantis.dom.toc.style.display='none'; // 隐藏toc目录按钮
+      } else volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
     }
   }
 
@@ -272,7 +295,11 @@ const VolantisApp = (() => {
             let array = e.currentTarget.children
             for (let index = 0; index < array.length; index++) {
               const element = array[index];
-              volantis.dom.$(element).show()
+              if (volantis.dom.$(element).title === 'menu') { // 移动端菜单栏异常
+                volantis.dom.$(element).display = "flex"      // https://github.com/volantis-x/hexo-theme-volantis/issues/706
+              } else {
+                volantis.dom.$(element).show()
+              }
             }
           }, 0);
         }
@@ -356,14 +383,14 @@ const VolantisApp = (() => {
         let targetID = decodeURI(e.target.hash.split('#')[1]).replace(/\ /g, '-');
         let target = document.getElementById(targetID);
         if (target) {
-          volantis.scroll.to(target,{addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant'})
+          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
         }
       });
     })
   }
 
-  // 代码块复制
-  fn.copyCode = (Selector) => {
+  // 工具类：代码块复制
+  fn.utilCopyCode = (Selector) => {
     document.querySelectorAll(Selector).forEach(node => {
       const test = node.insertAdjacentHTML("beforebegin", COPYHTML);
       const _BtnCopy = node.previousSibling;
@@ -379,12 +406,8 @@ const VolantisApp = (() => {
         document.getSelection().addRange(range);
 
         const str = document.getSelection().toString();
-        fn.writeClipText(str).then(() => {
-          if (volantis.messageCopyright && volantis.messageCopyright.enable) {
-            volantis.message(volantis.messageCopyright.title, volantis.messageCopyright.message, {
-              icon: volantis.messageCopyright.icon
-            });
-          }
+        fn.utilWriteClipText(str).then(() => {
+          fn.messageCopyright();
           _BtnCopy.classList.add('copied');
           _icon.classList.remove('fa-copy');
           _icon.classList.add('fa-check-circle');
@@ -395,7 +418,7 @@ const VolantisApp = (() => {
             _span.innerText = "COPY";
           }, 2000)
         }).catch(e => {
-          volantis.message('系统提示', e, {
+          VolantisApp.message('系统提示', e, {
             icon: 'fa fa-exclamation-circle red'
           });
           _BtnCopy.classList.add('copied-failed');
@@ -413,36 +436,212 @@ const VolantisApp = (() => {
   }
 
   // 工具类：复制字符串到剪切板
-  fn.writeClipText = (str) => {
-    try {
-      return navigator.clipboard
-        .writeText(str)
-        .then(() => {
-          return Promise.resolve()
-        })
-        .catch(err => {
-          return Promise.reject(err || '复制文本失败!')
-        })
-    } catch (e) {
-      const input = document.createElement('input');
-      input.setAttribute('readonly', 'readonly');
-      document.body.appendChild(input);
-      input.setAttribute('value', str);
-      input.select();
-      try {
-        let result = document.execCommand('copy')
-        document.body.removeChild(input);
-        if (!result || result === 'unsuccessful') {
-          return Promise.reject('复制文本失败!')
-        } else {
-          return Promise.resolve()
+  fn.utilWriteClipText = (str) => {
+    return navigator.clipboard
+      .writeText(str)
+      .then(() => {
+        return Promise.resolve()
+      })
+      .catch(e => {
+        const input = document.createElement('textarea');
+        input.setAttribute('readonly', 'readonly');
+        document.body.appendChild(input);
+        input.innerHTML = str;
+        input.select();
+        try {
+          let result = document.execCommand('copy')
+          document.body.removeChild(input);
+          if (!result || result === 'unsuccessful') {
+            return Promise.reject('复制文本失败!')
+          } else {
+            return Promise.resolve()
+          }
+        } catch (e) {
+          document.body.removeChild(input);
+          return Promise.reject(
+            '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
+          )
         }
-      } catch (e) {
-        document.body.removeChild(input);
-        return Promise.reject(
-          '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
-        )
-      }
+      })
+  }
+
+  // 工具类：返回时间间隔
+  fn.utilTimeAgo = (dateTimeStamp) => {
+    const minute = 1e3 * 60, hour = minute * 60, day = hour * 24, week = day * 7, month = day * 30;
+    const now = new Date().getTime();
+    const diffValue = now - dateTimeStamp;
+    const minC = diffValue / minute,
+      hourC = diffValue / hour,
+      dayC = diffValue / day,
+      weekC = diffValue / week,
+      monthC = diffValue / month;
+    if (diffValue < 0) {
+      result = ""
+    } else if (monthC >= 1 && monthC < 7) {
+      result = " " + parseInt(monthC) + " 月前"
+    } else if (weekC >= 1 && weekC < 4) {
+      result = " " + parseInt(weekC) + " 周前"
+    } else if (dayC >= 1 && dayC < 7) {
+      result = " " + parseInt(dayC) + " 天前"
+    } else if (hourC >= 1 && hourC < 24) {
+      result = " " + parseInt(hourC) + " 小时前"
+    } else if (minC >= 1 && minC < 60) {
+      result = " " + parseInt(minC) + " 分钟前"
+    } else if (diffValue >= 0 && diffValue <= minute) {
+      result = "刚刚"
+    } else {
+      const datetime = new Date();
+      datetime.setTime(dateTimeStamp);
+      const Nyear = datetime.getFullYear();
+      const Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+      const Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+      const Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+      const Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+      const Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+      result = Nyear + "-" + Nmonth + "-" + Ndate
+    }
+    return result;
+  }
+
+  // 消息提示：标准
+  fn.message = (title, message, option = {}, done = null) => {
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
+        tozashMessage(title, message, option, done);
+      });
+    } else {
+      tozashMessage(title, message, option, done);
+    }
+    function tozashMessage(title, message, option, done) {
+      const {
+        icon,
+        time,
+        position,
+        transitionIn,
+        transitionOut,
+        messageColor,
+        titleColor,
+        backgroundColor,
+        zindex,
+        displayMode
+      } = option;
+      iziToast.show({
+        layout: '2',
+        icon: 'Fontawesome',
+        closeOnEscape: 'true',
+        displayMode: displayMode || 'replace',
+        transitionIn: transitionIn || volantis.GLOBAL_CONFIG.plugins.message.transitionIn,
+        transitionOut: transitionOut || volantis.GLOBAL_CONFIG.plugins.message.transitionOut,
+        messageColor: messageColor || volantis.GLOBAL_CONFIG.plugins.message.messageColor,
+        titleColor: titleColor || volantis.GLOBAL_CONFIG.plugins.message.titleColor,
+        backgroundColor: backgroundColor || volantis.GLOBAL_CONFIG.plugins.message.backgroundColor,
+        zindex: zindex || volantis.GLOBAL_CONFIG.plugins.message.zindex,
+        icon: icon || volantis.GLOBAL_CONFIG.plugins.message.icon.default,
+        timeout: time || volantis.GLOBAL_CONFIG.plugins.message.time.default,
+        position: position || volantis.GLOBAL_CONFIG.plugins.message.position,
+        title: title,
+        message: message,
+        onClosed: () => {
+          if (done) done();
+        },
+      });
+    }
+  }
+
+  // 消息提示：询问
+  fn.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
+        tozashQuestion(title, message, option, success, cancel, done);
+      });
+    } else {
+      tozashQuestion(title, message, option, success, cancel, done);
+    }
+
+    function tozashQuestion(title, message, option, success, cancel, done) {
+      const {
+        icon,
+        time,
+        position,
+        transitionIn,
+        transitionOut,
+        messageColor,
+        titleColor,
+        backgroundColor,
+        zindex
+      } = option;
+      iziToast.question({
+        id: 'question',
+        icon: 'Fontawesome',
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        position: 'center',
+        messageColor: messageColor || volantis.GLOBAL_CONFIG.plugins.message.messageColor,
+        titleColor: titleColor || volantis.GLOBAL_CONFIG.plugins.message.titleColor,
+        backgroundColor: backgroundColor || volantis.GLOBAL_CONFIG.plugins.message.backgroundColor,
+        zindex: zindex || volantis.GLOBAL_CONFIG.plugins.message.zindex,
+        icon: icon || volantis.GLOBAL_CONFIG.plugins.message.icon.quection,
+        timeout: time || volantis.GLOBAL_CONFIG.plugins.message.time.quection,
+        title: title,
+        message: message,
+        buttons: [
+          ['<button><b>是</b></button>', (instance, toast) => {
+            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
+            if (success) success(instance, toast)
+          }],
+          ['<button><b>否</b></button>', (instance, toast) => {
+            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
+            if (cancel) cancel(instance, toast)
+          }]
+        ],
+        onClosed: (instance, toast, closedBy) => {
+          if (done) done(instance, toast, closedBy);
+        }
+      });
+    }
+  }
+
+  // 消息提示：隐藏
+  fn.hideMessage = (done = null) => {
+    const toast = document.querySelector('.iziToast');
+    if (!toast) {
+      if (done) done()
+      return;
+    }
+
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.GLOBAL_CONFIG.plugins.message.css)
+      volantis.js(volantis.GLOBAL_CONFIG.plugins.message.js, () => {
+        hideMessage(done);
+      });
+    } else {
+      hideMessage(done);
+    }
+
+    function hideMessage(done) {
+      iziToast.hide({}, toast);
+      if (done) done();
+    }
+  }
+
+  // 消息提示：复制
+  let messageCopyrightShow = 0;
+  fn.messageCopyright = () => {
+    // 消息提示 复制时弹出
+    if (volantis.GLOBAL_CONFIG.plugins.message.enable
+      && volantis.GLOBAL_CONFIG.plugins.message.copyright.enable
+      && messageCopyrightShow < 1) {
+      messageCopyrightShow++;
+      VolantisApp.message(volantis.GLOBAL_CONFIG.plugins.message.copyright.title,
+        volantis.GLOBAL_CONFIG.plugins.message.copyright.message, {
+        icon: volantis.GLOBAL_CONFIG.plugins.message.copyright.icon,
+        transitionIn: 'flipInX',
+        transitionOut: 'flipOutX',
+        displayMode: 1
+      });
     }
   }
 
@@ -460,7 +659,6 @@ const VolantisApp = (() => {
       fn.setScrollAnchor();
       fn.setTabs();
       fn.footnotes();
-      fn.copyCode();
     },
     pjaxReload: () => {
       fn.event();
@@ -471,85 +669,152 @@ const VolantisApp = (() => {
       fn.setScrollAnchor();
       fn.setTabs();
       fn.footnotes();
-      fn.copyCode();
 
       // 移除小尾巴的移除
       document.querySelector("#l_header .nav-main").querySelectorAll('.list-v:not(.menu-phone)').forEach(function (e) {
         e.removeAttribute("style")
       })
-      document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style")
+      document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style");
+      messageCopyrightShow = 0;
     },
-    writeClipText: fn.writeClipText,
-    copyCode: fn.copyCode,
+    utilCopyCode: fn.utilCopyCode,
+    utilWriteClipText: fn.utilWriteClipText,
+    utilTimeAgo: fn.utilTimeAgo,
+    message: fn.message,
+    question: fn.question,
+    hideMessage: fn.hideMessage,
+    messageCopyright: fn.messageCopyright,
+    scrolltoElement: fn.scrolltoElement
   }
 })()
 Object.freeze(VolantisApp);
 
-const volantisFancyBox = (() => {
+/* FancyBox */
+const VolantisFancyBox = (() => {
   const fn = {};
 
-  fn.initFB = () => {
-    const group = new Set();
-    group.add('default'); // 默认类
-    group.add('Twikoo'); // TwiKoo 类
+  fn.loadFancyBox = (done) => {
+    volantis.css(volantis.GLOBAL_CONFIG.plugins.fancybox.css);
+    volantis.js(volantis.GLOBAL_CONFIG.plugins.fancybox.js).then(() => {
+      if (done) done();
+    })
+  }
 
-    if (!document.querySelector(".md .gallery img, .fancybox")) return;
-    document.querySelectorAll(".md .gallery").forEach(function (ele) {
+  /**
+   * 加载及处理
+   * 
+   * @param {*} checkMain 是否只处理文章区域的文章
+   * @param {*} done      FancyBox 加载完成后的动作，默认执行分组绑定
+   * @returns 
+   */
+  fn.init = (checkMain = true, done = fn.groupBind) => {
+    if (!document.querySelector(".md .gallery img, .fancybox") && checkMain) return;
+    if (typeof Fancybox === "undefined") {
+      fn.loadFancyBox(done);
+    } else {
+      done();
+    }
+  }
+
+  /**
+   * 图片元素预处理
+   * 
+   * @param {*} selectors 选择器
+   * @param {*} name      分组
+   */
+  fn.elementHandling = (selectors, name) => {
+    const nodeList = document.querySelectorAll(selectors);
+    nodeList.forEach($item => {
+      if ($item.hasAttribute('fancybox')) return;
+      $item.setAttribute('fancybox', '');
+      const $link = document.createElement('a');
+      $link.setAttribute('href', $item.src);
+      $link.setAttribute('data-caption', $item.alt);
+      $link.setAttribute('data-fancybox', name);
+      $link.classList.add('fancybox');
+      $link.append($item.cloneNode());
+      $item.replaceWith($link);
+    })
+  }
+
+  /**
+   * 原生绑定
+   * 
+   * @param {*} selectors 选择器
+   */
+  fn.bind = (selectors) => {
+    fn.init(false, () => {
+      Fancybox.bind(selectors, {
+        groupAll: true,
+        Hash: false,
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: function (fancybox, carousel, slide) {
+          return slide.$trigger.alt || null
+        }
+      });
+    });
+  }
+
+  /**
+   * 分组绑定
+   * 
+   * @param {*} groupName 分组名称
+   */
+  fn.groupBind = (groupName = null) => {
+    const group = new Set();
+
+    document.querySelectorAll(".gallery").forEach(ele => {
       if (ele.querySelector("img")) {
         group.add(ele.getAttribute('data-group') || 'default');
       }
     })
 
-    Fancybox.destroy();
+    if (!!groupName) group.add(groupName);
+
     for (const iterator of group) {
-      if (!!iterator) Fancybox.bind('[data-fancybox="' + iterator + '"]', {
-        Hash: false
+      Fancybox.unbind('[data-fancybox="' + iterator + '"]');
+      Fancybox.bind('[data-fancybox="' + iterator + '"]', {
+        Hash: false,
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        }
       });
     }
   }
 
-  fn.loadFancyBox = (done) => {
-    if (!document.querySelector(".md .gallery img, .fancybox")) return;
-    volantis.css(" https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css");
-    volantis.js('https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js').then(() => {
-      fn.initFB();
-      if (done) done();
-    })
-  }
-
   return {
-    loadFancyBox: (done = null) => {
-      fn.loadFancyBox(done);
-    },
-    initFancyBox: () => {
-      fn.initFB()
-    },
-    pjaxReload: () => {
-      if (typeof Fancybox === "undefined") {
-        fn.loadFancyBox();
-      } else {
-        fn.initFB();
+    init: fn.init,
+    bind: fn.bind,
+    groupBind: (selectors, groupName = 'default') => {
+      try {
+        fn.elementHandling(selectors, groupName);
+        fn.init(false, () => {
+          fn.groupBind(groupName)
+        });
+      } catch (error) {
+        console.error(error)
       }
     }
   }
 })()
-Object.freeze(volantisFancyBox);
+Object.freeze(VolantisFancyBox);
 
 // highlightKeyWords 与 搜索功能搭配 https://github.com/next-theme/hexo-theme-next/blob/eb194a7258058302baf59f02d4b80b6655338b01/source/js/third-party/search/local-search.js
-
 // Question: 锚点稳定性未知
-
-// ToDo: 查找模式 
+// ToDo: 查找模式
 // 0. (/////////要知道浏览器自带全页面查找功能 CTRL + F)
 // 1. 右键开启查找模式 / 导航栏菜单开启?? / CTRL + F ???
 // 2. 查找模式面板 (可拖动? or 固定?)
 // 3. keyword mark id 从 0 开始编号 查找下一处 highlightKeyWords.scrollToNextHighlightKeywordMark() 查找上一处 scrollToPrevHighlightKeywordMark() 循环查找(取模%)
-// 4. 可输入修改 查找关键词 keywords(type:list) 
+// 4. 可输入修改 查找关键词 keywords(type:list)
 // 5. 区分大小写 caseSensitive (/ 全字匹配?? / 正则匹配??)
 // 6. 在选定区域中查找 querySelector ??
 // 7. 关闭查找模式
 // 8. 搜索跳转 (URL 入口) 自动开启查找模式 调用 scrollToNextHighlightKeywordMark()
-
 const highlightKeyWords = (() => {
   let fn = {}
   fn.markNum = 0
@@ -565,6 +830,7 @@ const highlightKeyWords = (() => {
     fn.scrollToFirstHighlightKeywordMark()
   }
   fn.scrollToFirstHighlightKeywordMark = () => {
+    volantis.cleanContentVisibility();
     let target = fn.scrollToNextHighlightKeywordMark("0");
     if (!target) {
       volantis.requestAnimationFrame(fn.scrollToFirstHighlightKeywordMark)
@@ -580,7 +846,7 @@ const highlightKeyWords = (() => {
       target = document.getElementById("keyword-mark-" + fn.markNextId);
     }
     if (target) {
-      volantis.scroll.to(target,{addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
     }
     // Current target
     return target
@@ -595,7 +861,7 @@ const highlightKeyWords = (() => {
       target = document.getElementById("keyword-mark-" + fn.markNextId);
     }
     if (target) {
-      volantis.scroll.to(target, {addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
     }
     // Current target
     return target
@@ -734,3 +1000,129 @@ const highlightKeyWords = (() => {
   }
 })()
 Object.freeze(highlightKeyWords);
+
+/* DOM 控制 */
+const DOMController = {
+  /**
+   * 控制元素显隐
+   */
+  visible: (ele, type = true) => {
+    if (ele) ele.style.display = type === true ? 'block' : 'none';
+  },
+
+  /**
+   * 移除元素
+   */
+  remove: (param) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.remove();
+    })
+  },
+
+  removeList: (list) => {
+    list.forEach(param => {
+      DOMController.remove(param)
+    })
+  },
+
+  /**
+   * 设置属性
+   */
+  setAttribute: (param, attrName, attrValue) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.setAttribute(attrName, attrValue)
+    })
+  },
+
+  setAttributeList: (list) => {
+    list.forEach(item => {
+      DOMController.setAttribute(item[0], item[1], item[2])
+    })
+  },
+
+  /**
+   * 设置样式
+   */
+  setStyle: (param, styleName, styleValue) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.style[styleName] = styleValue;
+    })
+  },
+
+  setStyleList: (list) => {
+    list.forEach(item => {
+      DOMController.setStyle(item[0], item[1], item[2])
+    })
+  },
+
+  fadeIn: (e) => {
+    if (!e) return;
+    e.style.visibility = "visible";
+    e.style.opacity = 1;
+    e.style.display = "block";
+    e.style.transition = "all 0.5s linear";
+    return e
+  },
+
+  fadeOut: (e) => {
+    if (!e) return;
+    e.style.visibility = "hidden";
+    e.style.opacity = 0;
+    e.style.display = "none";
+    e.style.transition = "all 0.5s linear";
+    return e
+  },
+
+  fadeToggle: (e) => {
+    if (!e) return;
+    if (e.style.visibility == "hidden") {
+      e = DOMController.fadeIn(e)
+    } else {
+      e = DOMController.fadeOut(e)
+    }
+    return e
+  },
+
+  fadeToggleList: (list) => {
+    list.forEach(param => {
+      DOMController.fadeToggle(param)
+    })
+  },
+
+  hasClass: (e, c) => {
+    if (!e) return;
+    return e.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+  },
+
+  addClass: (e, c) => {
+    if (!e) return;
+    e.classList.add(c);
+    return e
+  },
+
+  removeClass: (e, c) => {
+    if (!e) return;
+    e.classList.remove(c);
+    return e
+  },
+
+  toggleClass: (e, c) => {
+    if (!e) return;
+    if (DOMController.hasClass(e, c)) {
+      DOMController.removeClass(e, c)
+    } else {
+      DOMController.addClass(e, c)
+    }
+    return e
+  },
+
+  toggleClassList: (list) => {
+    list.forEach(item => {
+      DOMController.toggleClass(item[0], item[1])
+    })
+  }
+}
+Object.freeze(DOMController);
