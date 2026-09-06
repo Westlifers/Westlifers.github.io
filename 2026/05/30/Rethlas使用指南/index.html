@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Rethlas使用指南 - Yang Di&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yang Di&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yang Di&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，Rethlas是开源的，只需要对Codex的访问权限即可使用，正好我手"><meta property="og:type" content="blog"><meta property="og:title" content="Rethlas使用指南"><meta property="og:url" content="http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"><meta property="og:site_name" content="Yang Di&#039;s blog"><meta property="og:description" content="Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，Rethlas是开源的，只需要对Codex的访问权限即可使用，正好我手"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://hexo.yougi.top/img/og_image.png"><meta property="article:published_time" content="2026-05-30T13:47:35.000Z"><meta property="article:modified_time" content="2026-09-06T03:56:59.486Z"><meta property="article:author" content="Yang Di"><meta property="article:tag" content="Rethlas"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://hexo.yougi.top/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"},"headline":"Rethlas使用指南","image":["http://hexo.yougi.top/img/og_image.png"],"datePublished":"2026-05-30T13:47:35.000Z","dateModified":"2026-09-06T03:56:59.486Z","author":{"@type":"Person","name":"Yang Di"},"publisher":{"@type":"Organization","name":"Yang Di's blog","logo":{"@type":"ImageObject","url":"http://hexo.yougi.top/img/Yougi.png"}},"description":"Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，Rethlas是开源的，只需要对Codex的访问权限即可使用，正好我手"}</script><link rel="canonical" href="http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-05-30T13:47:35.000Z" title="5/30/2026, 1:47:35 PM">2026-05-30</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/AI4Math/">AI4Math</a></span><span class="level-item">6 分钟读完 (大约974个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Rethlas使用指南</h1><div class="content"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，<a target="_blank" rel="noopener" href="https://github.com/frenzymath/Rethlas">Rethlas是开源的</a>，只需要对Codex的访问权限即可使用，正好我手里有ChatGPT plus订阅，这两天便花了些时间折腾了一下。</p>
+<span id="more"></span>
+
+<p>虽然Rethlas有一个Readme文档，当因为我不是经常写代码，使用没有ui界面的开源工具还是免不了踩不少坑，才勉强跑起来，跑了一个我最近在想的很不成熟的例子，最后一步验证的时候Verifier还是报了错，但整体流程基本跑通了。这里记录一下在我的PC上运行Rethlas时遇到的问题和解决方法。</p>
+<p>首先说明，所有的修改都是基于官方Readme中的流程的，应当首先通读官方的文档。</p>
+<h2 id="在Windows上运行主程序"><a href="#在Windows上运行主程序" class="headerlink" title="在Windows上运行主程序"></a>在Windows上运行主程序</h2><p>首先要注意的点是如果你像我一样使用的是windows电脑，正常是无法直接运行.sh文件的，而Rethlas的主入口是一个.sh文件。</p>
+<p>在官方文档中，主入口启动的命令是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> agents/generation</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">PROBLEM_FILE=data/my_problem.md ./tests/run_example.sh</span><br></pre></td></tr></table></figure>
+<p>第一行不用解释，第二行应该换成Windows中python进入虚拟环境的方式，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\.venv\Scripts\activate     </span><br></pre></td></tr></table></figure>
+<p>第三行则应拆成两行，首先设置 PROBLEM_FILE 常数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env</span>:PROBLEM_FILE=<span class="string">&quot;data/example/example1.md&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后启动主程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash tests/run_example.sh</span><br></pre></td></tr></table></figure>
+<p>这里你电脑上很有可能没有bash命令，如果你电脑上安装了Git（如果没有，推荐安装一个），则可以使用Git自带的bash，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\code\Git\bin\bash.exe tests/run_example.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="Verifier问题"><a href="#Verifier问题" class="headerlink" title="Verifier问题"></a>Verifier问题</h2><p>我使用Rethlas时问题多集中在Verifier上，第一次运行示例时Verifier报了很多错误。</p>
+<p>在<code>agents/verification/api/server.py</code>文件中，第74行<code>build_prompt</code>函数中，应将<code>f&quot;Proof:\n&#123;proof&#125;\n\n&quot;</code>替换为<code>f&quot;Proof:&#123;proof&#125;\n\n&quot;</code>，即删除第一个换行符，这是因为至少对于我，使用codex时因为网络问题总是会重连5次，因为不知明原因，每次运行验证时，第一个换行符处会直接中断，然后显示重连尝试。如果在Proof内容前换行，实际证明内容会直接消失，那么待连接成功后Verifier会得到一个空证明，总是返回False。</p>
+<p>此外，在运行Verification服务前，应该用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where.exe codex</span><br></pre></td></tr></table></figure>
+<p>查找到codex路径，然后先行设置（以我的为例）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env</span>:CODEX_BIN=<span class="string">&quot;C:\Users\Westlifer\AppData\Roaming\npm\codex.cmd&quot;</span></span><br></pre></td></tr></table></figure>
+<p>再启动服务。</p>
+<h2 id="打包问题"><a href="#打包问题" class="headerlink" title="打包问题"></a>打包问题</h2><p>证明结束后，主程序会提示你</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To view results in the browser, run:</span><br><span class="line">  ./site/serve.sh</span><br><span class="line">Then open http://localhost:3264</span><br></pre></td></tr></table></figure>
+<p>但我实际运行时总是直接中断。原因查明为<code>agents/generation/site/serve.sh</code>文件第102行<code>python3 &quot;$TRANSFORM&quot; &quot;$source_md&quot; &quot;$tmp&quot;</code>在我电脑上应改为<code>python &quot;$TRANSFORM&quot; &quot;$source_md&quot; &quot;$tmp&quot;</code>，我的电脑上python启动命令只注册了<code>python</code>这一个，而没有<code>python3</code>。</p>
+<p>我注意到两个agent的<code>config.toml</code>文件里也涉及使用python启动mcp服务器，但我不确定这里是否需要把python3改python，我是改了的。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Rethlas使用指南</p><p><a href="http://hexo.yougi.top/2026/05/30/Rethlas使用指南/">http://hexo.yougi.top/2026/05/30/Rethlas使用指南/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Yang Di</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-05-30</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-09-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Rethlas/">Rethlas</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2026/08/08/Route-Six/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Route Six</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2026/05/08/CoEnd%20Calculus/"><span class="level-item">Co/End Calculus</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://giscus.app/client.js" repo="Westlifers/Westlifers.github.io" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-category="Announcements" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="杨荻"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">杨荻</p><p class="is-size-6 is-block">行有不得，反求诸己。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 四川 成都 四川大学</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">9</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Westlifers" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Zhihu" href="https://www.zhihu.com/people/westlifer"><i class="fa-brands fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="E-mail" href="mailto://mcwestlifer@gmail.com"><i class="fa-solid fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WCA" href="https://cubing.com/results/person/2023YANG65"><i class="fa-solid fa-cube"></i></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2026 Yang Di</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
