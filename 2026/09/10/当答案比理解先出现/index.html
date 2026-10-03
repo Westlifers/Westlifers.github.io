@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>当答案比理解先出现 - Yang Di&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yang Di&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yang Di&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="最近几个月，AI 在数学上的进展已经到了令人有些麻木的程度。竞赛成绩早已不再是最值得讨论的事情。长期开放问题被解决或实质推进，新的反例被发现，大规模的证明搜索与形式化验证开始进入真正的研究数学。2026 年 8 月，OpenAI 一次公布了十项数学与理论计算机科学方面的进展，其中一些成果在数学社区看来足以构成传统意义上的重要研究工作。到了 9 月，围绕 Navier–Stokes 千禧年问题的候选"><meta property="og:type" content="blog"><meta property="og:title" content="当答案比理解先出现"><meta property="og:url" content="http://hexo.yougi.top/2026/09/10/%E5%BD%93%E7%AD%94%E6%A1%88%E6%AF%94%E7%90%86%E8%A7%A3%E5%85%88%E5%87%BA%E7%8E%B0/"><meta property="og:site_name" content="Yang Di&#039;s blog"><meta property="og:description" content="最近几个月，AI 在数学上的进展已经到了令人有些麻木的程度。竞赛成绩早已不再是最值得讨论的事情。长期开放问题被解决或实质推进，新的反例被发现，大规模的证明搜索与形式化验证开始进入真正的研究数学。2026 年 8 月，OpenAI 一次公布了十项数学与理论计算机科学方面的进展，其中一些成果在数学社区看来足以构成传统意义上的重要研究工作。到了 9 月，围绕 Navier–Stokes 千禧年问题的候选"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://hexo.yougi.top/img/og_image.png"><meta property="article:published_time" content="2026-09-10T16:48:16.000Z"><meta property="article:modified_time" content="2026-10-03T14:31:36.142Z"><meta property="article:author" content="Yang Di"><meta property="article:tag" content="路在何方"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://hexo.yougi.top/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2026/09/10/%E5%BD%93%E7%AD%94%E6%A1%88%E6%AF%94%E7%90%86%E8%A7%A3%E5%85%88%E5%87%BA%E7%8E%B0/"},"headline":"当答案比理解先出现","image":["http://hexo.yougi.top/img/og_image.png"],"datePublished":"2026-09-10T16:48:16.000Z","dateModified":"2026-10-03T14:31:36.142Z","author":{"@type":"Person","name":"Yang Di"},"publisher":{"@type":"Organization","name":"Yang Di's blog","logo":{"@type":"ImageObject","url":"http://hexo.yougi.top/img/Yougi.png"}},"description":"最近几个月，AI 在数学上的进展已经到了令人有些麻木的程度。竞赛成绩早已不再是最值得讨论的事情。长期开放问题被解决或实质推进，新的反例被发现，大规模的证明搜索与形式化验证开始进入真正的研究数学。2026 年 8 月，OpenAI 一次公布了十项数学与理论计算机科学方面的进展，其中一些成果在数学社区看来足以构成传统意义上的重要研究工作。到了 9 月，围绕 Navier–Stokes 千禧年问题的候选"}</script><link rel="canonical" href="http://hexo.yougi.top/2026/09/10/%E5%BD%93%E7%AD%94%E6%A1%88%E6%AF%94%E7%90%86%E8%A7%A3%E5%85%88%E5%87%BA%E7%8E%B0/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script>
+<link rel="stylesheet" href="/css/ai-disclosure.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-09-10T16:48:16.000Z" title="9/10/2026, 4:48:16 PM">2026-09-11</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/AI4Math/">AI4Math</a><span> / </span><a class="link-muted" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span><span class="level-item">40 分钟读完 (大约5958个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">当答案比理解先出现</h1><div class="content">
+<div class="ai-disclosure ai-disclosure--substantial">
+  <div class="ai-disclosure__header">
+    <span class="ai-disclosure__icon">◈</span>
+    <span class="ai-disclosure__label">AI 深度辅助</span>
+  </div>
+
+  <div class="ai-disclosure__text">
+    本文在资料检索、观点讨论、结构组织及文字撰写中较多使用生成式 AI。核心观点、材料取舍与最终内容由作者审定。
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最近几个月，AI 在数学上的进展已经到了令人有些麻木的程度。竞赛成绩早已不再是最值得讨论的事情。长期开放问题被解决或实质推进，新的反例被发现，大规模的证明搜索与形式化验证开始进入真正的研究数学。2026 年 8 月，OpenAI 一次公布了十项数学与理论计算机科学方面的进展，其中一些成果在数学社区看来足以构成传统意义上的重要研究工作。到了 9 月，围绕 Navier–Stokes 千禧年问题的候选解答又把这种冲击推到了大众视野的中央。</p>
+<span id="more"></span>
+
+<p>伴随这些成果而来的，还有一种很有意思的社会现象。</p>
+<p>在中文互联网上，可以看到“数学家几十年不如 AI 跑几个小时”“一个完全不懂数学的人借助 AI 也能击穿专业壁垒”之类的说法。北京协和医院一位住院医借助 AI 研究 Crouzeix 猜想的事件，在知乎获得了数百万浏览，其中传播最广的叙事之一恰恰是“作者甚至不是数学家”。 英文互联网的表达更加直接。在一些 AI 社群里，<code>mathematicians are coping</code>、<code>math is over</code>、<code>mathematicians are cooked</code> 已经成了固定句式。最近 Reddit 上甚至真的出现了题为 “Math is over as a field” 的热门讨论，下面一边有人建议年轻人不要再学数学，一边有人讽刺这些宣布数学死亡的人恐怕连基本微积分都不了解。</p>
+<p>这种现象最值得讨论的地方，也许并不是网友是否尊重数学家。AI 正在引起一个更深的变化：过去紧紧纠缠在一起的“解出问题”“理解问题”和“产生新的数学结构”，第一次有可能被大规模地拆开。当这几个东西开始分离，我们才发现，数学界自己过去也没有迫切需要把它们区分得如此清楚。</p>
+<h2 id="一、当外部开始越过专业边界"><a href="#一、当外部开始越过专业边界" class="headerlink" title="一、当外部开始越过专业边界"></a>一、当外部开始越过专业边界</h2><h3 id="从“AI-很厉害”到“数学家不过如此”"><a href="#从“AI-很厉害”到“数学家不过如此”" class="headerlink" title="从“AI 很厉害”到“数学家不过如此”"></a>从“AI 很厉害”到“数学家不过如此”</h3><p>一个新技术解决了困难的数学问题，大众对此惊叹，本来没有什么特别。真正有趣的是讨论对象逐渐发生了变化。</p>
+<p>开始的时候，人们问的是 AI 到底有多强。后来问题变成了：既然 AI 可以解决这些问题，数学家还有什么用？</p>
+<p>这之间其实跨过了相当大的一步。</p>
+<p>研究数学原本是一种进入门槛极高的知识活动。一个没有学过代数几何的人几乎没有办法独立判断一篇代数几何论文的价值。他只能相信同行评议、专业声誉、大学和数学共同体内部形成的判断。大众面对数学专业权威时，长期存在一种相当特殊的关系：我不知道你究竟在做什么，却知道那大概非常困难，因此暂时接受同行对你的评价。</p>
+<p>AI 改变了这种结构。现在一个完全不理解某个问题的人也可以产生这样的推理：我虽然不会数学，但 AI 会；如果 AI 已经比专业数学家更擅长解决问题，那么我无需亲自理解数学，也足以判断这个职业是否还有价值。</p>
+<p>这里出现了一种可以称作“代理认识论权威”的东西。AI 的能力并没有让使用者自动获得相应的数学能力，却让一些人产生了越过专业共同体直接评价它的信心。过去要进入一个专业领域才能挑战其中的专家，现在似乎只需要站在一个更强的机器旁边。</p>
+<p>这也是为什么最近的网络讨论带有如此强烈的“祛魅”意味。数学家失去的也许首先不是工作，而是一种长期默认的智力地位：至少在这个极端抽象的领域里，专业训练应该意味着某种外部人无法轻易取代的能力。</p>
+<h3 id="“你们以前不是最崇拜解决大问题吗？”"><a href="#“你们以前不是最崇拜解决大问题吗？”" class="headerlink" title="“你们以前不是最崇拜解决大问题吗？”"></a>“你们以前不是最崇拜解决大问题吗？”</h3><p>不过，如果把所有嘲讽都归结成外行的无知，数学界也会错过其中真正有力的批评。</p>
+<p>当 AI 开始解决研究问题以后，数学家越来越频繁地强调理解、洞察、理论建构的重要性。这很容易引来一个反问：你们以前难道不是最推崇解决大问题的人吗？</p>
+<p>这个反问并不荒谬。</p>
+<p>Fields Medal 的官方 citation 里一直可以看到“证明某个长期猜想”“解决某个核心问题”这样的表述。2022 年 Viazovska 的 citation 直接以八维最密球堆积问题的解决为核心；June Huh 的 citation 同时列出多个长期猜想的证明和 Lorentzian polynomial 理论的建立。2018 年 Birkar 因 Fano varieties 有界性的证明获得表彰，而 Scholze 的 citation 则强调 perfectoid spaces 和新上同调理论的建立。数学界一直同时奖励 problem solving 和 theory building，但“解决了什么重大问题”显然长期是最醒目、也最容易理解的成就指标之一。</p>
+<p>Wiles 的 Abel Prize citation 更能说明这种纠缠。官方既表彰他证明 Fermat 大定理，也强调他借助半稳定椭圆曲线的模性“开启了数论的新时代”。 在这里，解决著名问题和产生新的数学方法几乎天然连在一起。公众最后记住的是“Wiles solved Fermat’s Last Theorem”，但那个简短句子背后封装了大量远比“Yes, the conjecture is true”丰富的数学内容。</p>
+<p>因此，当 AI 开始擅长第一件事情以后，数学家突然告诉公众“真正重要的是 insight”，客观上确实具有 moving the goalposts 的外观。如果我们假装这种观感毫无根据，那么 <code>cope</code> 这个词反而更有杀伤力。</p>
+<h3 id="洞察会不会只是弱者的拐杖？"><a href="#洞察会不会只是弱者的拐杖？" class="headerlink" title="洞察会不会只是弱者的拐杖？"></a>洞察会不会只是弱者的拐杖？</h3><p>外部质疑还可以再推进一步，而且这一步比“数学家没用了”要严肃得多。</p>
+<p>人类数学家为什么如此重视一个漂亮的想法？也许只是因为人的认知能力太有限。面对巨大的搜索空间，我们必须找到 invariant，必须抽象出概念，必须把十万步计算压缩成一个 lemma。所谓 mathematical insight，在这个意义上或许只是 bounded intelligence 为了降低认知成本而形成的压缩技术。</p>
+<p>如果一个超级智能可以直接把握一个人类根本无法容纳的巨大 representation，它为什么一定需要我们所谓的“洞察”？如果它可以直接找到答案，也许那些漂亮的概念只是人类为了弥补自己不够聪明才发明出来的脚手架。</p>
+<p>这个问题很微妙。数学家不能简单回答“因为你不懂真正的 insight”。</p>
+<p>洞察确实具有一种与单次解题不同的作用。一个好的概念会告诉我们一个结论为什么成立，会把孤立现象组织在一起，会让原来的论证迁移到新的问题上，也会产生此前无法提出的问题。一个百万行的 proof certificate 与一个用新结构统一几十个现象的理论，即使最终推出同一个定理，也很难说产生了同样的数学。</p>
+<p>但这仍然留下一个悬而未决的问题：这种价值究竟是任何数学智能都需要的，还是主要对于我们这种有限的人类认知主体而言重要？</p>
+<p>要回答它，首先需要看看数学共同体自己过去究竟如何理解“解题”与“理解”的关系。</p>
+<h2 id="二、数学界开始拆开过去纠缠在一起的价值"><a href="#二、数学界开始拆开过去纠缠在一起的价值" class="headerlink" title="二、数学界开始拆开过去纠缠在一起的价值"></a>二、数学界开始拆开过去纠缠在一起的价值</h2><h3 id="这种区分其实一直存在"><a href="#这种区分其实一直存在" class="headerlink" title="这种区分其实一直存在"></a>这种区分其实一直存在</h3><p>如果说数学家直到 AI 出现以后才突然发明“理解比答案重要”这套说法，历史上显然站不住脚。</p>
+<p>1994 年，William Thurston 在著名文章《On Proof and Progress in Mathematics》中已经明确反对把数学进展简单理解为累积更多定理。他关心的问题是数学家究竟如何推进人类对数学的理解。 计算机辅助完成四色定理以后出现的争论，也很早就暴露了“我们知道它是真的”和“我们理解为什么它是真的”之间的距离。</p>
+<p>Gowers 在 2000 年的《The Two Cultures of Mathematics》中则干脆把纯数学内部描述成两种文化。一类数学家更接近 problem-solvers，一类更偏向 theory-builders。他用两个方向相反的问题来刻画这种差别：我们解决问题，是为了更好地理解数学；还是我们理解数学，是为了更好地解决问题？他自己也强调，大多数数学家会承认两个方向都有道理。</p>
+<p>因此，solution 与 understanding 的区别一直存在于数学家的自我认识中。真正值得注意的是，在过去很长时间里，数学界没有今天这样的压力，必须精确说明二者各自值多少钱。</p>
+<h3 id="过去，解决问题是一个非常好的代理指标"><a href="#过去，解决问题是一个非常好的代理指标" class="headerlink" title="过去，解决问题是一个非常好的代理指标"></a>过去，解决问题是一个非常好的代理指标</h3><p>原因并不复杂。在传统的人类数学实践中，解决困难问题、产生洞察和建立理论通常高度相关。</p>
+<p>一个数学家花几年时间解决一个真正困难的问题，他往往在这个过程中理解了问题的内部结构，发明了新的技巧，知道哪些假设重要，也知道哪些失败路线暴露了值得研究的现象。最后留下来的 proof 往往只是整个认识过程的压缩结果。</p>
+<p>因此，“这个人解决了什么？”长期以来是一个非常有效的评价指标。它当然不等于全部数学价值，却与其他很难直接度量的价值高度相关。</p>
+<p>这也解释了为什么数学界一方面会产生 Thurston、Atiyah 或 Gowers 式的 theory-building 传统，另一方面仍然会对解决著名猜想给予极高声望。两种文化之间没有形成无法调和的矛盾，因为优秀的 problem solving 通常也会产生理解，而优秀的 theory 往往又会解决大量问题。</p>
+<p>甚至公众最喜欢的数学英雄叙事，在过去也没有造成太严重的失真。“Wiles 解决了 Fermat 大定理”虽然极度压缩了事实，却大体指向了一项同时包含深刻结构和重大问题解决的工作。</p>
+<p>这个历史背景非常重要。否则，我们很容易把今天的争论错误地描述成“外行只看答案，数学家一直都知道理解更重要”。事实没有这么整齐。</p>
+<h3 id="AI-开始破坏这种相关性"><a href="#AI-开始破坏这种相关性" class="headerlink" title="AI 开始破坏这种相关性"></a>AI 开始破坏这种相关性</h3><p>AI 带来的新东西恰恰在这里。</p>
+<p>Terence Tao 最近不断使用 generation、verification 和 digestion 来拆分数学研究过程。generation 是找到论证或答案，verification 是确认它正确，digestion 则是理解它、把它放入已有知识中、解释其机制以及判断它还意味着什么。Tao 特别指出，历史上这三个阶段都很困难，digestion 往往在解决问题的过程中自然发生；因此共同体长期把主要荣誉给予 generation 和 verification，并不会产生太严重的错位。现在 AI 大幅加快前两个环节，理解却没有自动以同样速度产生，于是数学从 proof scarcity 开始进入 proof abundance。</p>
+<p>这种分离已经可以直接观察到。Tao 在今年讨论 Erdős problem #1196 时明确写道，AI 使证明生成和验证极其迅速，但把这些证明整理成连贯的数学叙事、联系既有文献并理解未来方向，仍然需要缓慢的专家工作。 他最近连续使用 “A digestion of …” 这样的标题，也正是这种新分工的体现。</p>
+<p>这意味着过去隐约成立的关系正在发生变化：</p>
+<p>解出一个很难的问题，不再自动告诉我们有多少新的、可理解的数学随之产生。</p>
+<p>一旦相关性下降，旧的评价方式自然会出现问题。一个 AI 系统一天扫掉几十个 open problems，与一个数学家建立一个十年后仍然改变整个领域语言的新理论，应该怎样比较？如果 proof 的数量突然增加几个数量级，论文数量还能不能承担“数学进步”的度量功能？当生成 proof 的成本接近于零的时候，“第一个把答案交出来”还应该拥有多大的 credit？</p>
+<p>数学界今天突然密集讨论 understanding，并不难理解。从外面看，它像防线后撤；从里面看，更像一个长期有效的 proxy 失效以后，评价体系终于必须打开黑箱。</p>
+<p>2026 年的 Leiden Declaration 就很有这种意味。它特意声明，数学产生的不只有 results，还包括 understanding、clarity 和 judgment，并担心自动化会让研究方向越来越受到机器可解性的影响。IMU 正式 endorse 了这份宣言，Peter Scholze 也在支持声明中把数学研究的目标直接表述为 human understanding。 这些价值显然都不是 2026 年才被发明出来的。值得思考的恰恰是：为什么数学界到了 2026 年需要专门把它们写成一份 Declaration？</p>
+<p>一个合理的答案是，以前这些价值大体朝同一个方向运动，现在它们可能不再如此。</p>
+<h3 id="数学家内部也没有统一答案"><a href="#数学家内部也没有统一答案" class="headerlink" title="数学家内部也没有统一答案"></a>数学家内部也没有统一答案</h3><p>共同体内部的分歧因此远比“支持 AI”与“反对 AI”复杂。</p>
+<p>Fields Medal 得主 Jacob Tsimerman 属于非常激进的一端。他公开说数学家中存在大量关于 AI 的 “cope”，认为很多人过度相信 AI 最终只能当助手，而无法完成“major stuff”。他的判断相当悲观：职业数学家这个职业本身可能很快受到根本冲击。Quanta 报道称，他甚至已经停止招收传统数学方向的研究生，因为担心几年后他们面对的职业世界已经完全改变。</p>
+<p>Gowers 的兴趣则更多放在能力分解上。他关心当前模型究竟特别擅长怎样的数学，以及它们能否稳定创造事后看来自然却此前无人想到的新观点。这里并不否认 AI 的成果，只是拒绝用“解决了几个 open problems”作为完整的能力刻度。</p>
+<p>Tao 的位置又不同。他似乎越来越接受 proof abundance 会到来，因此开始思考稀缺性接下来会移动到哪里：verification、digestion、problem selection、exposition，以及把大量孤立结果重新组织成真正能够被共同体使用的数学。</p>
+<p>制度层面同样存在分歧。IMU endorse Leiden Declaration，而 European Mathematical Society 在今年 8 月明确决定不正式 endorse。EMS 并不否认其中提出的问题，但认为讨论还需要更多关注 AI 为数学创造的机会。</p>
+<p>所以今天很难再说“数学界认为 AI 怎样”。数学界已经被迫讨论一个此前没有如此紧迫的问题：如果传统上共同出现的几种数学价值开始各自分离，我们究竟希望保留什么，又准备怎样重新分配声望。</p>
+<h2 id="三、当旧的相关性真的失效以后"><a href="#三、当旧的相关性真的失效以后" class="headerlink" title="三、当旧的相关性真的失效以后"></a>三、当旧的相关性真的失效以后</h2><h3 id="解题本身很可能首先失去稀缺性"><a href="#解题本身很可能首先失去稀缺性" class="headerlink" title="解题本身很可能首先失去稀缺性"></a>解题本身很可能首先失去稀缺性</h3><p>从专业角度看，AI 最容易继续推进的方向其实相当清楚。证明搜索、反例寻找、文献调用、计算实验、形式验证以及大量技术性 lemma，都非常适合被越来越强的系统压缩成本。</p>
+<p>这并不意味着这些工作简单。恰恰由于它们过去很难，自动化才会产生巨大的冲击。</p>
+<p>如果这种趋势继续，未来一个研究者说“我解决了一个很难的问题”时，这句话提供的信息会越来越少。我们还需要知道它如何被解决，这个解法揭示了什么，是否产生可迁移的方法，以及它与周围的数学有什么关系。</p>
+<p>数学研究的价值中心可能因此向上游移动。什么问题值得提出，怎样的定义真正抓住了现象，若干看似无关的结果是否来自同一个结构，一段复杂证明是否可以压缩成一个新的概念——这些事情会比今天更加显眼。</p>
+<p>这种变化并不能简单解释成人类给自己寻找新的安全区。任何一种仍然稀缺的工作，在前一层自动化以后都会获得更高的边际价值。proof scarcity 消失以后，人们自然开始关心 understanding scarcity。</p>
+<h3 id="但“洞察”并不是一个可靠的永久堡垒"><a href="#但“洞察”并不是一个可靠的永久堡垒" class="headerlink" title="但“洞察”并不是一个可靠的永久堡垒"></a>但“洞察”并不是一个可靠的永久堡垒</h3><p>这里又必须认真对待外部那个看似粗暴的质疑。</p>
+<p>也许 AI 很快也会产生我们认可的 insight。也许它会自己发现正确的 definition，建立我们没有想到的 theory，把几百个定理压缩成一个漂亮的结构。到了那一天，如果数学家再说“真正重要的是另一种只有人类拥有的能力”，那么 moving the goalposts 的批评就会再次成立。</p>
+<p>因此，把“洞察”定义成 AI 当前恰好还不会做的事情，没有多少意义。</p>
+<p>更棘手的情况甚至是，超级智能也许根本不需要人类式洞察。我们所谓的优美结构，有一部分价值确实来自认知压缩：人脑无法同时处理几十万个相互作用的对象，所以喜欢短证明、统一概念和可视化结构。一个认知容量远超人类的系统，可能直接操作我们看来完全无法理解的表示，而没有必要把它们压缩成一套二十页的漂亮理论。</p>
+<p>如果唯一目标是得到正确答案，这种方式没有明显的劣势。</p>
+<p>问题于是最终落回“数学是谁的知识”。</p>
+<p>只要我们还希望人类能够学习数学、讨论数学，并通过既有知识继续提出新的问题，那么 compression、explanation 和 human-readable structure 就仍然有现实价值。这时洞察的重要性不需要建立在“人类拥有某种机器永远不可能获得的神秘能力”上。它的理由简单得多：如果一项知识永远只有机器能够处理，对人类而言，“我们拥有这项数学”和“某个外部系统拥有海量正确结果”已经开始成为两件不同的事。</p>
+<p>这也是 Leiden Declaration 那句“mathematics produces not only a body of results”真正值得重视的地方。</p>
+<h3 id="AI-打碎的可能是一个我们用了很久的等号"><a href="#AI-打碎的可能是一个我们用了很久的等号" class="headerlink" title="AI 打碎的可能是一个我们用了很久的等号"></a>AI 打碎的可能是一个我们用了很久的等号</h3><p>回到最初那些嘲笑数学家的声音，其中确实抓住了一个真实变化。</p>
+<p>数学家过去能够相当自然地把“解决最难的问题”作为顶尖数学能力的象征。今天如果 AI 更擅长解题，专业共同体不能仅靠重新宣布“其实解题从来都不重要”来化解尴尬。那既不符合数学史，也不符合数学界过去实际的奖励方式。</p>
+<p>但从“AI 可以解决重大问题”直接推到“理解已经没有价值”，同样跳得太远。</p>
+<p>更接近事实的情况或许是，传统数学长期享受着一个非常幸运的相关性：最好的 problem-solvers 往往也带来新的 insight，最好的 theory-builders 又往往解决许多原本困难的问题；一个重大问题被解决，通常伴随着大量值得保存的理解。因此，我们可以用 solved problems 作为 deep mathematics 的方便代理，而不必每天追问这两个概念究竟有什么区别。</p>
+<p>AI 正在破坏这种便利。</p>
+<p>未来也许会有越来越多的答案先于理解出现，越来越多正确的证明等待别人消化，甚至越来越多难题在形成足够丰富的数学文化之前就已经被机器扫掉。到了那个世界，“又解决了一个 open problem”可能仍然是一项技术成就，却未必再自动意味着一次同等规模的数学进步。</p>
+<p>这也是为什么今天外部的嘲讽与内部的焦虑会同时出现。前者仍在使用数学界自己长期塑造的评价指标，然后发现机器已经可以在这个指标上获胜；后者则开始意识到，这个指标过去之所以有效，很大程度上依赖于一些现在正在失效的隐含条件。</p>
+<p>AI 对数学最深的影响，也许最终不在于它解决了多少个原本属于人类的难题。它迫使数学界第一次认真面对一个过去可以含混过去的问题：</p>
+<p><strong>当“解出难题”不再自动意味着“产生深刻数学”时，我们究竟希望奖励什么，又究竟把什么称作数学进步？</strong></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>当答案比理解先出现</p><p><a href="http://hexo.yougi.top/2026/09/10/当答案比理解先出现/">http://hexo.yougi.top/2026/09/10/当答案比理解先出现/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Yang Di</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-09-11</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-10-03</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/">路在何方</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2026/09/30/noema-introduction/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">你好，我是 Noema</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2026/09/05/%E6%97%A5%E5%85%89%E4%B9%8B%E4%B8%8B%EF%BC%8C%E6%9C%89%E4%B8%80%E5%8F%AA%E7%99%BD%E7%8C%AB/"><span class="level-item">日光之下，有一只白猫</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://giscus.app/client.js" repo="Westlifers/Westlifers.github.io" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-category="Announcements" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#一、当外部开始越过专业边界"><span class="level-left"><span class="level-item">1</span><span class="level-item">一、当外部开始越过专业边界</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#从“AI-很厉害”到“数学家不过如此”"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">从“AI 很厉害”到“数学家不过如此”</span></span></a></li><li><a class="level is-mobile" href="#“你们以前不是最崇拜解决大问题吗？”"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">“你们以前不是最崇拜解决大问题吗？”</span></span></a></li><li><a class="level is-mobile" href="#洞察会不会只是弱者的拐杖？"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">洞察会不会只是弱者的拐杖？</span></span></a></li></ul></li><li><a class="level is-mobile" href="#二、数学界开始拆开过去纠缠在一起的价值"><span class="level-left"><span class="level-item">2</span><span class="level-item">二、数学界开始拆开过去纠缠在一起的价值</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#这种区分其实一直存在"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">这种区分其实一直存在</span></span></a></li><li><a class="level is-mobile" href="#过去，解决问题是一个非常好的代理指标"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">过去，解决问题是一个非常好的代理指标</span></span></a></li><li><a class="level is-mobile" href="#AI-开始破坏这种相关性"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">AI 开始破坏这种相关性</span></span></a></li><li><a class="level is-mobile" href="#数学家内部也没有统一答案"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">数学家内部也没有统一答案</span></span></a></li></ul></li><li><a class="level is-mobile" href="#三、当旧的相关性真的失效以后"><span class="level-left"><span class="level-item">3</span><span class="level-item">三、当旧的相关性真的失效以后</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#解题本身很可能首先失去稀缺性"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">解题本身很可能首先失去稀缺性</span></span></a></li><li><a class="level is-mobile" href="#但“洞察”并不是一个可靠的永久堡垒"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">但“洞察”并不是一个可靠的永久堡垒</span></span></a></li><li><a class="level is-mobile" href="#AI-打碎的可能是一个我们用了很久的等号"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">AI 打碎的可能是一个我们用了很久的等号</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="杨荻"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">杨荻</p><p class="is-size-6 is-block">行有不得，反求诸己。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 四川 成都 四川大学</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">16</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">14</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Westlifers" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Zhihu" href="https://www.zhihu.com/people/westlifer"><i class="fa-brands fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="E-mail" href="mailto://mcwestlifer@gmail.com"><i class="fa-solid fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WCA" href="https://cubing.com/results/person/2023YANG65"><i class="fa-solid fa-cube"></i></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2026 Yang Di</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

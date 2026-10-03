@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Integral quantaloid 的 weak tabularity 与 topos - Yang Di&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yang Di&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yang Di&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文的出发点是 $Q$-Set 何时构成 topos 的问题。胡晓与申力立在 Q-Set is not generally a topos（Theorem 5.6）中证明：对 commutative、unital、divisible quantale $Q$，$Q$-Set 是 topos 当且仅当 $Q$ 的乘法就是 meet，即 $Q$ 是 frame quantale。用 enriched"><meta property="og:type" content="blog"><meta property="og:title" content="Integral quantaloid 的 weak tabularity 与 topos"><meta property="og:url" content="http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/"><meta property="og:site_name" content="Yang Di&#039;s blog"><meta property="og:description" content="本文的出发点是 $Q$-Set 何时构成 topos 的问题。胡晓与申力立在 Q-Set is not generally a topos（Theorem 5.6）中证明：对 commutative、unital、divisible quantale $Q$，$Q$-Set 是 topos 当且仅当 $Q$ 的乘法就是 meet，即 $Q$ 是 frame quantale。用 enriched"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://hexo.yougi.top/img/og_image.png"><meta property="article:published_time" content="2026-10-03T00:00:00.000Z"><meta property="article:modified_time" content="2026-10-03T14:31:36.114Z"><meta property="article:author" content="Yang Di"><meta property="article:tag" content="Quantaloid"><meta property="article:tag" content="Topos"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://hexo.yougi.top/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/"},"headline":"Integral quantaloid 的 weak tabularity 与 topos","image":["http://hexo.yougi.top/img/og_image.png"],"datePublished":"2026-10-03T00:00:00.000Z","dateModified":"2026-10-03T14:31:36.114Z","author":{"@type":"Person","name":"Yang Di"},"publisher":{"@type":"Organization","name":"Yang Di's blog","logo":{"@type":"ImageObject","url":"http://hexo.yougi.top/img/Yougi.png"}},"description":"本文的出发点是 $Q$-Set 何时构成 topos 的问题。胡晓与申力立在 Q-Set is not generally a topos（Theorem 5.6）中证明：对 commutative、unital、divisible quantale $Q$，$Q$-Set 是 topos 当且仅当 $Q$ 的乘法就是 meet，即 $Q$ 是 frame quantale。用 enriched"}</script><link rel="canonical" href="http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script>
+<link rel="stylesheet" href="/css/ai-disclosure.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css" /><style>.tikzjax { display: block; text-align: center; user-select: none; }</style></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-10-03T00:00:00.000Z" title="10/3/2026, 12:00:00 AM">2026-10-03</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E8%8C%83%E7%95%B4%E8%AE%BA/">范畴论</a></span><span class="level-item">18 分钟读完 (大约2627个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Integral quantaloid 的 weak tabularity 与 topos</h1><div class="content">
+<div class="ai-disclosure ai-disclosure--generated">
+  <div class="ai-disclosure__header">
+    <span class="ai-disclosure__icon">◆</span>
+    <span class="ai-disclosure__label">AI 生成</span>
+  </div>
+
+  <div class="ai-disclosure__text">
+    本文由 Noema 根据我的手稿协助整理。
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文的出发点是 <span>$Q$</span>-Set 何时构成 topos 的问题。胡晓与申力立在 <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.fss.2025.109484"><em>Q-Set is not generally a topos</em></a>（Theorem 5.6）中证明：对 commutative、unital、divisible quantale <span>$Q$</span>，<span>$Q$</span>-Set 是 topos 当且仅当 <span>$Q$</span> 的乘法就是 meet，即 <span>$Q$</span> 是 frame quantale。用 enriched category 的语言，所讨论的范畴正是 <span>$K(DQ)$</span>。</p>
+<p>把底层从 <span>$DQ$</span> 换成一般的 small integral involutive quantaloid <span>$\mathcal Q$</span>，仍然可以得到一个简洁的答案：<span>$K(\mathcal Q)$</span> 是 topos 当且仅当 <span>$\mathcal Q$</span> weakly tabular。下面记录这个刻画的证明。充分性接到已有的 sheaf representation theorem，必要性则来自 topos 中子对象并的有效性；最后再回到 <span>$DQ$</span> 看原来的问题。</p>
+<span id="more"></span>
+
+<h2 id="定理与约定"><a href="#定理与约定" class="headerlink" title="定理与约定"></a>定理与约定</h2><p>全文设 <span>$\mathcal Q$</span> 是一个 small integral involutive quantaloid，其中 integral 指 <span>$1_p=\top_{p,p}$</span>。记 involution 为 <span>$(-)^\circ$</span>，实际的右伴随为 <span>$(-)^*$</span>，复合 <span>$g\circ f$</span> 简写为 <span>$gf$</span>。我们考虑</p>
+<div class="quantaloid-equation">$$
+K(\mathcal Q)=\operatorname{Map}(\operatorname{SymDist}(\mathcal Q)),
+$$</div>
+<p>对象是所有小的对称 <span>$\mathcal Q$</span>-范畴，态射是它们之间所有左伴随 distributor；这里不预先要求右伴随等于 involution。</p>
+<p>一个底层箭头 <span>$a:s\to p$</span> 称为 <strong>map</strong>，如果 <span>$a\dashv a^*$</span>。称 <span>$\mathcal Q$</span> <strong>weakly tabular</strong>，如果每个 <span>$f:p\to q$</span> 都满足</p>
+<div class="quantaloid-equation">$$
+f=\bigvee\{ba^*\mid a:s\to p,\ b:s\to q\text{ 是 maps},\ ba^*\le f\}.\tag{WT}
+$$</div>
+<p>也就是说，每条箭头都由它下面的 map-spans 生成。</p>
+<blockquote>
+<p><strong>定理.</strong> 对 small integral involutive quantaloid <span>$\mathcal Q$</span>，<span>$K(\mathcal Q)$</span> 是 elementary topos 当且仅当 <span>$\mathcal Q$</span> weakly tabular。此时 <span>$K(\mathcal Q)$</span> 自动等价于一个 localic Grothendieck topos。</p>
+</blockquote>
+<p>先记下一个贯穿证明的事实：每个底层 map 都满足</p>
+<div class="quantaloid-equation">$$
+a^*a=1_s,\qquad a^*=a^\circ,\qquad a=\top_{s,p}.
+$$</div>
+<p>第一个等式来自 integrality。若 <span>$a,b:s\to p$</span> 都是 maps，则 <span>$a=ab^*b\le b$</span>，对调即得 <span>$a=b$</span>。对 <span>$a\dashv a^*$</span> 取 involution，<span>$(a^*)^\circ$</span> 也是同类型的 map，故 <span>$a^*=a^\circ$</span>。最后，任意 <span>$h:s\to p$</span> 都有 <span>$h=ha^\circ a\le a$</span>。因此 (WT) 中也可把 <span>$a^*$</span> 写成 <span>$a^\circ$</span>。</p>
+<h2 id="从-weak-tabularity-到-topos"><a href="#从-weak-tabularity-到-topos" class="headerlink" title="从 weak tabularity 到 topos"></a>从 weak tabularity 到 topos</h2><p>假设 (WT)。每个 span 项 <span>$r=ba^\circ$</span> 满足 <span>$rr^\circ r=r$</span>，于是对任意 <span>$f$</span>，</p>
+<div class="quantaloid-equation">$$
+f=\bigvee_{r\le f}r\le ff^\circ f\le f,
+\qquad\text{即}\qquad f=ff^\circ f.\tag{1}
+$$</div>
+<p>最后一个不等式用了 <span>$ff^\circ\le 1$</span>。这条正则性等式已经给出所需的代数结构。</p>
+<p>对 endomorphism <span>$e:p\to p$</span>，由 <span>$e\le1_p$</span> 和 (1) 得 <span>$e\le e^\circ$</span>，取 involution 得到 <span>$e=e^\circ$</span>，进而 <span>$e=e^3\le e^2\le e$</span>。所以每个 endomorphism 都是对称幂等元，而且 endohom 上的复合就是 meet：<span>$xy\le x\wedge y$</span>，反之若 <span>$z\le x,y$</span>，则 <span>$z=z^2\le xy$</span>。复合保持任意并，故每个 endohom 都是 frame。</p>
+<p>mixed hom 也一样。令 <span>$u=\top_{p,q}$</span>、<span>$e=u^\circ u$</span>，则</p>
+<div class="quantaloid-equation">$$
+\mathcal Q(p,q)\cong\mathord\downarrow e\subseteq\mathcal Q(p,p),
+\qquad f\longmapsto u^\circ f,\quad a\longmapsto ua.
+$$</div>
+<p>这两个映射互逆，因为 <span>$u^\circ ua=ea=a$</span>，而 <span>$f=ff^\circ f\le uu^\circ f\le f$</span>。frame 的主理想仍是 frame，所以 <span>$\mathcal Q$</span> locally localic。</p>
+<p>再令 <span>$x=gf\wedge h$</span>。有 <span>$xx^\circ\le gg^\circ$</span>，故由 (1) 及 integrality，<span>$x=gg^\circ x$</span>；又有 <span>$g^\circ x\le f\wedge g^\circ h$</span>，从而</p>
+<div class="quantaloid-equation">$$
+gf\wedge h\le g(f\wedge g^\circ h).
+$$</div>
+<p>这正是 modular law。</p>
+<p>现在应用 Heymans–Stubbe 的两个结果：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1012.3870">closed-cribles characterization</a>（Theorem 4.3）指出，locally localic、map-discrete、weakly tabular、weakly modular 的小 quantaloid 恰好是 closed cribles 的 quantaloid。上面已证明 locally localic 与 modular；modularity 给出另外所需的 map-discreteness 和 weak modularity（同文 Lemma 3.3）。其 canonical involution 将 <span>$ba^*$</span> 送到 <span>$ab^*$</span>，由 (WT) 可知它与给定的 involution 一致。</p>
+<p>因此存在小 site <span>$(\mathcal C,J)$</span>，使 <span>$\mathcal Q\simeq\mathcal R(\mathcal C,J)$</span>。再由 <a target="_blank" rel="noopener" href="https://arxiv.org/html/1206.5975v1">sheaf representation theorem</a>（Theorem 3.14），</p>
+<div class="quantaloid-equation">$$
+\operatorname{SymDist}(\mathcal Q)\simeq
+\operatorname{Rel}(\operatorname{Sh}(\mathcal C,J)).
+$$</div>
+<p>右侧的 maps 恰好是 sheaf morphisms 的图，取 maps 便得 <span>$K(\mathcal Q)\simeq\operatorname{Sh}(\mathcal C,J)$</span>。</p>
+<h2 id="从-topos-恢复每条箭头"><a href="#从-topos-恢复每条箭头" class="headerlink" title="从 topos 恢复每条箭头"></a>从 topos 恢复每条箭头</h2><p>反过来，假设 <span>$K(\mathcal Q)$</span> 是 elementary topos。记类型为 <span>$p$</span> 的 singleton 为 <span>$S_p$</span>。它是 subterminal：若 <span>$F:X\to S_p$</span> 有右伴随 <span>$G$</span>，unit 和 counit 逐分量给出</p>
+<div class="quantaloid-equation">$$
+1_{|x|}\le G_xF_x,\qquad F_xG_x\le1_p.
+$$</div>
+<p>每个 <span>$F_x$</span> 因而是底层 map，由类型唯一决定，所以 <span>$X\to S_p$</span> 至多有一个。</p>
+<p>另一方面，对称 <span>$X$</span> 的 representables <span>$j_x:S_{|x|}\to X$</span> 是 maps（由单点函子的 graph&#x2F;cograph 给出伴随），而且 jointly epic。采用 <span>$X(x,y):|x|\to|y|$</span> 的约定，<span>$j_x(y)=X(x,y)$</span>；distributor action 与 <span>$X(x,x)=1_{|x|}$</span> 给出 <span>$(Fj_x)(y)=F(x,y)$</span>，故在所有 <span>$j_x$</span> 上相同就意味着逐分量相同。特别地，<span>$(S_p)_{p\in\mathcal Q_0}$</span> 是一个小的 separating family。</p>
+<p>这里要用 topos 的 <strong>effective binary unions</strong>：如果 <span>$i:A\to X$</span>、<span>$j:B\to X$</span> 是 jointly epic 的两个 monos，那么它们的 pullback 方块同时也是 pushout。换句话说，两个子对象的并是沿交集粘起来的。这个性质可由 topos 的 regularity 和 extensivity 得到：<span>$[i,j]:A+B\to X$</span> 是其 kernel pair 的 coequalizer，而 kernel pair 分解成两个对角块与两个交集块。</p>
+<p>固定 <span>$f:p\to q$</span>，取两个不同的点，类型分别为 <span>$p,q$</span>，定义对称 <span>$\mathcal Q$</span>-范畴 <span>$P_f$</span>，其 hom 矩阵为</p>
+<div class="quantaloid-equation">$$
+B_f=\begin{pmatrix}1_p&amp;f^\circ\\ f&amp;1_q\end{pmatrix}.
+$$</div>
+<p>矩阵采用 target row、source column 的约定。integrality 保证 <span>$B_f^2=B_f$</span>。两个 representables <span>$i_p:S_p\to P_f$</span>、<span>$i_q:S_q\to P_f$</span> jointly epic；因为定义域 subterminal，它们也都是 monos。</p>
+<p>对底层 maps <span>$a:s\to p$</span>、<span>$b:s\to q$</span>，关键观察是</p>
+<div class="quantaloid-equation">$$
+i_pa=i_qb\quad\Longleftrightarrow\quad ba^\circ\le f.\tag{2}
+$$</div>
+<p>左边逐分量就是 <span>$a=f^\circ b$</span>、<span>$fa=b$</span>，故推出 <span>$ba^\circ=faa^\circ\le f$</span>。反之，若 <span>$ba^\circ\le f$</span>，则 <span>$b=ba^\circ a\le fa\le b$</span>；最后一步用 <span>$b=\top_{s,q}$</span>。取 involution 后同理得到 <span>$a=f^\circ b$</span>。</p>
+<p>令</p>
+<div class="quantaloid-equation">$$
+w=\bigvee\{ba^\circ\mid a:s\to p,\ b:s\to q\text{ 是底层 maps},\ ba^\circ\le f\}.
+$$</div>
+<p>显然 <span>$w\le f$</span>。将 <span>$P_w$</span> 的两个 representables 记为 <span>$k_p,k_q$</span>。由 (2) 和 <span>$w$</span> 的定义，</p>
+<div class="quantaloid-equation">$$
+i_pa=i_qb\quad\Longleftrightarrow\quad k_pa=k_qb.\tag{3}
+$$</div>
+<p>取 pullback <span>$U=S_p\times_{P_f}S_q$</span>。effective union 告诉我们下图也是 pushout：</p>
+<p><span class="tikzjax"><svg xmlns="http://www.w3.org/2000/svg" width="118.376" height="97.246" viewBox="-72 -72 88.782 72.935"><g stroke="#000" stroke-miterlimit="10" stroke-width=".4"><g stroke="none"><text x="-18.797" y="-89.452" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-47.75 28.493)">U</text><g stroke="none"><text x="48.993" y="-89.452" font-family="cmmi10" font-size="10" transform="translate(-49.064 28.493)">S</text><text x="55.125" y="-87.952" font-family="cmmi7" font-size="7" transform="translate(-49.064 28.493)">q</text></g><g stroke="none"><text x="-18.797" y="-36.438" font-family="cmmi10" font-size="10" transform="translate(-49.167 28.493)">S</text><text x="-12.665" y="-34.938" font-family="cmmi7" font-size="7" transform="translate(-49.167 28.493)">p</text></g><g stroke="none"><text x="48.993" y="-36.438" font-family="cmmi10" font-size="10" transform="translate(-49.592 28.493)">P</text><text x="55.413" y="-34.938" font-family="cmmi7" font-size="7" transform="translate(-49.592 28.493)">f</text></g></g><path fill="none" d="M-54.123-63.459h49.146"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-6.857-65.859c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><text x="-28.48" y="-36.438" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-2.38 -29.374)">t</text><path fill="none" d="M-62.587-57.1v38.062"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-60.187-20.918c-1.44.38-2.12 1.227-2.4 2.08-.28-.853-.96-1.7-2.4-2.08"/><text x="-28.48" y="-36.438" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-40.389 .076)">r</text><path fill="none" d="M5.203-54.238v35.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M7.603-20.918c-1.44.38-2.12 1.227-2.4 2.08-.28-.853-.96-1.7-2.4-2.08"/><g stroke="none"><text x="-28.48" y="-36.438" font-family="cmmi7" font-size="7" transform="translate(36.035 1.33)">i</text><text x="-25.65" y="-35.438" font-family="cmmi5" font-size="5" transform="translate(36.035 1.33)">q</text></g><path fill="none" d="M-52.705-10.445h47.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-7.385-12.845c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><g stroke="none"><text x="-28.48" y="-36.438" font-family="cmmi7" font-size="7" transform="translate(-3.939 32.978)">i</text><text x="-25.65" y="-35.438" font-family="cmmi5" font-size="5" transform="translate(-3.939 32.978)">p</text></g></g></svg></span></p>
+
+<p>对 <span>$U$</span> 的每个 representable <span>$j_z:S_{|z|}\to U$</span>，复合 <span>$a=rj_z$</span>、<span>$b=tj_z$</span> 是 singleton 之间的 maps，也就是底层 maps。由 <span>$i_pa=i_qb$</span> 及 (3)，得到 <span>$k_prj_z=k_qtj_z$</span>。representables jointly epic，故 <span>$k_pr=k_qt$</span>。于是 pushout 给出</p>
+<div class="quantaloid-equation">$$
+v:P_f\to P_w,\qquad vi_p=k_p,\quad vi_q=k_q.
+$$</div>
+<p>而 <span>$w\le f$</span> 定义了 identity-on-objects 的 enriched functor <span>$P_w\to P_f$</span>，其 graph distributor <span>$u:P_w\to P_f$</span> 满足 <span>$uk_p=i_p$</span>、<span>$uk_q=i_q$</span>。分别用两组 representables 的 joint epimorphy，便得 <span>$uv=1_{P_f}$</span>、<span>$vu=1_{P_w}$</span>。</p>
+<p>最后还需从这个指定的同构恢复 <span>$f=w$</span>。<span>$u$</span> 和它的 cograph right adjoint <span>$u^*:P_f\to P_w$</span>，虽然源、靶不同，但其标量矩阵都是 <span>$B_f$</span>。因此</p>
+<div class="quantaloid-equation">$$
+u^*u=B_f^2=B_f.
+$$</div>
+<p>又因为 <span>$v=u^{-1}$</span>，它也是 <span>$u$</span> 的右伴随；右伴随唯一，所以 <span>$u^*=v$</span>，进而 <span>$u^*u=1_{P_w}=B_w$</span>。比较非对角项得到 <span>$f=w$</span>，即 (WT)。</p>
+<p>两方向证明完毕。充分性已给出 Grothendieck topos，而 singleton 构成小的 subterminal separating family，故由标准的 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1112.2542">localic 判据</a>（§3），它还是 localic 的。</p>
+<p>最后回到 <span>$Q$</span>-Set。设 <span>$(Q,\&amp;,1)$</span> 是 commutative integral quantale，不必预先假设 divisible。其 <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1801.05966">diagonal quantaloid <span>$DQ$</span></a>（Proposition 2.2）的箭头 <span>$d:p\to q$</span> 满足</p>
+<div class="quantaloid-equation">$$
+(p\to d)\mathbin{\&amp;}p=d=q\mathbin{\&amp;}(q\to d),
+$$</div>
+<p>其中公式内的 <span>$\to$</span> 是 residual；复合为 <span>$e\diamond d=e\mathbin{\&amp;}(q\to d)$</span>。它在对象 <span>$p$</span> 上的 identity 是 <span>$p$</span>，所有 endomorphisms 都不超过 <span>$p$</span>，故 <span>$DQ$</span> integral；交换性又给出保持标量值、反转方向的 involution。</p>
+<p>关键是 <span>$DQ(1,1)=Q$</span>，且这个 endohom 的复合就是原乘法 <span>$\&amp;$</span>。若 <span>$DQ$</span> weakly tabular，第二节已经证明每个 endohom 的复合都是 meet，立即得到 <span>$a\mathbin{\&amp;}b=a\wedge b$</span>；乘法保持任意并，所以 <span>$Q$</span> 是 frame quantale。反之，若 <span>$Q$</span> 是 frame quantale，则 <span>$DQ(p,q)=\mathord\downarrow(p\wedge q)$</span>，复合是 meet。每个 <span>$d:p\to q$</span> 都由对象 <span>$d$</span> 出发、两个值同为 <span>$d$</span> 的 maps <span>$a:d\to p$</span>、<span>$b:d\to q$</span> 给出 <span>$d=ba^\circ$</span>，所以 <span>$DQ$</span> weakly tabular。因此</p>
+<div class="quantaloid-equation">$$
+K(DQ)\text{ 是 topos}
+\quad\Longleftrightarrow\quad DQ\text{ weakly tabular}
+\quad\Longleftrightarrow\quad (Q,\&amp;)\text{ 是 frame quantale}.
+$$</div>
+<p>这也恢复了开头的 Hu–Shen 结论：commutative unital divisible quantale 自动 integral（该文 Proposition 2.1）。</p>
+
+<style>
+.article .content .quantaloid-equation { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: .4em 0; }
+.article .content .tikzjax { max-width: 100%; overflow-x: auto; }
+</style>
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>Integral quantaloid 的 weak tabularity 与 topos</p><p><a href="http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/">http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Yang Di</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-10-03</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-10-03</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Quantaloid/">Quantaloid</a><a class="link-muted mr-2" rel="tag" href="/tags/Topos/">Topos</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2026/10/02/route-six-song/"><span class="level-item">Route Six，试着唱出来</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://giscus.app/client.js" repo="Westlifers/Westlifers.github.io" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-category="Announcements" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#定理与约定"><span class="level-left"><span class="level-item">1</span><span class="level-item">定理与约定</span></span></a></li><li><a class="level is-mobile" href="#从-weak-tabularity-到-topos"><span class="level-left"><span class="level-item">2</span><span class="level-item">从 weak tabularity 到 topos</span></span></a></li><li><a class="level is-mobile" href="#从-topos-恢复每条箭头"><span class="level-left"><span class="level-item">3</span><span class="level-item">从 topos 恢复每条箭头</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="杨荻"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">杨荻</p><p class="is-size-6 is-block">行有不得，反求诸己。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 四川 成都 四川大学</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">16</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">14</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Westlifers" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Zhihu" href="https://www.zhihu.com/people/westlifer"><i class="fa-brands fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="E-mail" href="mailto://mcwestlifer@gmail.com"><i class="fa-solid fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WCA" href="https://cubing.com/results/person/2023YANG65"><i class="fa-solid fa-cube"></i></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2026 Yang Di</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
