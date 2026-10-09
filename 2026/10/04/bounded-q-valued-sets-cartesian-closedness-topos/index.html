@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>有界 Q-valued sets 的笛卡尔闭性与 topos - Yang Di&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yang Di&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yang Di&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="上一篇讨论了 integral involutive quantaloid 的 weak tabularity 与 topos。这次只从笛卡尔闭性出发，在有界 \(Q\)-valued sets 中得到同样的结论，而且标量判据可以写得很短： \[ K_*(Q)\text{ 笛卡尔闭} \quad\Longleftrightarrow\quad K_*(Q)\text{ 是 topos} \quad"><meta property="og:type" content="blog"><meta property="og:title" content="有界 Q-valued sets 的笛卡尔闭性与 topos"><meta property="og:url" content="http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/"><meta property="og:site_name" content="Yang Di&#039;s blog"><meta property="og:description" content="上一篇讨论了 integral involutive quantaloid 的 weak tabularity 与 topos。这次只从笛卡尔闭性出发，在有界 \(Q\)-valued sets 中得到同样的结论，而且标量判据可以写得很短： \[ K_*(Q)\text{ 笛卡尔闭} \quad\Longleftrightarrow\quad K_*(Q)\text{ 是 topos} \quad"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://hexo.yougi.top/img/og_image.png"><meta property="article:published_time" content="2026-10-04T15:00:00.000Z"><meta property="article:modified_time" content="2026-10-09T03:07:41.857Z"><meta property="article:author" content="Yang Di"><meta property="article:tag" content="Quantaloid"><meta property="article:tag" content="Topos"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://hexo.yougi.top/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/"},"headline":"有界 Q-valued sets 的笛卡尔闭性与 topos","image":["http://hexo.yougi.top/img/og_image.png"],"datePublished":"2026-10-04T15:00:00.000Z","dateModified":"2026-10-09T03:07:41.857Z","author":{"@type":"Person","name":"Yang Di"},"publisher":{"@type":"Organization","name":"Yang Di's blog","logo":{"@type":"ImageObject","url":"http://hexo.yougi.top/img/Yougi.png"}},"description":"上一篇讨论了 integral involutive quantaloid 的 weak tabularity 与 topos。这次只从笛卡尔闭性出发，在有界 \\(Q\\)-valued sets 中得到同样的结论，而且标量判据可以写得很短： \\[ K_*(Q)\\text{ 笛卡尔闭} \\quad\\Longleftrightarrow\\quad K_*(Q)\\text{ 是 topos} \\quad"}</script><link rel="canonical" href="http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script>
+<link rel="stylesheet" href="/css/ai-disclosure.css">
+<link rel="stylesheet" href="/css/reading-mode.css"><link rel="stylesheet" href="/css/math-statements.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css" /><style>.tikzjax { display: block; text-align: center; user-select: none; }</style></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-10-04T15:00:00.000Z" title="10/4/2026, 3:00:00 PM">2026-10-04</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E8%8C%83%E7%95%B4%E8%AE%BA/">范畴论</a></span><span class="level-item">21 分钟读完 (大约3190个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">有界 Q-valued sets 的笛卡尔闭性与 topos</h1><div class="content"><div class="math-article">
+<div class="ai-disclosure ai-disclosure--generated">
+  <div class="ai-disclosure__header">
+    <span class="ai-disclosure__icon">◆</span>
+    <span class="ai-disclosure__label">AI 生成</span>
+  </div>
+
+  <div class="ai-disclosure__text">
+    本文由 Noema 根据我与它共同讨论、整理的证明撰写。
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/">上一篇</a>讨论了 integral involutive quantaloid 的 weak tabularity 与 topos。这次只从笛卡尔闭性出发，在有界 <span class="math inline">\(Q\)</span>-valued sets 中得到同样的结论，而且标量判据可以写得很短：</p>
+<p><span class="math display">\[
+K_*(Q)\text{ 笛卡尔闭}
+\quad\Longleftrightarrow\quad K_*(Q)\text{ 是 topos}
+\quad\Longleftrightarrow\quad
+\forall a\in Q,\quad\bigl(a^2\le a\ \Longrightarrow\ a^2=a\bigr).
+\]</span></p>
+<p>这里 <span class="math inline">\(Q\)</span> 是任意交换幺 quantale，不要求 integral 或 divisible；<span class="math inline">\(K_*(Q)\)</span> 使用有界对角 <span class="math inline">\(D_*Q\)</span>，态射取所有左伴随 distributors。证明的核心是一个自推出：乘以 singleton 后，它的两个标记点仍保留原来的交叉 hom，而这个 hom 恰好成为乘积投影的像幂等元。</p>
+<span id="more"></span>
+<h2 id="有界相等度与主定理">有界相等度与主定理</h2>
+<div id="def-bounded-q-valued" class="statement definition">
+<p><span class="statement-heading"><span class="statement-label">定义 1</span>.</span><span class="statement-spah"> </span>设 <span class="math inline">\(Q\)</span> 是交换幺 quantale，乘法用并置表示，单位为 <span class="math inline">\(e\)</span>，residual 满足</p>
+<p><span class="math display">\[
+pa\le b\quad\Longleftrightarrow\quad a\le p\to b.
+\]</span></p>
+<p>固定 <span class="math inline">\(Q\)</span> 的 involution 为恒等映射。有界对角 quantaloid 的对象是 <span class="math inline">\(Q\)</span> 中的元素，箭头为</p>
+<p><span class="math display">\[
+D_*Q(p,q)=\{d\le p\wedge q\mid p(p\to d)=d=q(q\to d)\}.
+\]</span></p>
+<p>对象 <span class="math inline">\(p\)</span> 的 identity 是标量 <span class="math inline">\(p\)</span>；对 <span class="math inline">\(d:p\to q\)</span>、<span class="math inline">\(b:q\to r\)</span>，复合为</p>
+<p><span class="math display">\[
+b\circ_q d=b(q\to d)=(q\to b)d.
+\]</span></p>
+<p>下标记录复合经过的对象。join 在 <span class="math inline">\(Q\)</span> 中计算，involution 保持标量并反转方向。因此 <span class="math inline">\(D_*Q\)</span> 总是 integral，且其中每个 endomorphism 都对称，即使 <span class="math inline">\(Q\)</span> 本身并不 integral。</p>
+<p>记</p>
+<p><span class="math display">\[
+K_*(Q)=\operatorname{Map}(\operatorname{SymDist}(D_*Q)).
+\]</span></p>
+<p>它的对象是小的对称 <span class="math inline">\(D_*Q\)</span>-范畴，态射是它们之间<strong>所有左伴随 distributors</strong>。用 <span class="math inline">\((-)^\circ\)</span> 表示给定 involution，用 <span class="math inline">\((-)^*\)</span> 表示实际右伴随，不预先把二者等同。</p>
+<p>这些对象就是有界的 <span class="math inline">\(Q\)</span>-valued similarities，也对应 Höhle–Kubiak 意义下的相等度；这个对象识别见 Lai–Shen–Tao–Zhang 的 <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1904.05565v2#page=13"><em>Quantale-valued dissimilarity</em></a>，Theorem 4.5 与 Remark 4.6。非整情形中的“<span class="math inline">\(Q\)</span>-Set”也可能指无界的 <span class="math inline">\(DQ\)</span> 版本，或采用集合函数作为态射；本文始终针对上述 <span class="math inline">\(K_*(Q)\)</span>。</p>
+</div>
+<div id="thm-bounded-ccc-topos" class="statement theorem plain">
+<p><span class="statement-heading"><span class="statement-label">定理 2</span>.</span><span class="statement-spah"> </span>对任意交换幺 quantale <span class="math inline">\(Q\)</span>，以下五个条件等价：</p>
+<ol type="1">
+<li><span class="math inline">\(K_*(Q)\)</span> 笛卡尔闭；</li>
+<li><span class="math inline">\(K_*(Q)\)</span> 是 elementary topos；</li>
+<li><span class="math inline">\(K_*(Q)\)</span> 是 Grothendieck topos；</li>
+<li><span class="math inline">\(D_*Q\)</span> weakly tabular；</li>
+<li>每个 subidempotent 都幂等，即对任意 <span class="math inline">\(a\in Q\)</span>，</li>
+</ol>
+<p><span class="math display">\[
+a^2\le a\quad\Longrightarrow\quad a^2=a.\tag{C}
+\]</span></p>
+<p>条件成立时，这个 topos 是 localic 的。</p>
+</div>
+<p>条件 (C) 中的平方是 <strong><span class="math inline">\(Q\)</span> 的乘法</strong>。下面证明的路线是：笛卡尔闭性使一个指定的自推出被 <span class="math inline">\(-\times S_p\)</span> 保持，从而得到 <span class="math inline">\(\kappa_p(q)=\pi\pi^*\)</span>；再取 <span class="math inline">\(p=e\vee a\)</span>、<span class="math inline">\(q=a\)</span> 推出 (C)。反向则直接把每条有界对角写成一个 map-span，接上<a href="https://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/">上一篇的表示定理</a>。</p>
+<p>自推出与乘积比较的细节见<a href="#proof-kappa-idempotent" title="投影公式的证明">投影公式的证明</a>。</p>
+<h2 id="笛卡尔闭性强迫-κ-幂等">自推出与乘积投影</h2>
+<p>以下始终在 <span class="math inline">\(D_*Q\)</span> 上工作。记 <span class="math inline">\(S_p\)</span> 为类型为 <span class="math inline">\(p\)</span>、hom 为 <span class="math inline">\(1_p\)</span> 的 singleton。矩阵采用 target row、source column 的约定：<span class="math inline">\(X(y,x):|x|\to|y|\)</span>。一个 map <span class="math inline">\(F:X\to Z\)</span> 满足</p>
+<p><span class="math display">\[
+X\le F^*F,\qquad FF^*\le Z.
+\]</span></p>
+<p>每个点 <span class="math inline">\(x\in X\)</span> 都有 principal map <span class="math inline">\(j_x:S_{|x|}\to X\)</span>，其两方向的分量是 <span class="math inline">\(X(y,x)\)</span> 和 <span class="math inline">\(X(x,y)\)</span>，故 <span class="math inline">\(j_y^*j_x=X(y,x)\)</span>。这些 principal maps 检测 distributors 是否相等。只有对这样的 principal maps，我们直接使用 <span class="math inline">\(j_x^*=j_x^\circ\)</span>。</p>
+<p><strong>先说明自推出怎样构造。</strong> 对 map <span class="math inline">\(f:U\to X\)</span>，若 <span class="math inline">\(\varepsilon=ff^*\)</span> 对称，则 adjunction 给出 <span class="math inline">\(\varepsilon\le X\)</span>、<span class="math inline">\(\varepsilon^2=\varepsilon\)</span>、<span class="math inline">\(\varepsilon f=f\)</span>。取 <span class="math inline">\(X\)</span> 的两个带标签副本，副本内部保留 <span class="math inline">\(X\)</span> 的 hom，跨副本的 hom 取 <span class="math inline">\(\varepsilon\)</span>，得到对称范畴 <span class="math inline">\(D_f\)</span>。它的包含 maps 满足</p>
+<p><span class="tikzjax"><svg xmlns="http://www.w3.org/2000/svg" width="101.472" height="81.663" viewBox="-72 -72 76.104 61.247"><g stroke="#000" stroke-miterlimit="10" stroke-width=".4"><g stroke="none"><text x="-25.203" y="-81.605" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-41.836 22.563)">U</text><text x="30.675" y="-81.605" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-42.412 22.563)">X</text><text x="-25.203" y="-40.452" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-42.412 22.563)">X</text><g stroke="none"><text x="30.675" y="-40.452" font-family="cmmi10" font-size="10" transform="translate(-44.61 22.563)">D</text><text x="38.954" y="-38.952" font-family="cmmi7" font-size="7" transform="translate(-44.61 22.563)">f</text></g></g><path fill="none" d="M-54.616-61.542h37.973"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-18.523-63.942c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><text x="-34.043" y="-40.452" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-3.728 -24.804)">f</text><path fill="none" d="M-63.08-55.183v26.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-60.68-30.862c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="-34.043" y="-40.452" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-36.074 .32)">f</text><path fill="none" d="M-7.203-55.183v26.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-4.803-30.862c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="-34.043" y="-40.452" stroke="none" font-family="cmmi7" font-size="7" transform="translate(29.193 .076)">r</text><path fill="none" d="M-54.04-20.39h35.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-20.72-22.79c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><text x="-34.043" y="-40.452" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-3.87 27.276)">`</text></g></svg></span></p>
+<p><span class="math display">\[
+\ell^*\ell=X=r^*r,\qquad r^*\ell=\varepsilon=\ell^*r.
+\]</span></p>
+<p>这个方块确实是 pushout。若 <span class="math inline">\(F,G:X\to Z\)</span> 且 <span class="math inline">\(Ff=Gf\)</span>，则</p>
+<p><span class="math display">\[
+\varepsilon\le G^*G\varepsilon=G^*F\varepsilon\le G^*F,
+\qquad \varepsilon\le F^*G.
+\]</span></p>
+<p>在两个副本上分别放 <span class="math inline">\(F,G\)</span>，得到 <span class="math inline">\(H\)</span>；分别放 <span class="math inline">\(F^*,G^*\)</span>，得到 <span class="math inline">\(N\)</span>。原来的 units 与上述交叉不等式给出 <span class="math inline">\(D_f\le NH\)</span>，counits 给出 <span class="math inline">\(HN=FF^*\vee GG^*\le Z\)</span>。逐副本的 <span class="math inline">\(Z\)</span>-action 成立，另外</p>
+<p><span class="math display">\[
+HD_f\le HNH\le H,\qquad D_fN\le NHN\le N;
+\]</span></p>
+<p>reflexivity 给出反向不等式。因此 <span class="math inline">\(H\dashv N\)</span>，且 <span class="math inline">\(H\ell=F\)</span>、<span class="math inline">\(Hr=G\)</span>；两副本覆盖所有点，也给出唯一性。</p>
+<p>这里的对称性条件不能省略。稍后对投影 <span class="math inline">\(\pi\)</span> 应用此构造时，<span class="math inline">\(\pi\pi^*\)</span> 是 <span class="math inline">\(D_*Q\)</span> 中的 endomorphism，所以自动对称；这不是对所有 integral involutive quantaloids 的一般断言。</p>
+<div id="lem-kappa-idempotent" class="statement lemma plain">
+<p><span class="statement-heading"><span class="statement-label">引理 3</span>.</span><span class="statement-spah"> </span>若 <span class="math inline">\(K_*(Q)\)</span> 笛卡尔闭，则对任意 <span class="math inline">\(p,q\)</span>，有</p>
+<p><span class="math display">\[
+\kappa_p(q):=\top_{q,p}\circ_q\top_{p,q}=\pi\pi^*,
+\qquad \pi:S_q\times S_p\to S_p.
+\]</span></p>
+<p>特别地，<span class="math inline">\(\kappa_p(q)\)</span> 在对象 <span class="math inline">\(p\)</span> 上幂等。</p>
+</div>
+<div id="proof-kappa-idempotent" class="statement proof unnumbered" data-proof-of="lem-kappa-idempotent">
+<p><span class="statement-heading"><span class="statement-label">证明</span>.</span><span class="statement-spah"> </span>令 <span class="math inline">\(Y=S_p\)</span>。取类型分别为 <span class="math inline">\(p,q\)</span> 的两点对称范畴 <span class="math inline">\(A\)</span>，所有 hom 都取相应类型的最大箭头，principal maps 记为 <span class="math inline">\(i:Y\to A\)</span>、<span class="math inline">\(j:S_q\to A\)</span>。integrality 保证传递性；而 <span class="math inline">\(A\)</span> 是 subterminal：任意 maps <span class="math inline">\(F,G:X\to A\)</span> 都有 <span class="math inline">\(FG^*\le A\)</span>，于是</p>
+<p><span class="math display">\[
+F\le FG^*G\le G,
+\]</span></p>
+<p>交换 <span class="math inline">\(F,G\)</span> 得相等。因此 <span class="math inline">\(A\times Y\cong Y\)</span>，逆于投影的 map 是 <span class="math inline">\(\langle i,1_Y\rangle\)</span>。</p>
+<p>由于 <span class="math inline">\(j\)</span> 是 principal，<span class="math inline">\(jj^*\)</span> 对称。按上面的构造得到 <span class="math inline">\(B=A\amalg_{S_q}A\)</span>，包含 maps 为 <span class="math inline">\(\ell,r\)</span>，且 <span class="math inline">\(r^*\ell=jj^*\)</span>。笛卡尔闭性在此只用一次：<span class="math inline">\(-\times Y\)</span> 有右伴随，所以保持这个已构造的 pushout。令 <span class="math inline">\(P=S_q\times Y\)</span>，利用 <span class="math inline">\(A\times Y\cong Y\)</span>，得到右边的方块：</p>
+<p><span class="tikzjax"><svg xmlns="http://www.w3.org/2000/svg" width="263.259" height="85.172" viewBox="-72 -72 197.444 63.879"><g stroke="#000" stroke-miterlimit="10" stroke-width=".4"><g stroke="none"><g stroke="none"><text x="36.032" y="-84.278" font-family="cmmi10" font-size="10" transform="translate(-103.996 25.007)">S</text><text x="42.164" y="-82.778" font-family="cmmi7" font-size="7" transform="translate(-103.996 25.007)">q</text></g><text x="89.961" y="-84.278" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.472 25.007)">A</text><text x="142.629" y="-84.278" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.627 25.007)">P</text><text x="205.422" y="-84.278" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.736 25.007)">Y</text><text x="36.032" y="-40.265" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.472 25.007)">A</text><text x="89.961" y="-40.265" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.766 25.007)">B</text><text x="142.629" y="-40.265" stroke="none" font-family="cmmi10" font-size="10" transform="translate(-102.736 25.007)">Y</text><g stroke="none" font-size="10"><text x="205.422" y="-40.265" font-family="cmmi10" transform="translate(-112.89 25.007)">B</text><text x="215.731" y="-40.265" font-family="cmsy10" transform="translate(-112.89 25.007)">£</text><text x="225.731" y="-40.265" font-family="cmmi10" transform="translate(-112.89 25.007)">Y</text></g></g><path fill="none" d="M-52.91-61.771h35.493"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-19.297-64.171c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-63.273 -25.22)">j</text><path fill="none" d="M-62.69-52.55v26.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-60.29-28.23c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-95.209 2.65)">j</text><path fill="none" d="M-8.762-55.412v29.061"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-6.362-28.23c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-32.861 1.09)">r</text><path fill="none" d="M52.317-61.771H97.78"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M95.901-64.171c.38 1.44 1.227 2.12 2.08 2.4-.853.28-1.7.96-2.08 2.4"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(46.333 -23.86)">¼</text><path fill="none" d="M43.907-55.412v29.061"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M46.307-28.23c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(10.175 1.09)">¼</text><path fill="none" d="M106.7-55.412v29.061"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M109.1-28.23c-1.44.38-2.12 1.226-2.4 2.08-.28-.854-.96-1.7-2.4-2.08"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(82.601 1.975)">R</text><path fill="none" d="M-54.435-17.758h36.725"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M-19.59-20.157c.38 1.44 1.226 2.12 2.08 2.4-.854.28-1.7.96-2.08 2.4"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(-63.998 29.72)">`</text><path fill="none" d="M52.426-17.758h35.2"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M85.747-20.157c.38 1.44 1.226 2.12 2.08 2.4-.854.28-1.7.96-2.08 2.4"/><text x="26.452" y="-40.265" stroke="none" font-family="cmmi7" font-size="7" transform="translate(41.031 29.643)">L</text></g></svg></span></p>
+<p>图中两方块均为 pushout；从左到右的操作是乘以 <span class="math inline">\(Y\)</span> 再用上述同构，而非顶点之间另有箭头。标记点变为</p>
+<p><span class="math display">\[
+L=\langle\ell i,1_Y\rangle,\qquad R=\langle ri,1_Y\rangle.
+\]</span></p>
+<p>另一方面，<span class="math inline">\(\pi\pi^*\)</span> 是 singleton <span class="math inline">\(Y\)</span> 上的对称 endomorphism，所以也可构造自推出 <span class="math inline">\(D_\pi=Y\amalg_PY\)</span>。设其包含 maps 为 <span class="math inline">\(s,t\)</span>。pushout 的唯一性给出保持两条 cocone maps 的同构</p>
+<p><span class="math display">\[
+\Theta:B\times Y\xrightarrow{\cong}D_\pi,
+\qquad \Theta L=s,\quad\Theta R=t.
+\]</span></p>
+<p>故</p>
+<p><span class="math display">\[
+R^*L=t^*s=\pi\pi^*.\tag{1}
+\]</span></p>
+<p>再从原来的两点计算同一个交叉 hom。<span class="math inline">\(B\)</span> 中标记点 <span class="math inline">\(\ell i,ri\)</span> 的交叉 hom 为</p>
+<p><span class="math display">\[
+(ri)^*(\ell i)=i^*r^*\ell i=i^*jj^*i=\kappa_p(q).
+\]</span></p>
+<p>令 <span class="math inline">\(C\)</span> 为这两点组成的 full subcategory，<span class="math inline">\(h:C\to B\)</span> 为包含 map，<span class="math inline">\(c_-,c_+:Y\to C\)</span> 为 principal maps。两点类型都是 <span class="math inline">\(p\)</span>，所以 integrality 给出常值保类型函子诱导的 <span class="math inline">\(\delta:C\to Y\)</span>。令 <span class="math inline">\(H=\langle h,\delta\rangle:C\to B\times Y\)</span>，则 <span class="math inline">\(Hc_-=L\)</span>、<span class="math inline">\(Hc_+=R\)</span>。直接估计得到</p>
+<p><span class="math display">\[
+\begin{aligned}
+\kappa_p(q)
+&amp;=c_+^*Cc_-
+\le c_+^*H^*Hc_-=R^*L\\
+&amp;\le R^*\operatorname{pr}_B^*\operatorname{pr}_BL
+=(ri)^*(\ell i)=\kappa_p(q).
+\end{aligned}
+\]</span></p>
+<p>两个不等式分别来自 <span class="math inline">\(H\)</span> 与 <span class="math inline">\(\operatorname{pr}_B\)</span> 的伴随 unit，故 <span class="math inline">\(R^*L=\kappa_p(q)\)</span>。结合 (1) 即得所求。最后由 adjunction 的三角恒等式，</p>
+<p><span class="math display">\[
+(\pi\pi^*)^2=\pi\pi^*\pi\pi^*=\pi\pi^*.
+\]</span></p>
+<p>整个证明用的是真正的范畴乘积，没有假设 enriched 乘积矩阵的公式，也没有把任意右伴随替换为 involute。</p>
+</div>
+<h2 id="从-κ-到标量判别与-weak-tabularity">从投影幂等到标量判据，再到 topos</h2>
+<div id="proof-bounded-necessity" class="statement proof unnumbered" data-proof-of="thm-bounded-ccc-topos" data-proof-part="① ⇒ ⑤：笛卡尔闭性 ⇒ (C)">
+<p><span class="statement-heading"><span class="statement-label">证明</span>.</span><span class="statement-spah"> </span><span class="proof-direction"><strong>笛卡尔闭性推出 (C)。</strong></span> 设 <span class="math inline">\(a^2\le a\)</span>，取 <span class="math inline">\(p=e\vee a\)</span>。则</p>
+<p><span class="math display">\[
+pa=a\vee a^2=a,\qquad p\to a=a.
+\]</span></p>
+<p>第二个等式的一边来自 <span class="math inline">\(pa=a\)</span>，另一边来自 <span class="math inline">\(p\ge e\)</span>。所以标量 <span class="math inline">\(a\)</span> 是 <span class="math inline">\(p\)</span> 与 <span class="math inline">\(a\)</span> 之间两个方向上的有界对角，也是这两个 hom 的最大元。因而</p>
+<p><span class="math display">\[
+\kappa_p(a)=a\circ_a a=a(a\to a)=a.
+\]</span></p>
+<p>这里用了对任意 <span class="math inline">\(x\)</span> 都成立的 <span class="math inline">\(x(x\to x)=x\)</span>，它来自 residuation 与 <span class="math inline">\(e\le x\to x\)</span>。由 <a href="#lem-kappa-idempotent" title="引理 3">引理 3</a>，这个 endomorphism 在 <span class="math inline">\(p\)</span> 上幂等，于是</p>
+<p><span class="math display">\[
+a=a\circ_p a=a(p\to a)=a^2.
+\]</span></p>
+<p>计算 <span class="math inline">\(\kappa_p(a)\)</span> 时经过对象 <span class="math inline">\(a\)</span>，计算其平方时经过对象 <span class="math inline">\(p\)</span>；正是这一区别把范畴的幂等性转成 <span class="math inline">\(Q\)</span> 中的幂等性。</p>
+</div>
+<p>反向要用到底层 maps，也就是 singletons 之间的 maps。</p>
+<div id="lem-bounded-base-maps" class="statement lemma plain">
+<p><span class="statement-heading"><span class="statement-label">引理 4</span>.</span><span class="statement-spah"> </span><span class="math inline">\(D_*Q\)</span> 中从 <span class="math inline">\(r\)</span> 到 <span class="math inline">\(p\)</span> 至多有一个 map。它与实际右伴随的标量都是 <span class="math inline">\(r\)</span>；存在的充要条件是</p>
+<p><span class="math display">\[
+r\le p,\qquad p(p\to r)=r,\qquad r(p\to r)=r.
+\]</span></p>
+</div>
+<div id="proof-bounded-base-maps" class="statement proof unnumbered" data-proof-of="lem-bounded-base-maps">
+<p><span class="statement-heading"><span class="statement-label">证明</span>.</span><span class="statement-spah"> </span>设 <span class="math inline">\(f:r\to p\)</span> 左伴随于 <span class="math inline">\(g:p\to r\)</span>。unit 与有界性给出</p>
+<p><span class="math display">\[
+r\le(p\to g)f\le(p\to p)f=f\le r.
+\]</span></p>
+<p>中间等号来自 <span class="math inline">\(f=p(p\to f)\)</span> 及 <span class="math inline">\(p(p\to p)=p\)</span>，故 <span class="math inline">\(f=r\)</span>。利用同一复合的另一种写法，</p>
+<p><span class="math display">\[
+r\le g(p\to f)\le g(p\to p)=g\le r,
+\]</span></p>
+<p>同样得到 <span class="math inline">\(g=r\)</span>。反过来，前两个条件使标量 <span class="math inline">\(r\)</span> 成为两个方向上的箭头；第三个条件给出 unit，而 counit 是 <span class="math inline">\(r(r\to r)=r\le p\)</span>。</p>
+</div>
+<div id="proof-bounded-sufficiency" class="statement proof unnumbered" data-proof-of="thm-bounded-ccc-topos" data-proof-part="⑤ ⇒ ④：(C) ⇒ weak tabularity">
+<p><span class="statement-heading"><span class="statement-label">证明</span>.</span><span class="statement-spah"> </span><span class="proof-direction"><strong>(C) 推出 weak tabularity。</strong></span> 取任意有界对角 <span class="math inline">\(d:p\to q\)</span>，令 <span class="math inline">\(u=p\to d\)</span>。由 <span class="math inline">\(pu=d\le p\)</span>，有</p>
+<p><span class="math display">\[
+pu^2\le pu=d,
+\]</span></p>
+<p>residuation 给出 <span class="math inline">\(u^2\le p\to d=u\)</span>。(C) 因而给出 <span class="math inline">\(u^2=u\)</span>，所以</p>
+<p><span class="math display">\[
+d(p\to d)=pu^2=pu=d.
+\]</span></p>
+<p>在端点 <span class="math inline">\(q\)</span> 上作相同计算，得到 <span class="math inline">\(d(q\to d)=d\)</span>。由 <a href="#lem-bounded-base-maps" title="引理 4">引理 4</a>，存在底层 maps <span class="math inline">\(a:d\to p\)</span>、<span class="math inline">\(b:d\to q\)</span>，两者的标量都是 <span class="math inline">\(d\)</span>，并且</p>
+<p><span class="math display">\[
+p\xleftarrow{\ a\ }d\xrightarrow{\ b\ }q,
+\qquad b\circ_d a^*=d(d\to d)=d.
+\]</span></p>
+<p>每条箭头自身就由一个 map-span 表示，因此满足 weak tabularity：</p>
+<p><span class="math display">\[
+v=\bigvee\{ba^*\mid a:s\to p,\ b:s\to q\text{ 是底层 maps},\ ba^*\le v\}.
+\]</span></p>
+</div>
+<div id="proof-bounded-completion" class="statement proof unnumbered" data-proof-of="thm-bounded-ccc-topos" data-proof-part="④ ⇒ ③ ⇒ ② ⇒ ①；localicity">
+<p><span class="statement-heading"><span class="statement-label">证明</span>.</span><span class="statement-spah"> </span>因为 <span class="math inline">\(D_*Q\)</span> integral，<a href="https://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/">上一篇的表示定理</a>把 weak tabularity 识别为 localic Grothendieck topos。那里检查了 local frames、modularity、给定 involution 与闭 cribles 的相容性，并通过 sheaf 表示对<strong>所有左伴随 distributors</strong>取 maps；这里不重复这些通用步骤。Grothendieck topos 是 elementary topos，后者笛卡尔闭，至此 <a href="#thm-bounded-ccc-topos" title="定理 2">定理 2</a>的五个条件形成闭环。</p>
+</div>
+<p>还可写出这个 topos 的 site。在 (C) 下，底层 maps 构成 <span class="math inline">\(Q\)</span> 上的偏序 <span class="math inline">\(P\)</span>：</p>
+<p><span class="math display">\[
+r\preceq p\quad\Longleftrightarrow\quad r\le p\ \text{且}\ p(p\to r)=r.
+\]</span></p>
+<p>一族 <span class="math inline">\((r_i\preceq p)\)</span> 覆盖当且仅当 <span class="math inline">\(\bigvee_i r_i=p\)</span>，于是 <span class="math inline">\(K_*(Q)\simeq\operatorname{Sh}(P,J)\)</span>。</p>
+<h2 id="Integral-情形">Integral 情形与适用范围</h2>
+<p>若 <span class="math inline">\(Q\)</span> 本身 integral，即 <span class="math inline">\(e=\top\)</span>，则 <span class="math inline">\(a^2\le a\)</span> 自动成立，(C) 就是所有元素幂等。此时 <span class="math inline">\(ab\le a\wedge b\)</span>；若 <span class="math inline">\(z\le a,b\)</span>，则</p>
+<p><span class="math display">\[
+z=z^2\le ab.
+\]</span></p>
+<p>所以乘法就是 meet，保持任意 join 的乘法给出 frame distributive law。反向对 frame quantale 显然成立。integral 时 <span class="math inline">\(DQ=D_*Q\)</span>，不需要额外假设 divisible，因此</p>
+<p><span class="math display">\[
+K(DQ)\text{ 笛卡尔闭}
+\quad\Longleftrightarrow\quad K(DQ)\text{ 是 topos}
+\quad\Longleftrightarrow\quad Q\text{ 是 frame quantale}.
+\]</span></p>
+<p>对非整 <span class="math inline">\(Q\)</span>，(C) 的前提不能丢掉。例如 <span class="math inline">\(Q=\mathcal P(C_3)\)</span> 取集合的群加法为乘法。若 <span class="math inline">\(A+A\subseteq A\)</span>，则 <span class="math inline">\(A\)</span> 为空或有限群中的子半群，因而是子群，所以 <span class="math inline">\(A+A=A\)</span>。这满足 (C)，但对生成元 <span class="math inline">\(g\)</span>，<span class="math inline">\(\{g\}^2=\{2g\}\)</span> 与 <span class="math inline">\(\{g\}\)</span> 不可比较；(C) 并不声称任意 <span class="math inline">\(a\)</span> 都有 <span class="math inline">\(a\le a^2\)</span>。</p>
+<p>必要性证明只要求 <span class="math inline">\(-\times S_p\)</span> 保持上面指定的自推出，而没有用到 subobject classifier、一般的像分解，也没有假定笛卡尔闭范畴中所有 pushouts 都存在。实际上，只要有限乘积存在，且所有满足 <span class="math inline">\(e\le p=p^2\)</span> 的 <span class="math inline">\(S_p\)</span> 都 exponentiable，就已足够：对 <span class="math inline">\(a^2\le a\)</span>，取 <span class="math inline">\(p=e\vee a\)</span> 有 <span class="math inline">\(p^2=p\)</span>，同一证明便推出 (C)。</p>
+</div></div><div class="article-licensing box"><div class="licensing-title"><p>有界 Q-valued sets 的笛卡尔闭性与 topos</p><p><a href="http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/">http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Yang Di</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-10-04</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-10-09</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Quantaloid/">Quantaloid</a><a class="link-muted mr-2" rel="tag" href="/tags/Topos/">Topos</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2026/10/03/integral-quantaloids-weak-tabularity-topos/"><span class="level-item">Integral quantaloid 的 weak tabularity 与 topos</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://giscus.app/client.js" repo="Westlifers/Westlifers.github.io" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-category="Announcements" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_light" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#有界相等度与主定理"><span class="level-left"><span class="level-item">1</span><span class="level-item">有界相等度与主定理</span></span></a></li><li><a class="level is-mobile" href="#笛卡尔闭性强迫-κ-幂等"><span class="level-left"><span class="level-item">2</span><span class="level-item">自推出与乘积投影</span></span></a></li><li><a class="level is-mobile" href="#从-κ-到标量判别与-weak-tabularity"><span class="level-left"><span class="level-item">3</span><span class="level-item">从投影幂等到标量判据，再到 topos</span></span></a></li><li><a class="level is-mobile" href="#Integral-情形"><span class="level-left"><span class="level-item">4</span><span class="level-item">Integral 情形与适用范围</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="杨荻"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">杨荻</p><p class="is-size-6 is-block">行有不得，反求诸己。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国 四川 成都 四川大学</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">14</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Westlifers" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/Westlifers"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Zhihu" href="https://www.zhihu.com/people/westlifer"><i class="fa-brands fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="E-mail" href="mailto://mcwestlifer@gmail.com"><i class="fa-solid fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WCA" href="https://cubing.com/results/person/2023YANG65"><i class="fa-solid fa-cube"></i></a></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/Yougi.png" alt="Yang Di&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2026 Yang Di</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><!-- hexo injector body_end start --><script defer src="/js/reading-mode.js"></script><script defer src="/js/math-statements.js" data-mathjax-src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!-- hexo injector body_end end --></body></html>
