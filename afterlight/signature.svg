@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204 78" fill="none">
+  <title>Yougi — handwritten signature</title>
+  <g stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="2.4" d="M11 25C9 15 19 8 29 11C38 14 28 34 31 39C35 44 47 26 54 11M54 11C47 29 39 49 30 63C22 75 14 70 20 61C30 47 47 43 63 40"/>
+    <path stroke-width="2.2" d="M78 34C71 27 60 35 59 45C58 54 67 55 73 47C78 41 79 35 75 34C72 35 77 43 86 36M88 33C84 41 80 52 85 52C91 53 98 39 101 33C97 42 95 51 100 51C105 51 110 44 114 39M132 35C125 29 113 36 112 46C111 54 119 53 126 44L133 33C128 50 123 66 115 71C107 77 103 70 109 64C118 55 139 48 146 37M149 33C145 41 141 51 146 52C153 54 161 44 166 40"/>
+    <path stroke-width="2.7" d="M153 23L154 21"/>
+    <path stroke-width="1.25" d="M58 64C97 58 145 58 192 60"/>
+  </g>
+</svg>

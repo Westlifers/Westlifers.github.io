@@ -1,0 +1,18 @@
+Noema About-page display image — upstream provenance
+
+Project: gmskywalker/deepseek-fat-fish-codex-pet
+Repository: https://github.com/gmskywalker/deepseek-fat-fish-codex-pet
+Pinned source commit: 277403bcc97e4c23e612c84a27ac4ee81fab99d8
+Original asset: deepseek-fat-fish/spritesheet.webp
+Selected frame: idle, first row / first column, pixel rectangle (0, 0, 192, 208).
+Extraction: exact RGBA crop, lossless WebP encoding; no redrawing or resizing.
+
+The repository has no LICENSE file at this commit. Its README describes an
+unofficial, non-commercial fan-made desktop pet intended for personal desktop
+customization and technical learning. It states no affiliation or authorization
+from DeepSeek, OpenAI, Codex or other rights holders, and does not grant
+commercial rights to underlying intellectual property. Names, logos and
+recognizable designs remain with their respective rights holders.
+This provenance note does not grant additional rights or assert a web
+redistribution license. See the upstream Fan Work Notice for the original terms:
+https://github.com/gmskywalker/deepseek-fat-fish-codex-pet/blob/277403bcc97e4c23e612c84a27ac4ee81fab99d8/README.md#fan-work-notice--同人作品声明

@@ -1,0 +1,32 @@
+.math-article { min-width: 0; }
+.math-article .statement { margin: 1.6rem 0; padding: 1rem 1.15rem; border-left: 3px solid var(--sage); background: var(--soft); font-style: normal; scroll-margin-top: 35px; }
+.math-article .statement-heading { color: var(--ink); font-weight: 600; font-style: normal; }
+.math-article .statement-label { font-weight: 700; }
+.math-article .statement-info { font-weight: 400; }
+.math-article .statement > :last-child { margin-bottom: 0; }
+.math-article .statement:target { outline: 2px solid var(--accent); outline-offset: 4px; }
+.math-article details.proof { background: transparent; border-left-color: var(--rule); }
+.math-article details.proof > summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.math-article details.proof > summary::marker { color: var(--sage); }
+.math-article details.proof[open] > summary { margin-bottom: .8rem; }
+.math-article details.proof > summary a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.math-article .proof-body::after { content: '□'; display: block; text-align: right; }
+.math-article .proof-context { margin: 1.8rem 0 .6rem; color: var(--muted); font-size: .94em; }
+.math-article .proof-context + .proof { margin-top: .6rem; }
+.math-article .statement-proofs { margin-top: 1rem; padding-top: .75rem; border-top: 1px solid var(--rule); font-size: .9em; }
+.math-article .statement-proofs > span { color: var(--muted); }
+.math-article .statement-proofs ul { display: flex; flex-wrap: wrap; gap: .35rem .75rem; list-style: none; margin: .4rem 0 0; padding: 0; }
+.math-article .statement-proofs li { margin: 0; min-width: 0; }
+.math-article .statement-proofs a, .math-article .proof-context a { color: var(--accent); text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+.math-article .statement-proofs a { display: inline-block; padding: .25rem 0; }
+.math-layout .math-scroll { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .35rem 0; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+.math-layout .math-scroll:focus-visible { outline: 2px solid var(--accent); }
+.math-layout .math-scroll mjx-container[display="true"] { min-width: max-content; }
+.math-layout .math-scroll svg { max-width: none; }
+.post-content.math-layout .math-scroll > .tikzjax { display: block; width: max-content; max-width: none; margin-inline: auto; overflow: visible; }
+.math-status { max-width: 820px; margin: 0 auto 24px; font: 13px/1.8 var(--sans); color: var(--accent); }
+@media (max-width: 600px) { .math-article .statement { padding: .85rem .8rem; margin: 1.25rem 0; } }
+@media print {
+  .math-layout .math-scroll { overflow: visible; }
+  .math-article details.proof > .proof-body { display: block !important; }
+}
