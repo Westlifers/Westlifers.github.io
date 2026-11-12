@@ -1,0 +1,34 @@
+/* Shared material and motion. Navigation remains ordinary document navigation. */
+:root{--ease-nocturne:cubic-bezier(.22,1,.36,1)}
+html{scrollbar-color:color-mix(in srgb,var(--muted) 45%,transparent) var(--bg)}
+.site-header .brand{view-transition-name:nocturne-brand}
+.site-header nav{view-transition-name:nocturne-navigation}
+.site-header .header-tools{view-transition-name:nocturne-tools}
+.site-header nav a:before{content:'';position:absolute;inset:auto 0 5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-nocturne);opacity:.4}
+.site-header nav a:hover:before{transform:scaleX(1)}
+.site-header nav a[aria-current]:before{display:none}
+.search-dialog{border:1px solid color-mix(in srgb,var(--accent) 22%,var(--rule));box-shadow:0 35px 100px #08050d66;border-radius:14px;padding:30px}
+.search-dialog .dialog-top h2{font:28px/1.4 var(--serif)}
+.search-dialog .search-close{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex-shrink:0;min-height:44px;min-width:56px;padding:8px 12px;color:var(--ink);font-size:12px;cursor:pointer}
+.search-close kbd{font:10px var(--sans);color:var(--muted)}
+.search-dialog .search-close:hover{background:var(--bg)}
+.search-dialog .search-close:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.search-result{border-radius:7px;transition:background .2s}
+.search-result.is-selected{box-shadow:inset 2px 0 var(--accent)}
+.search-result mark{color:var(--ink);background:color-mix(in srgb,var(--accent) 19%,transparent);padding:0 .08em;border-radius:2px}
+.search-dialog,.image-dialog{opacity:0;transform:translateY(12px) scale(.985);transition:opacity .22s ease,transform .3s var(--ease-nocturne),display .3s allow-discrete,overlay .3s allow-discrete}
+.search-dialog[open],.image-dialog[open]{opacity:1;transform:none}
+.search-dialog::backdrop,.image-dialog::backdrop{background:#0a0713aa;backdrop-filter:blur(8px);opacity:0;transition:opacity .25s,display .3s allow-discrete,overlay .3s allow-discrete}
+.search-dialog[open]::backdrop,.image-dialog[open]::backdrop{opacity:1}
+@starting-style{.search-dialog[open],.image-dialog[open]{opacity:0;transform:translateY(12px) scale(.985)}.search-dialog[open]::backdrop,.image-dialog[open]::backdrop{opacity:0}}
+@media(prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  ::view-transition-group(*){animation-duration:.24s;animation-timing-function:ease}
+  ::view-transition-old(root){animation:nocturne-page-out .2s ease both}
+  ::view-transition-new(root){animation:nocturne-page-in .3s ease both}
+  @keyframes nocturne-page-out{to{opacity:0}}
+  @keyframes nocturne-page-in{from{opacity:0}}
+}
+@media(prefers-reduced-motion:reduce){.search-dialog,.image-dialog,.search-dialog::backdrop,.image-dialog::backdrop{transition:none;transform:none}}
+@media(max-width:760px){.search-dialog{padding:22px 18px;border-radius:10px}.search-dialog .dialog-top h2{font-size:23px}}
+@media(max-width:760px),(pointer:coarse){.search-close kbd,.search-dialog .search-hint{display:none}}

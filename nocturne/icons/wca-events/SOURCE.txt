@@ -1,0 +1,26 @@
+Cubing event icons for the Nocturne about page
+
+Source project: cubing/icons
+Repository: https://github.com/cubing/icons
+Pinned revision: 5f9b4bb2e78acd3fe4322fc0c0ddba54ea3c0636
+Upstream directory: https://github.com/cubing/icons/tree/5f9b4bb2e78acd3fe4322fc0c0ddba54ea3c0636/src/svg/event
+Imported on: 2026-10-25
+
+Files and corresponding WCA event IDs:
+333.svg   — 3x3x3 Cube
+222.svg   — 2x2x2 Cube
+444.svg   — 4x4x4 Cube
+333oh.svg — 3x3x3 One-Handed (hand holding the puzzle)
+clock.svg — Clock
+pyram.svg — Pyraminx
+skewb.svg — Skewb (diamond-shaped center with triangular corners)
+
+License: MIT
+Copyright (c) 2015 Devin Corr-Robinett
+The upstream license is included verbatim in LICENSE.txt.
+
+The SVG artwork is unmodified; only a final newline may differ.
+No font package, runtime dependency, or external asset request is used.
+about.css uses these local SVGs as decorative masks beside the retained
+Chinese event names. CSS URLs resolve relative to about.css, including
+when the site is served under a subpath.

@@ -1,0 +1,7 @@
+/* The site's own handwritten signature, sized for the Nocturne navigation. */
+.site-header .brand.nocturne-brand{display:flex;align-items:center;flex:0 0 auto;width:142px;min-height:44px;padding:0;gap:0;line-height:0;border-radius:3px;--signature-ink:var(--ink);--signature-silver:color-mix(in srgb,var(--ink) 82%,var(--cool));--signature-warm:var(--accent)}
+.site-header .nocturne-signature{display:block;width:100%;aspect-ratio:184/72;background:linear-gradient(110deg,var(--signature-silver) 0%,var(--signature-ink) 45%,var(--signature-warm) 100%);-webkit-mask:var(--brand-signature) center/contain no-repeat;mask:var(--brand-signature) center/contain no-repeat}
+.is-home .site-header .brand.nocturne-brand{--signature-ink:#eee5e1;--signature-silver:#d9d8e9;--signature-warm:#e2ba98}
+.site-header .brand.nocturne-brand:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+@media(max-width:760px){.site-header .brand.nocturne-brand{width:112px;min-height:40px}}
+@media(max-width:360px){.site-header .brand.nocturne-brand{width:104px}}

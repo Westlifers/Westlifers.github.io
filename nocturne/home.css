@@ -1,0 +1,47 @@
+/* The poem and its song share a column, beside life and mathematics. */
+
+.home-works{padding-block:65px 20px}
+.home-works-heading{display:flex;justify-content:space-between;align-items:baseline;gap:25px;margin-bottom:30px}
+.home-works-heading h2{font:32px/1.5 var(--serif);margin:0}
+.home-works-heading p{color:var(--muted);font:12px/1.6 var(--sans);margin:0}
+.home-works-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);grid-template-rows:340px 100px 180px;gap:22px}
+.work{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;border-radius:3px;padding:30px;color:#f1e9e3;background:#231d2b}
+.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s var(--ease-nocturne),filter 1s}
+.work:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none}
+.work-caption{display:flex;justify-content:space-between;align-items:center;gap:20px;font:11px/1.5 var(--sans)}
+.work-caption span:last-child{color:#d2bfcb}
+.work h3{font:31px/1.4 var(--serif);margin:0 0 9px}
+.work p{font:12px/1.9 var(--sans);margin:0;color:#c9bac7}
+.work-poem{grid-column:1;grid-row:1/span 2;padding:36px}
+.work-poem img{filter:saturate(.8) brightness(.85);object-position:50% 42%}
+.work-poem:after{background:linear-gradient(180deg,#12121a45 0%,#17142220 32%,#171320d9 100%)}
+.work-poem .work-verse{font:italic clamp(25px,2.35vw,34px)/1.5 'Palatino Linotype',Georgia,serif;position:absolute;top:27%;left:36px;right:36px;text-shadow:0 2px 25px #08041170;text-wrap:pretty}.work-verse span{display:block}
+.work-poem h3{font:clamp(50px,6vw,78px)/1.15 'Palatino Linotype',Georgia,serif;letter-spacing:-.04em}
+.work-poem .work-arrow{position:absolute;bottom:39px;right:35px;font:30px Georgia;color:#e9bf97}
+.work-cat{grid-column:2;grid-row:1;padding:28px}
+.work-cat img{filter:brightness(.65) saturate(.68);object-position:52% 39%}
+.work-cat:after{background:linear-gradient(90deg,#17121d65,transparent),linear-gradient(0deg,#17121de0,transparent 80%)}
+.work-cat h3{font-size:28px}
+.work-math{grid-column:2;grid-row:2/span 2;background:radial-gradient(ellipse at 90% 10%,#57577744,transparent 75%),#201d2c;border:1px solid #a7a1c72b}
+.work-math:after{background:radial-gradient(ellipse at var(--work-x,70%) var(--work-y,10%),#e2c49a16,transparent 65%);opacity:0;transition:opacity .6s}
+.work-math:hover:after,.work-math:focus-visible:after{opacity:1}
+.work-math-symbol{position:absolute;right:24px;top:35px;font:italic clamp(75px,9vw,125px)/1 'Palatino Linotype',Georgia,serif;color:#b6bddd30;letter-spacing:-.07em;pointer-events:none}
+.work-math h3{font-size:30px;max-width:9em;text-wrap:balance}
+.work-math .work-caption{color:#d0c5df}
+.work-song{grid-column:1;grid-row:3;padding:24px 28px;background:#211b24;border:1px solid #c9a78726}
+.work-song:after{background:linear-gradient(110deg,transparent 48%,#b1896120)}
+.work-song .work-caption{justify-content:flex-start;gap:14px;color:#d7bba3}
+.work-song .work-caption span:last-child{color:#b9a9b6}
+.work-song-copy{position:relative;max-width:calc(100% - 160px)}
+.work-song h3{font:36px/1.1 'Palatino Linotype',Georgia,serif;letter-spacing:-.025em;margin-bottom:8px}
+.work-song p{font-size:12px}
+.work-song-lyric{font:italic 14px/1.5 'Palatino Linotype',Georgia,serif;color:#c9bac7}
+.work-song-disc{position:absolute;right:24px;top:50%;width:142px;height:142px;transform:translateY(-50%);border-radius:50%;background:repeating-radial-gradient(circle,#15111a 0 2px,#5c4e614a 2.5px 3px,#15111a 3.5px 5px);border:1px solid #c1a6be42;box-shadow:0 9px 22px #08060c70,inset 0 0 0 4px #0e0b12;pointer-events:none}
+.work-song-disc:before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from -35deg,transparent,#d9c4de2e 25deg,transparent 60deg 175deg,#bda4c329 205deg,transparent 240deg)}
+.work-song-disc:after{content:'';position:absolute;inset:36%;border-radius:50%;background:radial-gradient(circle,#120e17 0 3px,#d6b59b 3.5px 4.5px,transparent 5px),conic-gradient(from 20deg,#7e5f5c,#ceb198 28%,#80616c 60%,#b18d79 85%,#7e5f5c);border:1px solid #d4b39b70;box-shadow:0 0 0 4px #100c16}
+.work:hover img{transform:scale(1.035);filter:saturate(.8) brightness(.8)}
+
+@media(max-width:1100px){.home-works-grid{grid-template-rows:300px 110px 180px}.work-poem{padding:28px}.work-poem .work-verse{left:28px;right:28px}.work-song{padding:24px}.work-song-disc{width:120px;height:120px;right:20px}.work-song-copy{max-width:calc(100% - 130px)}.work-song h3{font-size:31px}}
+@media(max-width:760px){.home-works{padding-block:40px 0}.home-works-heading{display:block;margin-bottom:24px}.home-works-heading h2{font-size:27px}.home-works-heading p{margin-top:9px;font-size:11px}.home-works-grid{display:flex;flex-direction:column;gap:15px}.work-poem{min-height:540px}.work-poem .work-verse{font-size:clamp(25px,7vw,32px);line-height:1.5}.work-song{min-height:180px}.work-cat{min-height:315px}.work-math{min-height:250px}.work-math-symbol{font-size:110px}.work-math h3{font-size:28px}}
+@media(max-width:360px){.work-song-disc{width:100px;height:100px;right:16px}.work-song-copy{max-width:calc(100% - 108px)}.work-song h3{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.work img{transition:none}.work:hover img{transform:none}}

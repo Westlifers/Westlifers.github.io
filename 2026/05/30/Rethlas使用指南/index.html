@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Rethlas使用指南 · Yougi — Nocturne</title>
+  <meta name="description" content="Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一…">
+  <link rel="canonical" href="http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Yougi — Nocturne">
+  <meta property="og:title" content="Rethlas使用指南">
+  <meta property="og:description" content="Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一…">
+  <meta property="og:url" content="http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+  <meta property="og:image" content="http://hexo.yougi.top/nocturne/images/city.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="application/atom+xml" title="Yougi 的文字" href="/atom.xml">
+  <link rel="icon" href="/nocturne/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/nocturne/theme.css">
+  <link rel="stylesheet" href="/nocturne/experience.css">
+  <link rel="stylesheet" href="/nocturne/brand.css">
+  <link rel="stylesheet" href="/nocturne/footer.css">
+  <script src="/nocturne/appearance.js"></script>
+  
+  
+  
+  
+  <link rel="stylesheet" href="/nocturne/reader.css">
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="nocturne is-inner  ">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header shell">
+    <a class="brand nocturne-brand" href="/" aria-label="Yougi 首页"><span class="nocturne-signature" style="--brand-signature:url('/nocturne/signature.svg')" aria-hidden="true"></span></a>
+    <nav aria-label="主导航"><a href="/" >序章</a><a href="/archives/" >所有文字</a><a href="/atlas/" >星图</a><a href="/about/" >关于</a></nav>
+    <div class="header-tools"><button class="search-trigger" data-search-open aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>搜索</span><kbd>⌘ K</kbd></button><button class="icon-button" data-theme-toggle aria-label="切换到日间阅读">◐</button></div>
+  </header>
+  <main id="main">
+<div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+<div class="reading-page shell" data-reading-page data-title="Rethlas使用指南"><header class="post-header"><a class="back-link" href="/archives/">← 回到文字之中</a><div class="post-header-kind"><span class="section-dot"></span>随笔</div><h1>Rethlas使用指南</h1><div class="post-meta"><time datetime="2026-05-30T13:47:35.000Z">2026 年 5 月 30 日</time><span>杨荻</span><span>约 3 分钟</span></div></header>
+<div class="reading-grid"><aside class="article-sidebar"><div class="reading-actions"><button data-focus aria-pressed="false">专注阅读</button><button data-save aria-pressed="false">收藏本文</button><button data-copy-link>复制链接</button><button data-font-size aria-label="调整正文字号">字号 A+</button></div><div class="reader-chapter" data-reader-chapter hidden><span class="reader-chapter-label">读到这里</span><p data-reader-current>开篇</p><div class="reader-chapter-track" aria-hidden="true"><span data-reader-chapter-progress></span></div><div class="reader-chapter-steps"><button type="button" data-reader-previous disabled>上一节</button><span data-reader-section-percent></span><button type="button" data-reader-next>下一节</button></div></div><details class="article-outline" open><summary>本篇目录</summary><nav aria-label="本文目录"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Windows%E4%B8%8A%E8%BF%90%E8%A1%8C%E4%B8%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">在Windows上运行主程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verifier%E9%97%AE%E9%A2%98"><span class="toc-text">Verifier问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E9%97%AE%E9%A2%98"><span class="toc-text">打包问题</span></a></li></ol></nav></details><div class="reading-position"><span data-reading-percent>0%</span><span>已读</span></div></aside><div class="article-column"><button class="resume-reading" data-resume hidden>继续上次的阅读位置</button><article class="article"><div class="content post-content" data-article-content><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p id="paragraph-612b15b6f8e8" data-reader-paragraph>Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，<a target="_blank" rel="noopener" href="https://github.com/frenzymath/Rethlas">Rethlas是开源的</a>，只需要对Codex的访问权限即可使用，正好我手里有ChatGPT plus订阅，这两天便花了些时间折腾了一下。</p>
+<span id="more"></span>
+
+<p id="paragraph-1a381539b299" data-reader-paragraph>虽然Rethlas有一个Readme文档，当因为我不是经常写代码，使用没有ui界面的开源工具还是免不了踩不少坑，才勉强跑起来，跑了一个我最近在想的很不成熟的例子，最后一步验证的时候Verifier还是报了错，但整体流程基本跑通了。这里记录一下在我的PC上运行Rethlas时遇到的问题和解决方法。</p>
+<p id="paragraph-5119c6aea4d3" data-reader-paragraph>首先说明，所有的修改都是基于官方Readme中的流程的，应当首先通读官方的文档。</p>
+<h2 id="在Windows上运行主程序"><a href="#在Windows上运行主程序" class="headerlink" title="在Windows上运行主程序"></a>在Windows上运行主程序</h2><p id="paragraph-e025df9a7be6" data-reader-paragraph>首先要注意的点是如果你像我一样使用的是windows电脑，正常是无法直接运行.sh文件的，而Rethlas的主入口是一个.sh文件。</p>
+<p id="paragraph-d894f11728f2" data-reader-paragraph>在官方文档中，主入口启动的命令是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> agents/generation</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">PROBLEM_FILE=data/my_problem.md ./tests/run_example.sh</span><br></pre></td></tr></table></figure>
+<p id="paragraph-2453b7d959f0" data-reader-paragraph>第一行不用解释，第二行应该换成Windows中python进入虚拟环境的方式，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\.venv\Scripts\activate     </span><br></pre></td></tr></table></figure>
+<p id="paragraph-10305c2311b0" data-reader-paragraph>第三行则应拆成两行，首先设置 PROBLEM_FILE 常数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env</span>:PROBLEM_FILE=<span class="string">&quot;data/example/example1.md&quot;</span></span><br></pre></td></tr></table></figure>
+<p id="paragraph-99805dd4b246" data-reader-paragraph>然后启动主程序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash tests/run_example.sh</span><br></pre></td></tr></table></figure>
+<p id="paragraph-5333446728ef" data-reader-paragraph>这里你电脑上很有可能没有bash命令，如果你电脑上安装了Git（如果没有，推荐安装一个），则可以使用Git自带的bash，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\code\Git\bin\bash.exe tests/run_example.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="Verifier问题"><a href="#Verifier问题" class="headerlink" title="Verifier问题"></a>Verifier问题</h2><p id="paragraph-346905052964" data-reader-paragraph>我使用Rethlas时问题多集中在Verifier上，第一次运行示例时Verifier报了很多错误。</p>
+<p id="paragraph-44a204460497" data-reader-paragraph>在<code>agents/verification/api/server.py</code>文件中，第74行<code>build_prompt</code>函数中，应将<code>f&quot;Proof:\n&#123;proof&#125;\n\n&quot;</code>替换为<code>f&quot;Proof:&#123;proof&#125;\n\n&quot;</code>，即删除第一个换行符，这是因为至少对于我，使用codex时因为网络问题总是会重连5次，因为不知明原因，每次运行验证时，第一个换行符处会直接中断，然后显示重连尝试。如果在Proof内容前换行，实际证明内容会直接消失，那么待连接成功后Verifier会得到一个空证明，总是返回False。</p>
+<p id="paragraph-31b126aa2d12" data-reader-paragraph>此外，在运行Verification服务前，应该用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where.exe codex</span><br></pre></td></tr></table></figure>
+<p id="paragraph-ebecd0a457cf" data-reader-paragraph>查找到codex路径，然后先行设置（以我的为例）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env</span>:CODEX_BIN=<span class="string">&quot;C:\Users\Westlifer\AppData\Roaming\npm\codex.cmd&quot;</span></span><br></pre></td></tr></table></figure>
+<p id="paragraph-ea26430ce9eb" data-reader-paragraph>再启动服务。</p>
+<h2 id="打包问题"><a href="#打包问题" class="headerlink" title="打包问题"></a>打包问题</h2><p id="paragraph-2a1a241fddbb" data-reader-paragraph>证明结束后，主程序会提示你</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To view results in the browser, run:</span><br><span class="line">  ./site/serve.sh</span><br><span class="line">Then open http://localhost:3264</span><br></pre></td></tr></table></figure>
+<p id="paragraph-035598cef337" data-reader-paragraph>但我实际运行时总是直接中断。原因查明为<code>agents/generation/site/serve.sh</code>文件第102行<code>python3 &quot;$TRANSFORM&quot; &quot;$source_md&quot; &quot;$tmp&quot;</code>在我电脑上应改为<code>python &quot;$TRANSFORM&quot; &quot;$source_md&quot; &quot;$tmp&quot;</code>，我的电脑上python启动命令只注册了<code>python</code>这一个，而没有<code>python3</code>。</p>
+<p id="paragraph-430abac737dd" data-reader-paragraph>我注意到两个agent的<code>config.toml</code>文件里也涉及使用python启动mcp服务器，但我不确定这里是否需要把python3改python，我是改了的。</p>
+</div></article><div class="post-end"><div class="post-tags"><a href="/tags/Rethlas/"># Rethlas</a></div></div>
+<nav class="post-navigation" aria-label="相邻文章"><a href="/2026/08/08/Route-Six/"><span>较新的文字</span><strong>Route Six</strong></a><a href="/2026/05/08/CoEnd%20Calculus/"><span>再往过去走一点</span><strong>Co/End Calculus</strong></a></nav><section class="comments-section" aria-labelledby="comments-heading" data-comments data-preview="false" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category="Announcements" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-mapping="pathname" data-lang="zh-CN"><h2 id="comments-heading">留一点回声</h2><button type="button" data-comments-load hidden>展开评论</button><noscript><p>启用 JavaScript 后可加载评论。</p></noscript><p data-comments-status role="status"></p><div class="giscus"></div></section>
+</div></div></div>
+<div class="reader-dock" data-reader-dock hidden><button type="button" class="reader-dock-open" data-reader-outline-open aria-haspopup="dialog"><span>目录</span><strong data-reader-current>开篇</strong><span class="reader-dock-mark" aria-hidden="true">≡</span></button><button type="button" class="reader-dock-next" data-reader-next aria-label="下一节">↓</button><div class="reader-dock-track" aria-hidden="true"><span data-reader-chapter-progress></span></div></div>
+
+</main>
+  
+<footer class="site-footer nocturne-footer shell">
+  <div class="footer-main">
+    <a class="footer-wordmark" href="/">Nocturne<span>夜曲</span></a>
+    
+  </div>
+  <div class="footer-meta"><span>© 2026 杨荻</span><nav aria-label="页脚链接"><a href="/archives/?saved=1">收藏</a><a href="/atom.xml" aria-label="通过 RSS 订阅新文章">RSS</a></nav></div>
+</footer>
+
+  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title" data-index="/nocturne/search.json"><div class="dialog-top"><h2 id="search-title">在文字之间寻找</h2><button type="button" class="search-close" data-dialog-close aria-label="关闭搜索"><span>关闭</span><kbd aria-hidden="true">Esc</kbd></button></div><label class="search-field"><span class="sr-only">搜索标题、正文或标签</span><input type="search" data-search-input placeholder="一个词，一段记忆，一个定理…" autocomplete="off"></label><p class="search-status" data-search-status role="status">输入关键词，搜索全部文章。</p><div data-search-results></div><div class="search-hint">↑ ↓ 选择 <span>Enter 打开</span><span>Esc 关闭</span></div></dialog>
+  <dialog class="image-dialog" data-image-dialog aria-label="图片预览"><button data-dialog-close aria-label="关闭图片">关闭 ×</button><img alt=""><p></p></dialog>
+  <div class="toast" role="status" data-toast></div>
+  <script defer src="/nocturne/app.js"></script>
+  
+  
+  
+  
+  <script defer src="/nocturne/reading.js"></script><script defer src="/nocturne/reader-enhancements.js"></script><script defer src="/nocturne/comments.js"></script>
+</body>
+</html>

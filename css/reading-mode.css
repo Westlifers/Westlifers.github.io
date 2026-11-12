@@ -1,0 +1,99 @@
+:root { --blog-accent: #405563; --blog-focus: #657f90; --blog-border: #d2dce2; --blog-active-bg: #f3f6f8; --blog-hover-bg: #f7f9fa; }
+/* Site-owned reading layout. All article typography changes are opt-in. */
+.reading-tools button, .reading-directory-header button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: inherit; line-height: 1.4; background: #fff; color: #505866; border: 1px solid #e1e5eb; border-radius: 7px; padding: .5rem .85rem; cursor: pointer; min-height: 44px; transition: background-color .12s, border-color .12s, color .12s; }
+.reading-tools button[aria-pressed="true"] { color: var(--blog-accent); border-color: var(--blog-border); background: var(--blog-active-bg); }
+.reading-tools button:focus-visible, #reading-directory a:focus-visible, .reading-directory-header button:focus-visible { outline: 2px solid var(--blog-focus); outline-offset: 2px; }
+#reading-directory[hidden] { display: none; }
+#reading-directory { position: fixed; inset: 0; z-index: 10010; background: rgba(20,28,40,.3); display: flex; align-items: flex-end; justify-content: center; }
+.reading-directory-sheet { background: #fff; width: min(100%, 600px); max-height: 80vh; max-height: 80dvh; display: flex; flex-direction: column; overflow: hidden; padding: 1.25rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom)); border-radius: 14px 14px 0 0; box-shadow: 0 12px 40px rgba(20,28,40,.16); }
+.reading-directory-header { display: flex; justify-content: space-between; align-items: center; flex: 0 0 auto; margin-bottom: .75rem; padding-bottom: .5rem; border-bottom: 1px solid #edf0f4; }
+.reading-outline, .reading-outline li { list-style: none; margin: 0; padding: 0; }
+.reading-outline-link { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); column-gap: .6em; align-items: start; padding: .75rem .5rem .75rem calc(.5rem + var(--outline-depth, 0) * .9rem); min-height: 44px; color: #4a4a4a; font-size: 15px; line-height: 1.6; border-radius: 4px; }
+.reading-outline > li + li { border-top: 1px solid #f0f0f0; }
+.reading-outline-number { color: #7a7a7a; font-variant-numeric: tabular-nums; }
+.reading-outline-title { min-width: 0; overflow-wrap: anywhere; }
+.reading-outline-link:focus-visible { background: var(--blog-hover-bg); color: var(--blog-focus); }
+.reading-outline .reading-outline-link { font-weight: 500; }
+.reading-outline .reading-outline .reading-outline-link { font-weight: 400; color: #666; }
+.reading-directory-open { overflow: hidden; }
+.reading-article .article .content [id] { scroll-margin-top: 4.5rem; }
+.reading-mode .article > .content { font-size: 17px; line-height: 1.95; overflow-wrap: break-word; }
+.reading-mode .article > .content p { margin-bottom: 1.25em; }
+.reading-mode .article > .content h2 { font-size: 1.5em; line-height: 1.4; font-weight: 600; margin-top: 2.25em; margin-bottom: .9em; }
+.reading-mode .article > .content h3 { font-size: 1.2em; line-height: 1.5; font-weight: 600; margin-top: 1.9em; margin-bottom: .8em; }
+.reading-mode .article > .content h4 { font-size: 1.05em; font-weight: 600; margin-top: 1.6em; }
+.reading-mode .article > .content li { margin-top: .35em; }
+.reading-mode .article > .content blockquote { margin: 1.5em 0; padding: 1em 1.2em; }
+.reading-mode .article > .content mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .4em 0; margin: 1.65em 0 !important; }
+.reading-mode .article > .content .tikzjax { margin: 1.65em 0; max-width: 100%; overflow-x: auto; }
+.reading-mode .article > .content .table-overflow, .reading-mode .article > .content pre { max-width: 100%; overflow-x: auto; }
+@media screen and (min-width: 769px) {
+  body.reading-mode > .section { padding: 1.5rem 0 4rem; }
+  body.reading-mode > .section > .container { max-width: 1340px; width: calc(100% - 64px); }
+  .reading-mode .columns { display: block; margin: 0; }
+  .reading-mode .column-main { width: 100% !important; max-width: none; padding: 0; }
+  .reading-mode .columns > .column:not(.column-main) { display: none !important; }
+  .reading-mode .article { padding: 3rem clamp(32px, 4.5vw, 72px); }
+  .reading-mode .article > .content { font-size: 18px; line-height: 1.9; }
+  .reading-mode > .navbar-main { display: none; }
+  .reading-mode > footer { display: none; }
+  #reading-directory { align-items: flex-start; justify-content: flex-end; padding: 24px 32px; }
+  .reading-directory-sheet { width: 380px; max-height: calc(100vh - 48px); border-radius: 10px; }
+}
+@media screen and (max-width: 768px) {
+    .reading-article { padding-bottom: 80px; }
+  .reading-mode .columns > .column:not(.column-main) { display: none !important; }
+  .reading-mode > .navbar-main { display: none; }
+  .reading-mode .article { padding: 4.75rem 1.35rem 1.75rem; }
+  .reading-mode .article > .content { font-size: 16px; line-height: 1.9; }
+  .reading-mode .article > .content h2 { font-size: 1.4em; margin-top: 1.8em; }
+  .reading-mode .article > .content h3 { font-size: 1.15em; }
+}
+
+/* Exact chapter and its ancestors, shared by desktop and mobile outlines. */
+#reading-directory .reading-outline-link[aria-current="location"] { background: var(--blog-active-bg); color: var(--blog-accent); font-weight: 600; box-shadow: inset 3px 0 var(--blog-focus); }
+#reading-directory .reading-outline-link[aria-current="location"] .reading-outline-number { color: var(--blog-accent); }
+#reading-directory .reading-current-parent { color: var(--blog-accent); font-weight: 600; }
+.reading-directory-sheet > nav { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+
+/* Small, self-contained controls; no icon CDN or changes to article typography. */
+.reading-icon { width: 18px; height: 18px; flex: 0 0 auto; }
+.reading-directory-header button { width: 44px; height: 44px; min-width: 44px; padding: 0; border-color: transparent; background: transparent; color: #667080; }
+.reading-directory-header button .reading-icon { width: 20px; height: 20px; }
+@media (hover: hover) {
+  .reading-outline-link:hover { background: var(--blog-hover-bg); color: var(--blog-focus); }
+  .reading-tools button:hover, .reading-directory-header button:hover { background: var(--blog-hover-bg); border-color: var(--blog-border); color: var(--blog-accent); }
+}
+.reading-tools button:active, .reading-directory-header button:active { background: var(--blog-active-bg); border-color: var(--blog-border); }
+.reading-tools button[aria-expanded="true"] { background: var(--blog-active-bg); color: var(--blog-accent); }
+@media (prefers-reduced-motion: reduce) {
+  .reading-tools button, .reading-directory-header button { transition: none; }
+}
+
+/* A compact launcher, with a separate popover that never enlarges its hitbox. */
+#reading-tool-safe-area { position: fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); visibility: hidden; pointer-events: none; }
+.reading-tools { position: fixed; width: 48px; height: 48px; z-index: 110; margin: 0; padding: 0; }
+/* Icarus' sticky cards use 99/100. Keep controls above them, but out of search. */
+body:has(.searchbox.show) .reading-tools { visibility: hidden; pointer-events: none; }
+.reading-tools .reading-launcher { width: 48px; height: 48px; padding: 0; border-radius: 50%; border-color: #e1e5eb; background: #fff; box-shadow: 0 3px 14px rgba(20,28,40,.1); cursor: grab; touch-action: none; user-select: none; }
+.reading-tools[data-reading-active="true"] .reading-launcher { color: var(--blog-accent); background: var(--blog-active-bg); border-color: var(--blog-border); }
+.reading-tools .reading-launcher .reading-icon { width: 21px; height: 21px; transition: transform .18s cubic-bezier(.2,.7,.2,1); }
+.reading-tools .reading-launcher[aria-expanded="true"] .reading-icon { transform: rotate(-8deg); }
+.reading-tools.is-dragging .reading-launcher { cursor: grabbing; box-shadow: 0 5px 18px rgba(20,28,40,.16); }
+.reading-tool-actions[hidden] { display: none; }
+.reading-tool-actions { position: absolute; bottom: calc(100% + 8px); display: flex; flex-direction: column; gap: 4px; padding: 6px; overflow-y: auto; overscroll-behavior: contain; background: #fff; border: 1px solid #e1e5eb; border-radius: 10px; box-shadow: 0 4px 20px rgba(20,28,40,.12); }
+.reading-tools[data-direction="down"] .reading-tool-actions { bottom: auto; top: calc(100% + 8px); }
+.reading-tool-actions button { flex: 0 0 auto; width: 100%; justify-content: flex-start; border-color: transparent; }
+.reading-tool-actions [data-reading-reset] { order: 3; color: #667080; }
+.reading-tool-hint { order: 4; margin: .15rem .5rem .3rem; color: #7b8390; font-size: 12px; line-height: 1.5; }
+.reading-tool-status { position: absolute; bottom: calc(100% + 8px); padding: .6rem .75rem; border: 1px solid var(--blog-border); border-radius: 10px; background: #fff; color: var(--blog-accent); box-shadow: 0 4px 20px rgba(20,28,40,.1); font-size: 13px; line-height: 1.5; pointer-events: none; }
+.reading-tool-status:empty { display: none; }
+.reading-tools[data-direction="down"] .reading-tool-status { bottom: auto; top: calc(100% + 8px); }
+@media (prefers-reduced-motion: reduce) {
+  .reading-tools .reading-launcher .reading-icon { transition: none; transform: none; }
+}
+.reading-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* The mathematical wrapper owns local scrolling in both article layouts. */
+.reading-mode .article > .content .math-scroll mjx-container[display="true"] { max-width: none; overflow: visible; }
+.reading-mode .article > .content .math-scroll .tikzjax { max-width: none; overflow: visible; }

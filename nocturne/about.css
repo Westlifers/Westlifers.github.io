@@ -1,0 +1,165 @@
+/* The authored biography remains intact. Text leads; photographs sit beside
+   it like small images in a book. This scope wins over authored inline CSS. */
+.about-experience{position:relative;isolation:isolate;overflow:clip;padding:40px 0 105px;background:radial-gradient(ellipse 750px 600px at 83% 11%,#6b465c10,transparent),radial-gradient(ellipse 800px 800px at 3% 58%,#565d8c10,transparent)}
+.about-experience .about-shell{position:relative}
+.about-preface{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;letter-spacing:.08em}
+.about-preface span:first-child:before{content:'';display:inline-block;width:5px;height:5px;vertical-align:middle;margin-right:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px #e9bf9770}
+.about-geometry{position:absolute;top:12px;right:-3%;width:min(83vw,1150px);pointer-events:none;z-index:-1;color:var(--accent)}
+.about-geometry svg{width:100%;overflow:visible}
+.about-diagram-frame{stroke:url(#about-morphism);stroke-width:.6;opacity:.17}
+.about-diagram-arrows{stroke:url(#about-morphism);stroke-width:1;opacity:.28}
+.about-diagram-flow path{stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:.12 2;stroke-dashoffset:.15;opacity:0;animation:about-morphism-flow 7.6s linear infinite;animation-play-state:paused}
+.about-diagram-flow path:nth-child(2),.about-diagram-flow path:nth-child(4){animation-delay:3.8s}
+.is-about-moving .about-diagram-flow path{animation-play-state:running}
+@keyframes about-morphism-flow{0%{stroke-dashoffset:.15;opacity:0}8%{opacity:.55}42%{opacity:.55}50%,100%{stroke-dashoffset:-1.1;opacity:0}}
+.about-diagram-points{fill:var(--accent);opacity:.65}
+.about-diagram-labels{fill:var(--cool);font:italic 24px Georgia,serif;opacity:.3}
+.about-experience .about-prose{font-family:var(--serif);font-size:18px;line-height:1.95}
+.about-experience .about-page{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,8vw,130px);max-width:none;margin:0;padding:0;line-height:inherit}
+.about-experience .about-hero{position:relative;grid-column:1/-1;display:grid;grid-template-columns:max-content 104px minmax(0,1fr);gap:0 32px;align-items:center;min-height:0;margin:16px 0 55px;padding:55px 0 45px;text-align:left}
+.about-experience .about-intro{display:contents}
+.about-experience .about-intro h1{grid-column:1;grid-row:1;font:400 clamp(80px,8.8vw,128px)/1.15 var(--serif);letter-spacing:.04em;margin:0 0 0 -.06em;text-shadow:none}
+.about-experience .about-subtitle{grid-column:1/-1;grid-row:2;font:italic 17px/1.7 Georgia,serif;color:var(--cool);max-width:520px;margin:26px 0 0;letter-spacing:0}
+.about-experience .about-tags{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;max-width:430px;margin:25px 0 32px;padding-top:22px;border-top:1px solid var(--rule)}
+.about-experience .about-tags span{padding:0 0 0 15px;position:relative;font:12px/1.65 var(--sans);background:none;border:0;border-radius:0;color:var(--muted)}
+.about-experience .about-tags span:before{content:'';position:absolute;width:5px;height:5px;left:0;top:7px;border:1px solid var(--accent);transform:rotate(45deg)}
+.about-experience .about-lead{grid-column:1/-1;grid-row:4;font-size:16px;line-height:2.1;color:var(--ink);max-width:620px;margin:0}
+.about-experience .about-lead em{font-style:italic;color:var(--accent)}
+.about-experience .about-avatar-wrap{grid-column:2;grid-row:1;position:relative;width:104px;justify-self:start;align-self:center;margin:0;transform:none;padding:3px;border:1px solid color-mix(in srgb,var(--cool) 20%,transparent);border-radius:5px;background:color-mix(in srgb,var(--bg) 94%,var(--cool));box-shadow:none}
+.about-experience .about-avatar-wrap:before{content:none}
+.about-experience .about-avatar-wrap:after{content:'';position:absolute;inset:4px;border-radius:2px;background:linear-gradient(135deg,#c8b5f30a,transparent 42%,#15121b40);box-shadow:inset 0 0 12px #15121b38;pointer-events:none}
+.about-experience .about-avatar{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;margin:0;border-radius:2px;box-shadow:none;filter:saturate(.42) brightness(.92) contrast(.96);transition:none}
+.about-experience .about-avatar:hover{transform:none;box-shadow:none;filter:saturate(.42) brightness(.92) contrast(.96)}
+.about-experience .about-section{position:relative;min-width:0;margin:0;padding:45px 0 65px;border-top:1px solid var(--rule)}
+.about-experience .about-section-title{display:flex;gap:17px;align-items:baseline;margin:0 0 28px;border:0;color:var(--ink)}
+.about-experience .about-section-title h2{font:400 clamp(31px,3.7vw,52px)/1.25 var(--serif);margin:0;padding:0;letter-spacing:-.035em}
+.about-experience .about-section-mark{font:italic 13px/1.5 Georgia,serif;color:var(--accent);flex:none}
+.about-experience .about-section p{margin:.8em 0;font-size:17px;line-height:2;max-width:680px}
+.about-experience .about-section strong{font-weight:400;color:var(--accent)}
+.about-experience .about-page a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent);overflow-wrap:anywhere}
+.about-experience .about-page a:hover{border-color:var(--accent)}
+.about-experience .about-page>.about-section:nth-of-type(2){grid-column:1/-1;display:grid;grid-template-columns:.75fr 1.25fr;column-gap:65px;padding:60px 0 75px;margin-bottom:55px;border-bottom:1px solid var(--rule)}
+.about-experience .about-page>.about-section:nth-of-type(2) .about-section-title{grid-column:1;grid-row:1/3;align-self:start;margin-top:9px}
+.about-experience .about-page>.about-section:nth-of-type(2)>p{grid-column:2;max-width:650px}
+.about-experience .about-page>.about-cubing{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:65px;align-items:start;border-top:0;border-bottom:1px solid var(--rule);padding:20px 0 65px;margin-bottom:65px}
+.about-experience .about-cubing-copy,.about-experience .about-cubing-records{min-width:0}
+.about-experience .about-cubing-records h3{margin:0;font:400 25px/1.5 var(--serif);letter-spacing:.01em}
+.about-experience .about-cubing-records .about-cubing-meta{margin:8px 0 20px;font:12px/1.8 var(--sans);color:var(--muted)}
+.about-experience .about-cubing-table{width:100%;min-width:0;max-width:100%;table-layout:fixed;border-collapse:collapse;margin:0;font:14px/1.8 var(--sans);font-variant-numeric:tabular-nums}
+.about-experience .about-cubing-table caption{text-align:left;margin:0 0 12px;font:11px/1.7 var(--sans);color:var(--muted)}
+.about-experience .about-cubing-table th,.about-experience .about-cubing-table td{padding:11px 0;border:0;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+.about-experience .about-cubing-table th{font-size:11px;font-weight:400;color:var(--muted);border-top:1px solid var(--rule)}
+.about-experience .about-cubing-table th:first-child,.about-experience .about-cubing-table td:first-child{width:44%;text-align:left;color:var(--muted)}
+.about-experience .about-cubing-table td:not(:first-child){color:var(--ink)}
+/* cubing/icons, MIT; source revision and license live beside the local SVGs. */
+.about-cubing-table tr[data-wca-event="333"]{--wca-event-icon:url("icons/wca-events/333.svg")}
+.about-cubing-table tr[data-wca-event="222"]{--wca-event-icon:url("icons/wca-events/222.svg")}
+.about-cubing-table tr[data-wca-event="444"]{--wca-event-icon:url("icons/wca-events/444.svg")}
+.about-cubing-table tr[data-wca-event="333oh"]{--wca-event-icon:url("icons/wca-events/333oh.svg")}
+.about-cubing-table tr[data-wca-event="clock"]{--wca-event-icon:url("icons/wca-events/clock.svg")}
+.about-cubing-table tr[data-wca-event="pyram"]{--wca-event-icon:url("icons/wca-events/pyram.svg")}
+.about-cubing-table tr[data-wca-event="skewb"]{--wca-event-icon:url("icons/wca-events/skewb.svg")}
+@supports (mask-image:url("")) or (-webkit-mask-image:url("")){
+  .about-experience .about-cubing-table tr[data-wca-event]>th{position:relative;padding-inline-start:34px;font-size:inherit;border-top:0}
+  .about-experience .about-cubing-table tr[data-wca-event]>th:before{content:'';position:absolute;left:0;top:50%;width:23px;height:23px;transform:translateY(-50%);background:color-mix(in srgb,var(--accent) 65%,var(--cool));-webkit-mask:var(--wca-event-icon) center/contain no-repeat;mask:var(--wca-event-icon) center/contain no-repeat;pointer-events:none}
+}
+.about-experience .about-cubing-records .about-cubing-source{margin:16px 0 0;font:11px/1.9 var(--sans);color:var(--muted);overflow-wrap:anywhere}
+.about-experience .about-page>.about-elsewhere{grid-column:1;align-self:start;border-top:0;padding:0 0 60px}
+.about-experience .about-game-list{display:flex;gap:0;flex-wrap:wrap;margin-top:28px;border-top:1px solid var(--rule);padding-top:6px}
+.about-experience .about-game-list span{font:italic 17px/1.7 Georgia,serif;padding:12px 22px 6px 0;color:var(--cool);background:none;border:0;border-radius:0}
+.about-experience .about-photo{grid-column:2;position:relative;display:grid;grid-template-columns:minmax(0,320px) minmax(0,160px);gap:24px;align-items:end;align-self:start;justify-self:start;width:min(100%,504px);max-width:none;margin:0 0 64px;padding:0;text-align:left}
+.about-experience .about-photo:before,.about-experience .about-photo:after{content:none}
+.about-experience .about-photo img{width:100%;height:auto;object-fit:contain;border-radius:2px;margin:0;filter:saturate(.7);box-shadow:none}
+.about-experience .about-photo figcaption{margin:0 0 4px;font:italic 12px/1.8 Georgia,serif;color:var(--muted)}
+.about-experience .about-assistant-divider{display:none}
+.about-experience #noema-assistant{grid-column:1/-1;display:grid;grid-template-columns:.75fr 1.25fr;gap:0 65px;padding:55px 0 45px}
+.about-experience #noema-assistant .about-section-title{grid-column:1;grid-row:1/3;display:block}
+.about-experience #noema-assistant .about-section-mark{display:block;margin-bottom:16px}
+.about-experience #noema-assistant .about-section-title h2{font-size:clamp(27px,3vw,41px);letter-spacing:-.025em}
+.about-experience .about-assistant-profile{grid-column:2;grid-template-columns:100px minmax(0,1fr);gap:30px;align-items:start}
+.about-experience .about-assistant-portrait{width:100px;height:auto;margin:12px 0;filter:drop-shadow(0 10px 30px #b6bddd20);cursor:default}
+.about-experience .about-assistant-copy p{margin:0 0 18px;font-size:15px}
+.about-experience #noema-assistant .about-assistant-credit{grid-column:2;margin-top:14px;font:11px/1.9 var(--sans);color:var(--muted);max-width:650px}
+[data-theme=light] .about-diagram-labels{opacity:.45}
+[data-theme=light] .about-diagram-arrows{opacity:.42}
+[data-theme=light] .about-experience .about-avatar-wrap{border-color:color-mix(in srgb,var(--muted) 25%,transparent)}
+[data-theme=light] .about-experience .about-avatar,[data-theme=light] .about-experience .about-avatar:hover{filter:saturate(.5) contrast(.96)}
+[data-theme=light] .about-experience .about-avatar-wrap:after{background:linear-gradient(135deg,#b6a7c712,transparent 50%,#e8e3ef28);box-shadow:inset 0 0 12px #eeeaf124}
+@media(max-width:1100px){
+  .about-experience .about-hero{grid-template-columns:max-content 96px minmax(0,1fr);padding-top:40px;margin-bottom:45px}
+  .about-experience .about-avatar-wrap{width:96px}
+  .about-experience .about-subtitle{font-size:15px}
+  .about-experience .about-tags{gap:9px 12px}
+  .about-experience .about-tags span{font-size:11px}
+  .about-experience .about-lead{font-size:15px}
+  .about-experience .about-page>.about-section:nth-of-type(2),.about-experience #noema-assistant{column-gap:40px;grid-template-columns:.8fr 1.2fr}
+  .about-experience .about-page>.about-cubing{gap:40px}
+  .about-experience .about-assistant-profile{grid-template-columns:76px minmax(0,1fr);gap:20px}
+  .about-experience .about-section p{font-size:16px}
+}
+@media(max-width:760px){
+  .about-experience{padding-top:26px;padding-bottom:65px}
+  .about-preface{font-size:10px;gap:12px;letter-spacing:0}
+  .about-preface span:last-child{font-size:9px}
+  .about-geometry{top:140px;width:850px;max-width:none;right:-395px;opacity:.7}
+  .about-experience .about-page{display:block}
+  .about-experience .about-hero{grid-template-columns:max-content clamp(84px,17vw,104px) minmax(0,1fr);min-height:0;gap:0 24px;align-items:center;padding:38px 0 45px;margin:0;text-align:left}
+  .about-experience .about-intro h1{grid-column:1;grid-row:1;font-size:clamp(64px,15vw,100px);margin:0 0 0 -.06em}
+  .about-experience .about-subtitle{grid-column:1/-1;grid-row:2;font-size:15px;max-width:480px;margin:25px 0 0}
+  .about-experience .about-tags{grid-column:1/-1;grid-row:3;justify-content:start;max-width:440px;gap:10px 24px;margin:24px 0}
+  .about-experience .about-tags span{font-size:11px}
+  .about-experience .about-lead{grid-column:1/-1;grid-row:4;text-align:left;font-size:16px;max-width:500px}
+  .about-experience .about-avatar-wrap{width:100%}
+  .about-experience .about-avatar{margin:0;width:100%;height:auto}
+  .about-experience .about-page>.about-section:nth-of-type(2){display:block;margin:0 0 45px;padding:35px 0 40px}
+  .about-experience .about-page>.about-section:nth-of-type(2) .about-section-title{margin:0 0 25px}
+  .about-experience .about-section-title{gap:14px;margin-bottom:22px}
+  .about-experience .about-section-title h2{font-size:38px}
+  .about-experience .about-section p{font-size:16px;line-height:1.95}
+  .about-experience .about-page>.about-cubing{display:block;padding:0 0 40px;margin-bottom:40px}
+  .about-experience .about-cubing-records{margin-top:32px}
+  .about-experience .about-cubing-records h3{font-size:23px}
+  .about-experience .about-cubing-records .about-cubing-meta{font-size:11px;margin-bottom:18px}
+  .about-experience .about-cubing-table{min-width:0;font-size:14px}
+  .about-experience .about-cubing-table th,.about-experience .about-cubing-table td{padding-block:10px}
+  .about-experience .about-cubing-records .about-cubing-source{font-size:10px}
+  .about-experience .about-page>.about-elsewhere{padding:0 0 25px}
+  .about-experience .about-game-list{margin-top:22px}
+  .about-experience .about-game-list span{font-size:17px;padding-right:21px}
+  .about-experience .about-photo{display:block;width:min(72%,220px);padding:0;margin:25px 0 48px auto}
+  .about-experience .about-photo img{height:auto}
+  .about-experience .about-photo figcaption{font-size:11px;margin-top:12px}
+  .about-experience #noema-assistant{display:block;padding:35px 0 30px}
+  .about-experience #noema-assistant .about-section-title{display:flex;margin:0 0 25px}
+  .about-experience #noema-assistant .about-section-mark{margin:0}
+  .about-experience #noema-assistant .about-section-title h2{font-size:30px}
+  .about-experience .about-assistant-profile{grid-template-columns:76px minmax(0,1fr);gap:20px}
+  .about-experience .about-assistant-copy p{font-size:14px;margin:0 0 15px}
+  .about-experience .about-assistant-portrait{width:76px;margin:12px 0}
+  .about-experience #noema-assistant .about-assistant-credit{font-size:10px;margin-top:12px}
+}
+@media(max-width:360px){
+  .about-preface span:last-child{display:none}
+  .about-experience .about-tags{gap:10px 12px}
+  .about-experience .about-tags span{font-size:10px;padding-left:12px}
+  .about-experience .about-section-title h2{font-size:33px}
+  .about-experience .about-assistant-profile{grid-template-columns:1fr}
+  .about-experience .about-assistant-portrait{width:85px;justify-self:start}
+}
+@media(prefers-reduced-motion:reduce){.about-diagram-flow{display:none}}
+@media print{
+  .about-experience{padding:0;background:none;overflow:visible}
+  .about-geometry,.about-preface{display:none}
+  .about-experience .about-hero{min-height:0;margin:0 0 30px;padding:0;gap:30px}
+  .about-experience .about-intro h1{font-size:70px}
+  .about-experience .about-avatar-wrap{max-width:140px;margin-top:0}
+  .about-experience .about-avatar-wrap:before,.about-experience .about-avatar-wrap:after,.about-experience .about-photo:before,.about-experience .about-photo:after{display:none}
+  .about-experience .about-page{display:block}
+  .about-experience .about-page>.about-section:nth-of-type(2),.about-experience #noema-assistant{display:block;padding:25px 0;margin:0}
+  .about-experience .about-page>.about-cubing{display:block;padding:20px 0;margin-bottom:20px}
+  .about-experience .about-cubing-records{margin-top:20px;break-inside:avoid}
+  .about-experience .about-cubing-table{font-size:10pt}
+  .about-experience .about-page>.about-elsewhere{padding:20px 0}
+  .about-experience .about-photo{display:block;max-width:220px;padding:0;margin:25px auto}
+  .about-experience .about-photo img{height:auto}
+}

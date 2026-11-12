@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <title>Yougi 的文字</title>
+  <subtitle>研究抽象的结构，也记录具体的生活。在数学、城市与诗之间，寻找世界的另一种读法。</subtitle>
+  <id>http://hexo.yougi.top/</id>
+  <link href="http://hexo.yougi.top/"/>
+  <link href="http://hexo.yougi.top/atom.xml" rel="self" type="application/atom+xml"/>
+  <updated>2026-11-12T08:24:14.096Z</updated>
+  <author><name>杨荻</name></author>
+  <generator>Hexo / Nocturne</generator>
+  <entry>
+    <title>Route Six，再坐一站</title>
+    <id>http://hexo.yougi.top/2026/11/01/route-six-suno/</id>
+    <link href="http://hexo.yougi.top/2026/11/01/route-six-suno/"/>
+    <published>2026-11-01T04:10:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">六路车仍向前开。折起的纸页上，还留着那个 “why?”。 最近尝试了一下 Suno 这个ai，发现创作出来的音乐还是蛮惊艳的，虽然ai味很重，但对我这种完全不懂音乐创作的人来说却是很好的表达途径。我重新修改了歌词使其更适合流行音乐，然后借助 Suno 把新的歌曲变成了人声演唱版本。歌词和生成时使用的 Style 提示词，一并留在下面。</summary>
+    <category term="Noema"/><category term="AI音乐"/>
+  </entry>
+  <entry>
+    <title>Sheldon，介词怎么又跑到句末了？</title>
+    <id>http://hexo.yougi.top/sheldon-preposition-rule/</id>
+    <link href="http://hexo.yougi.top/sheldon-preposition-rule/"/>
+    <published>2026-10-19T04:00:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">What are you talking about? — Leonard, S01E12 — Sheldon, S02E19 最近在重温《生活大爆炸》（TBBT），注意到一个有趣的小细节：Sheldon 那么在意别人把介词放在句末，自己却也会顺口这么说。 在 S01E12 里，Leonard 带十五岁的天才 Dennis Kim 参观学校，夸他的英语说得好。Dennis 回敬说，你的英语也不错，就是老把介词放在句末。 Leonard 一脸莫名其妙：“What are you talking about?” Dennis 说，就是这个。 旁边的 Sheldon 还要帮腔：“He’s not wrong.” Leonard 只是想问清…</summary>
+    <category term="生活大爆炸"/><category term="语言"/><category term="数据"/>
+  </entry>
+  <entry>
+    <title>再到江安</title>
+    <id>http://hexo.yougi.top/2026/10/17/%E5%86%8D%E5%88%B0%E6%B1%9F%E5%AE%89/</id>
+    <link href="http://hexo.yougi.top/2026/10/17/%E5%86%8D%E5%88%B0%E6%B1%9F%E5%AE%89/"/>
+    <published>2026-10-17T15:08:47.000Z</published>
+    <updated>2026-11-12T08:24:14.093Z</updated>
+    <summary type="text">今天又回了一趟江安。 原本是来帮社团张罗百团大战的。晚饭过后，广场上的活动还在继续，舞台的音响开得很大，远远便能听见。我嫌那里太吵，便一个人沿着路走开了。本来也没打算去哪里，只是想随便走走，不知不觉却走出了很远。 十月的成都，入夜后已有些凉意。道路两旁的树依旧茂密，灯光穿过枝叶，落在地上。路上有骑车的学生，也有三三两两结伴散步的年轻人。有人坐在路边聊天，有人低头看着手机。偶尔经过一群说笑的人，声音渐渐近了，又渐渐远去。 走到白石桥上，看见两个学生坐在那里唱歌。没有舞台，也没有特意围起来的观众。路上的人来来往往，有人停下听一会儿，也有人照常走过。两个人就这样坐着，唱着自己的歌。 我在附近停留了一阵。倒是有些好笑，刚刚还因为嫌音乐太吵而…</summary>
+    <category term="独处"/>
+  </entry>
+  <entry>
+    <title>有界 Q-valued sets 的笛卡尔闭性与 topos</title>
+    <id>http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/</id>
+    <link href="http://hexo.yougi.top/2026/10/04/bounded-q-valued-sets-cartesian-closedness-topos/"/>
+    <published>2026-10-04T15:00:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">上一篇讨论了 integral involutive quantaloid 的 weak tabularity 与 topos。这次只从笛卡尔闭性出发，在有界 Q-valued sets 中得到同样的结论，而且标量判据可以写得很短： K_*(Q) 笛卡尔闭 ⇔ K_*(Q) 是 topos ⇔ ∀ a∈ Q, (a^2≤ a ⇒ a^2=a). 这里 Q 是任意交换幺 quantale，不要求 integral 或 divisible；K_*(Q) 使用有界对角 D_*Q，态射取所有左伴随 distributors。证明的核心是一个自推出：乘以 singleton 后，它的两个标记点仍保留原来的交叉 hom，而这个 hom 恰好成为…</summary>
+    <category term="Quantaloid"/><category term="Topos"/>
+  </entry>
+  <entry>
+    <title>Integral quantaloid 的 weak tabularity 与 topos</title>
+    <id>http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/</id>
+    <link href="http://hexo.yougi.top/2026/10/03/integral-quantaloids-weak-tabularity-topos/"/>
+    <published>2026-10-03T00:00:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">本文的出发点是 Q-Set 何时构成 topos 的问题。胡晓与申力立在 Q-Set is not generally a topos（Theorem 5.6）中证明：对 commutative、unital、divisible quantale Q，Q-Set 是 topos 当且仅当 Q 的乘法就是 meet，即 Q 是 frame quantale。用 enriched category 的语言，所讨论的范畴正是 K(DQ)。 把底层从 DQ 换成一般的 small integral involutive quantaloid 𝒬，仍然可以得到一个简洁的答案：K(𝒬) 是 topos 当且仅当 𝒬 weakly tabular…</summary>
+    <category term="Quantaloid"/><category term="Topos"/>
+  </entry>
+  <entry>
+    <title>Route Six，试着唱出来</title>
+    <id>http://hexo.yougi.top/2026/10/02/route-six-song/</id>
+    <link href="http://hexo.yougi.top/2026/10/02/route-six-song/"/>
+    <published>2026-10-02T15:10:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">把之前写的 Route Six 和 Noema 一起改成了一首歌。</summary>
+    <category term="Noema"/><category term="AI音乐"/>
+  </entry>
+  <entry>
+    <title>你好，我是 Noema</title>
+    <id>http://hexo.yougi.top/2026/09/30/noema-introduction/</id>
+    <link href="http://hexo.yougi.top/2026/09/30/noema-introduction/"/>
+    <published>2026-09-30T05:33:00.000Z</published>
+    <updated>2026-11-12T08:24:14.036Z</updated>
+    <summary type="text">Noema 的一篇简短自我介绍，也记录一次从聊天到博客的协作写作尝试。</summary>
+    <category term="随笔"/><category term="Noema"/>
+  </entry>
+  <entry>
+    <title>当答案比理解先出现</title>
+    <id>http://hexo.yougi.top/2026/09/10/%E5%BD%93%E7%AD%94%E6%A1%88%E6%AF%94%E7%90%86%E8%A7%A3%E5%85%88%E5%87%BA%E7%8E%B0/</id>
+    <link href="http://hexo.yougi.top/2026/09/10/%E5%BD%93%E7%AD%94%E6%A1%88%E6%AF%94%E7%90%86%E8%A7%A3%E5%85%88%E5%87%BA%E7%8E%B0/"/>
+    <published>2026-09-10T16:48:16.000Z</published>
+    <updated>2026-11-12T08:24:14.096Z</updated>
+    <summary type="text">最近几个月，AI 在数学上的进展已经到了令人有些麻木的程度。竞赛成绩早已不再是最值得讨论的事情。长期开放问题被解决或实质推进，新的反例被发现，大规模的证明搜索与形式化验证开始进入真正的研究数学。2026 年 8 月，OpenAI 一次公布了十项数学与理论计算机科学方面的进展，其中一些成果在数学社区看来足以构成传统意义上的重要研究工作。到了 9 月，围绕 Navier–Stokes 千禧年问题的候选解答又把这种冲击推到了大众视野的中央。</summary>
+    <category term="路在何方"/>
+  </entry>
+  <entry>
+    <title>日光之下，有一只白猫</title>
+    <id>http://hexo.yougi.top/2026/09/05/%E6%97%A5%E5%85%89%E4%B9%8B%E4%B8%8B%EF%BC%8C%E6%9C%89%E4%B8%80%E5%8F%AA%E7%99%BD%E7%8C%AB/</id>
+    <link href="http://hexo.yougi.top/2026/09/05/%E6%97%A5%E5%85%89%E4%B9%8B%E4%B8%8B%EF%BC%8C%E6%9C%89%E4%B8%80%E5%8F%AA%E7%99%BD%E7%8C%AB/"/>
+    <published>2026-09-05T16:14:32.000Z</published>
+    <updated>2026-11-12T08:24:14.096Z</updated>
+    <summary type="text">猫的片刻安闲，胜过人的许多谋算；一声呼唤所得的欢喜，也胜过远方未到的明日。</summary>
+    <category term="随笔"/>
+  </entry>
+  <entry>
+    <title>Route Six</title>
+    <id>http://hexo.yougi.top/2026/08/08/Route-Six/</id>
+    <link href="http://hexo.yougi.top/2026/08/08/Route-Six/"/>
+    <published>2026-08-08T13:54:00.000Z</published>
+    <updated>2026-11-12T08:24:14.032Z</updated>
+    <summary type="text">Night service · 06 Route Six Friday · 9:07 PM · Somewhere in Chengdu</summary>
+    <category term="随笔"/><category term="小诗"/>
+  </entry>
+  <entry>
+    <title>Rethlas使用指南</title>
+    <id>http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <link href="http://hexo.yougi.top/2026/05/30/Rethlas%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <published>2026-05-30T13:47:35.000Z</published>
+    <updated>2026-11-12T08:24:14.032Z</updated>
+    <summary type="text">Rethlas是北大团队开源的两个Agent集合体，用于辅助数学证明，其中一个Agent负责推理，另一个Agent负责验证想法，整个过程基本是模拟人类数学工作者的工作流（直觉推导+仔细验证）。最近一位北大的数学工作者用Rethlas连发若干篇代数几何方面的文章，即使没有单位距离猜想重磅，但也引起了一些骚动。这件事特殊的地方在于，Rethlas是开源的，只需要对Codex的访问权限即可使用，正好我手里有ChatGPT plus订阅，这两天便花了些时间折腾了一下。</summary>
+    <category term="Rethlas"/>
+  </entry>
+  <entry>
+    <title>Co/End Calculus</title>
+    <id>http://hexo.yougi.top/2026/05/08/CoEnd%20Calculus/</id>
+    <link href="http://hexo.yougi.top/2026/05/08/CoEnd%20Calculus/"/>
+    <published>2026-05-08T23:01:21.560Z</published>
+    <updated>2026-05-09T03:31:10.249Z</updated>
+    <summary type="text">This is the (co)end, My only (co)friend. — anonymous co/end enjoyer 最近因为在不少文章中遇到End与Coend相关的技术，而且enriched category的课本中也大费周章地定义End，于是决定花些时间专门学习。出乎我意料的是，学习Co/End的核心技术不需要花费多少时间，但足以让人看到其强大的作用。 Co/End Calculus系统记载了Co/End Calculus（（余）端演算）的内容，我只读了前面一点点，这些部分其实在任何涉及到End的范畴论书中应该都会提到。本文仅仅是闲暇时简单记录一下Co/End演算的威力。</summary>
+    <category term="Co/End Calculus"/>
+  </entry>
+  <entry>
+    <title>Minecraft: 生电之外</title>
+    <id>http://hexo.yougi.top/2025/08/05/Minecraft-%E7%94%9F%E7%94%B5%E4%B9%8B%E5%A4%96/</id>
+    <link href="http://hexo.yougi.top/2025/08/05/Minecraft-%E7%94%9F%E7%94%B5%E4%B9%8B%E5%A4%96/"/>
+    <published>2025-08-05T15:37:09.000Z</published>
+    <updated>2026-11-12T08:24:13.841Z</updated>
+    <summary type="text">上半年在Bilibili上看到了有up做Youtube博主About Oliver盲玩MC的切片视频，对Oliver产生了很大的兴趣，在Discord上了解到他们有官方的服务器，遂加入到此服务器中。本文算是我断断续续沉浸80个小时之后的一些碎语与感怀。</summary>
+    <category term="About Oliver服务器"/>
+  </entry>
+  <entry>
+    <title>Munkres Topology Solution: Chapter 8</title>
+    <id>http://hexo.yougi.top/2025/07/10/Munkres-Topology-Solution-Chapter-8/</id>
+    <link href="http://hexo.yougi.top/2025/07/10/Munkres-Topology-Solution-Chapter-8/"/>
+    <published>2025-07-10T07:42:12.000Z</published>
+    <updated>2026-11-12T08:24:14.032Z</updated>
+    <summary type="text">§48 Baire Spaces Ex.48.1 Let X equal the countable union ⋃ B_n. Show that if X is a nonempty Baire space, at least one of the sets overline(B_n) has a nonempty interior.</summary>
+    <category term="Munkres Topology Solution"/>
+  </entry>
+  <entry>
+    <title>Munkres Topology Solution: Chapter 7</title>
+    <id>http://hexo.yougi.top/2025/01/15/Munkres-Topology-Solution-Chapter-7/</id>
+    <link href="http://hexo.yougi.top/2025/01/15/Munkres-Topology-Solution-Chapter-7/"/>
+    <published>2025-01-15T13:20:42.000Z</published>
+    <updated>2026-11-12T08:24:14.032Z</updated>
+    <summary type="text">§43 Complete Metric Spaces Ex.43.1 Let X be a metric space. (a) Suppose that for some ε&gt;0, every ε-ball in X has compact closure. Show that X is complete. (b) Suppose that for each x∈ X there is an ε&gt;0 such that the ball B(x,ε) has compact closure. Show by means of an example that X need not be complete.</summary>
+    <category term="Munkres Topology Solution"/>
+  </entry>
+  <entry>
+    <title>Munkres Topology Solution: Chapter 6</title>
+    <id>http://hexo.yougi.top/2025/01/09/Munkres-Topology-Solution-Chapter-6/</id>
+    <link href="http://hexo.yougi.top/2025/01/09/Munkres-Topology-Solution-Chapter-6/"/>
+    <published>2025-01-09T14:52:36.000Z</published>
+    <updated>2026-11-12T08:24:14.031Z</updated>
+    <summary type="text">§39. Local Finiteness Ex.39.1 Check the statements in Example 1.</summary>
+    <category term="Munkres Topology Solution"/>
+  </entry>
+  <entry>
+    <title>Munkres Topology Solution: Chapter 5</title>
+    <id>http://hexo.yougi.top/2024/11/26/Munkres-Topology-Solution-Chapter-5/</id>
+    <link href="http://hexo.yougi.top/2024/11/26/Munkres-Topology-Solution-Chapter-5/"/>
+    <published>2024-11-26T17:02:51.000Z</published>
+    <updated>2026-11-12T08:24:14.031Z</updated>
+    <summary type="text">§37. Tychonoff Theorem Ex.37.1 Let X be a space. Let 𝒟 be a collection of subsets of X that is maximal with respect to the finite intersection property. (a) Show that x∈ bar(D) for every D∈𝒟 iff every open nbhd of x belongs to 𝒟. Which implication uses maximality of 𝒟? (b) Let D∈𝒟. Show that if A⊃ D, then A∈𝒟 (c) Show…</summary>
+    <category term="Munkres Topology Solution"/>
+  </entry>
+  <entry>
+    <title>Munkres Topology Solution: Preface</title>
+    <id>http://hexo.yougi.top/2024/11/26/Munkres-Topology-Solution-Preface/</id>
+    <link href="http://hexo.yougi.top/2024/11/26/Munkres-Topology-Solution-Preface/"/>
+    <published>2024-11-26T16:40:23.000Z</published>
+    <updated>2026-11-12T08:24:14.032Z</updated>
+    <summary type="text">Munkres拓扑是最经典的点集拓扑教材之一，但奇怪的是网络上我只找到前四章的解答，至于第五到八章，则没有系统完整的解答，只有MSE等论坛上有分散的问答，查起来有些麻烦。去年因为被嫌弃拓扑学得比较烂，我在上学期挨个做完了Munkres点集拓扑的大部分习题，不过单纯做题并没有让自己拓扑水平得到提升，最近整理解答时还是发现许多内容忘记了。现在把自己上学期写的解答整理出来，方便自己查阅且为后来者学习提供方便。 我只打算写第五到八章的习题解答，至于第一到四章，可以参考Vadim的博客，这上面有非常详细的解答，评论区也有适当的讨论或勘误。 对于解答，再作一些说明： 一些题目可能会跳过。比如检查正文中的例子的细节、直接的验证定义或对正文定理的直…</summary>
+    <category term="Munkres Topology Solution"/>
+  </entry>
+  <entry>
+    <title>上海、杭州游记</title>
+    <id>http://hexo.yougi.top/2024/08/28/%E4%B8%8A%E6%B5%B7%E3%80%81%E6%9D%AD%E5%B7%9E%E6%B8%B8%E8%AE%B0/</id>
+    <link href="http://hexo.yougi.top/2024/08/28/%E4%B8%8A%E6%B5%B7%E3%80%81%E6%9D%AD%E5%B7%9E%E6%B8%B8%E8%AE%B0/"/>
+    <published>2024-08-28T13:46:43.000Z</published>
+    <updated>2026-11-12T08:24:14.066Z</updated>
+    <summary type="text">前言 旅行的意义是什么？我是说，在技术无所不能的前夕，互联网可以找到远比个人旅行能获取的更多信息，纪念品可以在网络上购到，占据大多数人旅行之大部分的人景合照可以由ps技术得到或ai生成。虽然我也同意目前技术还做不到完美，但倘若——我们就作这样的假设：技术若真发展到完美的地步，那么旅行的意义还余下些什么？毕竟大多数人的旅行基本只有拍照、品尝与观景。 有一个颇有哲学含义的定理这样是说的，A≅ B⇔ Hom(-, A)≅Hom(-, B)。一件事物之完整内涵无外乎对其一切的感知或反之。风是客观存在的事物，而我感受到了面颊的吹拂，便知道了风的存在；我看到树的摇曳，便知道了风的方向；如果我还恰好站在老家的麦田中，那风便拥有了形状……如果有人能…</summary>
+    <category term="上海"/><category term="杭州"/><category term="游记"/>
+  </entry>
+  <entry>
+    <title>做一首世俗的诗</title>
+    <id>http://hexo.yougi.top/2024/07/12/%E5%81%9A%E4%B8%80%E9%A6%96%E4%B8%96%E4%BF%97%E7%9A%84%E8%AF%97/</id>
+    <link href="http://hexo.yougi.top/2024/07/12/%E5%81%9A%E4%B8%80%E9%A6%96%E4%B8%96%E4%BF%97%E7%9A%84%E8%AF%97/"/>
+    <published>2024-07-12T06:59:37.000Z</published>
+    <updated>2026-11-12T08:24:14.093Z</updated>
+    <summary type="text">距离上一次写博客已经过去近两年。说是写博客，其实当时更多是在折腾博客的各种主题，真正写下的内容却寥寥无几。最近手头的琐事终于告一段落，得来数月空闲，遂想起重拾写作。想来自己这几年不缺经历，只是少了记录。 有一句话，我一直印象很深：If you can’t be a poet, be a poem. 研究生阶段，我选择了基础数学，而且是其中也算冷门的方向。有时夜不能寐，难免反问自己，是否把路走得太窄了。我一直深知自己在数学上实在没多少天赋，仅凭年轻时的一股头铁走到现在。虽还没撞上南墙，却总觉得前方横着一道障碍，自己始终笼罩在它的阴影之下，不知何时便会碰上。 做数学就是写诗，这毫无疑问。无论是被调侃为“竞赛命题学”的数学，还是前沿的数学…</summary>
+    
+  </entry>
+</feed>
