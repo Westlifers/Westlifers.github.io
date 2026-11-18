@@ -1,0 +1,43 @@
+/* A typographic score: words carry identity, fine silver carries composition. */
+.string-diagram{display:block;width:100%;max-width:none;overflow:visible;font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif}
+.string-strand{fill:none;stroke-linecap:round;stroke-linejoin:round;transition:opacity .55s}
+.string-halo{stroke-width:8;opacity:.11;filter:var(--string-glow);transition:opacity .45s,stroke-width .45s}
+.string-thread{stroke-width:1.35;opacity:.82;transition:stroke-width .4s,opacity .4s}
+.string-specular{stroke:#f4f1ff;stroke-width:.35;opacity:.52}
+.string-flow{stroke:#fff9f0;stroke-width:2;stroke-dasharray:9 991;stroke-dashoffset:1000;opacity:0;animation:string-light var(--strand-time,28s) linear infinite;animation-delay:var(--strand-delay,0s)}
+.string-strand:nth-child(3n+1) .string-flow{opacity:.65}
+.string-signal{stroke:#fff2d8;stroke-width:2.4;stroke-dasharray:90 910;stroke-dashoffset:1000;opacity:0}
+.string-strand--sentence .string-thread{stroke-width:1.4;opacity:.75}
+.string-word{cursor:pointer;outline:none}
+.string-word-hit{fill:transparent;pointer-events:all}
+.string-word-aura{opacity:0;pointer-events:none;transition:opacity .5s}
+.string-word-label{fill:#f3ebe3;font-size:40px;font-style:italic;letter-spacing:-.045em;pointer-events:none;transition:fill .35s,filter .35s;filter:drop-shadow(0 2px 13px #b5c6e722)}
+.string-word-anchor{stroke:#c3cada;stroke-width:.65;opacity:.12;pointer-events:none;transition:opacity .35s,stroke .35s}
+.string-word-focus{fill:none;stroke:#f0c796;stroke-width:1.6;opacity:0;pointer-events:none}
+.string-port{fill:#d4c5bf;stroke:#14121c;stroke-width:.6;pointer-events:none;transition:fill .35s}
+.string-type{fill:#c4b9ce;stroke:#14121c;stroke-width:4px;paint-order:stroke fill;font:12px 'Cambria Math',Georgia,serif;opacity:0;visibility:hidden;transition:opacity .2s;pointer-events:none}
+.string-output{fill:#e4bd90;font:italic 25px Georgia,serif}
+.string-word.is-active .string-word-aura{opacity:.85}
+.string-word.is-active .string-word-label,.string-word.is-related .string-word-label{fill:#fff7e6;filter:drop-shadow(0 0 9px #e9c7a653)}
+.string-word.is-active .string-word-anchor{opacity:.85;stroke:#ebc199}
+.string-word.is-active .string-port{fill:#ffe5b5}
+.string-word:focus-visible .string-word-focus{opacity:1}
+.string-diagram.has-selection .string-strand:not(.is-active){opacity:.12}
+.string-diagram.has-selection .string-word:not(.is-active):not(.is-related) .string-word-label{fill:#847f94;filter:none}
+.string-strand.is-active .string-thread{opacity:1;stroke-width:1.9}
+.string-strand.is-active .string-halo{opacity:.38;stroke-width:12}
+.string-strand.is-active .string-signal{animation:string-answer 1.8s cubic-bezier(.18,.5,.4,1) both}
+.string-diagram.has-selection .string-flow{opacity:0}
+[data-string-hero].show-string-types .string-type{opacity:1;visibility:visible}
+[data-string-hero].string-arriving .string-thread{animation:string-inscribe 2.2s cubic-bezier(.2,.6,.2,1) both;animation-delay:var(--ink-delay);stroke-dasharray:1000}
+[data-string-hero].string-arriving .string-specular,[data-string-hero].string-arriving .string-halo,[data-string-hero].string-arriving .string-flow{opacity:0}
+[data-string-hero].string-arriving .string-words{animation:string-appear 1s ease both}
+[data-string-hero].string-paused .string-diagram *,[data-string-hero]:not(.string-ready) .string-diagram *{animation-play-state:paused!important}
+[data-string-hero]:not(.string-ready) .string-word{cursor:default}
+@keyframes string-light{to{stroke-dashoffset:0}}
+@keyframes string-answer{0%{stroke-dashoffset:1000;opacity:0}12%{opacity:.9}80%{opacity:.7}100%{stroke-dashoffset:-90;opacity:0}}
+@keyframes string-inscribe{from{stroke-dashoffset:1000;opacity:.2}to{stroke-dashoffset:0;opacity:.82}}
+@keyframes string-appear{from{opacity:.35;filter:blur(3px)}to{opacity:1;filter:blur(0)}}
+@media(max-width:760px){.string-stage>.string-diagram{width:max(100%,var(--diagram-width));height:auto}}
+@media(prefers-reduced-motion:reduce){.string-diagram *{animation:none!important;transition:none!important}.string-flow,.string-signal{display:none}.string-thread{stroke-dashoffset:0!important}}
+@media print{.string-diagram text{fill:#111;filter:none}.string-thread{stroke:#333;stroke-width:1}.string-halo,.string-flow,.string-signal,.string-specular,.string-word-aura,.string-output-light{display:none}}
