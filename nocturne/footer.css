@@ -1,0 +1,52 @@
+/* A single quiet ending. The home audio lives inside the same footer. */
+.site-footer.nocturne-footer{border-top:1px solid var(--rule);padding:27px 0 23px}
+.nocturne-footer>.footer-main{display:flex;justify-content:space-between;align-items:center;gap:28px;border:0;padding:0;color:var(--ink);font-size:inherit}
+.nocturne-footer .footer-wordmark{display:inline-flex;align-items:center;gap:17px;flex:none;font:italic 36px/1.1 Georgia,serif;letter-spacing:-.035em;color:var(--accent)}
+.nocturne-footer .footer-wordmark span{margin:0;font:11px/1.6 var(--serif);letter-spacing:.18em;color:var(--muted)}
+.nocturne-footer>.footer-meta{display:flex;justify-content:space-between;align-items:center;gap:18px;border:0;padding:0;margin-top:23px;font:10px/1.6 var(--sans);color:var(--muted)}
+.nocturne-footer .footer-meta>span{margin:0}
+.footer-meta nav{display:flex;gap:22px}
+.footer-meta a:hover,.footer-track-title:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-player{display:grid;grid-template-columns:60px minmax(0,1fr);align-items:center;gap:16px;width:360px;max-width:100%;margin:0}
+.footer-player-copy{min-width:0}
+.footer-track-title{display:inline-block;font:17px/1.3 Georgia,serif;letter-spacing:.015em;color:var(--ink)}
+/* Rotate the engraved face and its off-axis mark together, so motion remains
+   legible at this scale. The rim, lighting and spindle stay in place. */
+.footer-disc{position:relative;isolation:isolate;width:60px;height:60px;flex:none;padding:3px;border-radius:50%;background:linear-gradient(135deg,#8f879966,#1c1824 38%,#4e4557 75%,#92819a66);box-shadow:0 4px 12px #08060d66,inset 0 0 0 1px #c7bbd225;overflow:hidden}
+.footer-disc-rotor{position:relative;display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:repeating-radial-gradient(circle at center,#131018 0 1px,#80718d38 1.2px 1.6px,#18141e 1.9px 2.5px);box-shadow:inset 0 0 0 1px #0b0912,inset 0 0 0 3px #0e0b14;animation:footer-disc-spin 10s linear infinite;animation-play-state:paused}
+.footer-player.is-playing .footer-disc-rotor{animation-play-state:running}
+.footer-disc-rotor:before{content:'';position:absolute;inset:5px;border:1px solid transparent;border-top-color:#c8b1d15c;border-right-color:#c8b1d119;border-radius:50%;transform:rotate(-30deg)}
+.footer-disc-rotor:after{content:'';position:absolute;top:8px;left:calc(50% - 1px);width:2px;height:4px;border-radius:1px;background:#cfb39c;box-shadow:0 0 4px #e9bf9730}
+.footer-disc-label{position:relative;width:20px;height:20px;border:1px solid #dcc1ac80;border-radius:50%;background:conic-gradient(from 25deg,#9d7d74,#dcc4a9 23%,#a88880 48%,#6e5967 72%,#c6a995 91%,#9d7d74);box-shadow:0 0 0 2px #0c0a12,inset 0 0 0 3px #251d282b}
+.footer-disc-label:before{content:'';position:absolute;inset:3px;border:1px solid #36283865;border-left-color:#f0d8b96b;border-radius:50%}
+.footer-disc:before{content:'';position:absolute;inset:3px;z-index:1;border-radius:50%;background:conic-gradient(from -33deg,transparent 0deg,#d4cce929 22deg,transparent 58deg 178deg,#a6a6c821 201deg,transparent 232deg);pointer-events:none}
+.footer-disc:after{content:'';position:absolute;z-index:2;top:50%;left:50%;width:4px;height:4px;transform:translate(-50%,-50%);border-radius:50%;background:#16121b;box-shadow:0 0 0 1px #e7d4bb6b,inset 0 1px 1px #030206}
+.footer-audio-controls{display:grid;grid-template-columns:30px minmax(0,1fr);gap:9px;align-items:center;margin-top:4px}
+.footer-play{display:grid;place-items:center;width:30px;height:32px;padding:0;border:0;border-radius:3px;color:var(--accent);font:14px/1 var(--sans);background:none}
+.footer-play:hover{background:var(--soft)}
+.nocturne-footer .footer-play span{margin:0;display:block;line-height:1}
+.footer-timeline{min-width:0}
+.footer-seek{display:block;appearance:none;-webkit-appearance:none;width:100%;height:18px;margin:0;border:0;border-radius:0;padding:0;cursor:pointer;background:linear-gradient(to right,var(--accent) 0 var(--audio-progress,0%),var(--rule) var(--audio-progress,0%) 100%) center/100% 2px no-repeat;accent-color:var(--accent)}
+.footer-seek::-webkit-slider-runnable-track{height:2px;background:transparent}
+.footer-seek::-webkit-slider-thumb{-webkit-appearance:none;width:7px;height:7px;margin-top:-2.5px;border:0;border-radius:50%;background:var(--accent)}
+.footer-seek::-moz-range-track{height:2px;background:transparent}
+.footer-seek::-moz-range-thumb{width:7px;height:7px;border:0;border-radius:50%;background:var(--accent)}
+.footer-seek:disabled{opacity:.4;cursor:default}
+.footer-audio-time{display:flex;justify-content:flex-end;color:var(--muted);font:9px/1.2 var(--sans);font-variant-numeric:tabular-nums}
+.nocturne-footer .footer-audio-time>span{margin:0}
+.footer-audio-native{display:block;width:100%;height:36px;margin-top:8px}
+.footer-player.audio-enhanced .footer-audio-native{display:none}
+.footer-audio-status{margin:8px 0 0;font:11px/1.7 var(--sans);color:var(--accent)}
+.footer-audio-status:empty{display:none}
+@keyframes footer-disc-spin{to{transform:rotate(360deg)}}
+@media(max-width:760px){
+  .site-footer.nocturne-footer{padding:23px 0 21px}
+  .nocturne-footer>.footer-main{flex-wrap:wrap;gap:23px}
+  .nocturne-footer .footer-wordmark{font-size:30px;gap:14px}
+  .nocturne-footer .footer-wordmark span{font-size:10px}
+  .footer-player{width:340px;grid-template-columns:56px minmax(0,1fr);gap:14px}
+  .footer-disc{width:56px;height:56px}
+  .nocturne-footer>.footer-meta{margin-top:20px;font-size:9px}
+  .footer-meta nav{gap:20px}
+}
+@media(prefers-reduced-motion:reduce){.footer-disc-rotor{animation:none}}

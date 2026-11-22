@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>形式推理的贬值 · Yougi — Nocturne</title>
+  <meta name="description" content="最近半年我们已经看到太多 AI 在数学上的表现，尤其是在千禧年问题上的突破。对于我这种平凡的数学学习者，千禧年问题即使遥远，其影响也是具体的。关于这些我最近几个月一直在思考，现在我也只有一些还比较模糊的想法，试着在这里整理一下。">
+  <link rel="canonical" href="http://hexo.yougi.top/when-reasoning-becomes-cheap/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Yougi — Nocturne">
+  <meta property="og:title" content="形式推理的贬值">
+  <meta property="og:description" content="最近半年我们已经看到太多 AI 在数学上的表现，尤其是在千禧年问题上的突破。对于我这种平凡的数学学习者，千禧年问题即使遥远，其影响也是具体的。关于这些我最近几个月一直在思考，现在我也只有一些还比较模糊的想法，试着在这里整理一下。">
+  <meta property="og:url" content="http://hexo.yougi.top/when-reasoning-becomes-cheap/">
+  <meta property="og:image" content="http://hexo.yougi.top/nocturne/images/city.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="application/atom+xml" title="Yougi 的文字" href="/atom.xml">
+  <link rel="icon" href="/nocturne/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/nocturne/theme.css">
+  <link rel="stylesheet" href="/nocturne/experience.css">
+  <link rel="stylesheet" href="/nocturne/brand.css">
+  <link rel="stylesheet" href="/nocturne/footer.css">
+  <script src="/nocturne/appearance.js"></script>
+  
+  
+  
+  
+  <link rel="stylesheet" href="/nocturne/reader.css">
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="nocturne is-inner  ">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header shell">
+    <a class="brand nocturne-brand" href="/" aria-label="Yougi 首页"><span class="nocturne-signature" style="--brand-signature:url('/nocturne/signature.svg')" aria-hidden="true"></span></a>
+    <nav aria-label="主导航"><a href="/" >序章</a><a href="/archives/" >所有文字</a><a href="/atlas/" >星图</a><a href="/about/" >关于</a></nav>
+    <div class="header-tools"><button class="search-trigger" data-search-open aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>搜索</span><kbd>⌘ K</kbd></button><button class="icon-button" data-theme-toggle aria-label="切换到日间阅读">◐</button></div>
+  </header>
+  <main id="main">
+<div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+<div class="reading-page shell" data-reading-page data-title="形式推理的贬值"><header class="post-header"><a class="back-link" href="/archives/">← 回到文字之中</a><div class="post-header-kind"><span class="section-dot"></span>随笔</div><h1>形式推理的贬值</h1><div class="post-meta"><time datetime="2026-11-21T17:27:43.000Z">2026 年 11 月 22 日</time><span>杨荻</span><span>约 10 分钟</span></div><details class="ai-disclosure ai-disclosure--assisted"><summary>◇ AI 润色<span>查看说明</span></summary><div>本文由作者撰写，AI 仅参与文字润色。</div></details></header>
+<div class="reading-grid"><aside class="article-sidebar"><div class="reading-actions"><button data-focus aria-pressed="false">专注阅读</button><button data-save aria-pressed="false">收藏本文</button><button data-copy-link>复制链接</button><button data-font-size aria-label="调整正文字号">字号 A+</button></div><div class="reading-position"><span data-reading-percent>0%</span><span>已读</span></div></aside><div class="article-column"><button class="resume-reading" data-resume hidden>继续上次的阅读位置</button><article class="article"><div class="content post-content" data-article-content><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p id="paragraph-b79d3f6f0837" data-reader-paragraph>最近半年我们已经看到太多 AI 在数学上的表现，尤其是在千禧年问题上的突破。对于我这种平凡的数学学习者，千禧年问题即使遥远，其影响也是具体的。关于这些我最近几个月一直在思考，现在我也只有一些还比较模糊的想法，试着在这里整理一下。</p>
+<span id="more"></span>
+
+
+
+<p id="paragraph-26c927b9efd4" data-reader-paragraph>一个显而易见的事实是，<strong>形式推理能力正在迅速贬值。</strong></p>
+<p id="paragraph-e80cde0306a4" data-reader-paragraph>这里的形式推理是一个比较模糊宽泛的概念，除了通常的定理证明，也包括从已有定义和理论中推导后果、寻找反例、分析各种条件之间的关系等数学活动。曾经，这些能力是数学工作者最重要的核心能力之一，但现在的情况正在发生剧烈变化。LLM 已经能够进行相当复杂的数学推理，更重要的是，这种能力可以规模化。NS 方程的研究动用了上万个 agent 进行并行推理和交流，这种研究规模显然不是人类能够直接竞争的。</p>
+<p id="paragraph-1034737073c4" data-reader-paragraph>一个之前就经常提及的比喻是计算能力，现在我觉得这个比喻越来越恰当。</p>
+<p id="paragraph-25364d804887" data-reader-paragraph>计算曾经也是数学工作中的一大难题。人们需要掌握各种复杂的计算技巧，而现在，一个复杂的乘法可以瞬间算出，还可以借助 GPU 同时进行海量计算。</p>
+<p id="paragraph-1efea36bf1bd" data-reader-paragraph>借助这个比喻，我们或许可以获得一些关于数学未来的参考。</p>
+<p id="paragraph-b4064ed17847" data-reader-paragraph>首先，数学工作者必须重新审视形式推理在数学研究中的地位。随着推理能力逐渐成为一种可以大量购买和调用的资源，形式推理作为一种稀缺研究能力的价值正在下降。但计算机显然没有杀死数学。恰恰相反，现代数学中有大量工作建立在计算机提供的计算能力之上。那么，我们似乎也来到一个不得不重新思考，数学中除了形式推理，还有哪些重要的内容的境地。</p>
+<p id="paragraph-3f1887834b7e" data-reader-paragraph>我觉得有一个值得参考的区分：<strong>在一个已有的数学框架内探索，与设计这个数学框架本身，是两种不同的数学活动。</strong></p>
+<p id="paragraph-05b99516a169" data-reader-paragraph>这里的框架不一定是什么 ZFC、类型论之类的基础体系，也可以是一套很局部的理论，甚至只是一个具体课题中的概念和定义。我们可以在给定定义后研究它的性质、推导各种等价条件，也可以反过来思考，究竟应该引入怎样的定义，才能自然地描述我们所关心的数学现象。</p>
+<p id="paragraph-1486844e07e7" data-reader-paragraph>后者有很强的主观性。我们为什么要研究某种结构？为什么选择这种定义而不是另一种？这些动机可能来自物理世界，可能来自其他数学理论，也可能与人类的审美和价值习惯高度相关。一套数学框架应该刻画什么现象、满足什么要求、使用什么工具，本身就包含大量的选择。数学的形式系统可以告诉我们某个命题是否能从给定的公理推出，却不会自动告诉我们为什么应该研究这套公理。</p>
+<p id="paragraph-7751a6fcae4d" data-reader-paragraph>简单举几个我自己在数学研究中观察到的粗糙例子，不成体系，只是想到什么说什么。</p>
+<p id="paragraph-2af94edd5b4c" data-reader-paragraph>第一，提出新的问题，以及判断什么问题值得做。</p>
+<p id="paragraph-829987f97300" data-reader-paragraph>你可以在 AI 完成一个课题后询问它，还有哪些相关课题值得研究。它通常能给出不少方向，但按我的经验，这些方向的质量并不高，很多时候仔细想想就会发现其实相当平凡。更进一步，我们完全可以让一个 AI 自主运行，要求它不断提出猜想、尝试证明，再根据已有结果提出新的猜想。这样的过程当然可以产生大量数学命题，但如何判断这些命题中哪些具有真正的研究价值，仍然是一个很大的问题。</p>
+<p id="paragraph-6cfd8b5b0d32" data-reader-paragraph>这件事或多或少涉及数学中的审美和价值判断。为什么某个问题值得研究？为什么我们会认为一种理论比另一种理论更有意义？这些问题本身就值得思考。</p>
+<p id="paragraph-12827e4da4fb" data-reader-paragraph>第二，刻画性问题。</p>
+<p id="paragraph-9003634d4c1a" data-reader-paragraph>数学研究中有相当一部分工作，是尝试寻找某种性质的等价刻画。我们可能希望这种刻画足够具体，或者足够抽象，或者方便操作，或者能够自然地利用某个领域已有的工具。对于同一个数学性质，可能存在无数种正确的等价刻画，但它们的数学价值显然并不相同。</p>
+<p id="paragraph-014132279ead" data-reader-paragraph>我自己经常让 AI 帮忙寻找一些性质的等价刻画，而它给出的结果有时相当难看：逻辑上没有问题，却缺乏自然性，也无法揭示什么新的结构。这里困难的部分似乎并不总是证明两个条件等价，而是找到一个真正合适的条件。数学工作者在寻找的，往往不只是一个正确的定理。</p>
+<p id="paragraph-00caae8de777" data-reader-paragraph>第三，抽象与压缩。</p>
+<p id="paragraph-9bc88db7557c" data-reader-paragraph>数学共同体外有时会出现一种想法：人类之所以需要不断发明抽象概念和庞大的理论工具，是因为人类的推理能力太差。如果存在一个足够聪明的 AI，它完全可以绕过这些抽象，直接完成推理。</p>
+<p id="paragraph-3e7e12f9743e" data-reader-paragraph>我对此始终保持怀疑。</p>
+<p id="paragraph-faebd8d12a16" data-reader-paragraph>考虑一个极端的思想实验：假设人类的数学从未得到发展，但不知道为什么 LLM 还是被发明出来了，它只学过初等算术这种级别的数学。这已经足以让我们向它叙述费马大定理。那它能证明费马大定理吗？</p>
+<p id="paragraph-c86bf3adcfc9" data-reader-paragraph>Maybe。或许费马真的发现了某个绝妙的证明，只需要比书页边缘稍多一点的空间就能写下。但至少从我们已知的数学来看，证明费马大定理需要建立极其庞大的理论体系。我们需要从初等数论出发，经过椭圆曲线、模形式、Galois 表示等多层抽象，最终利用模形式与椭圆曲线之间的深刻联系，通过证明特定椭圆曲线的模性来解决这个看起来只涉及几个整数幂的初等问题。</p>
+<p id="paragraph-16de80706e68" data-reader-paragraph>这些概念之间的联系不是直接从费马大定理的陈述中显现出来的。只有在漫长的数学发展中逐渐建立起相应的理论，问题才有可能被转化成这种形式。数学抽象使我们能够在更高的层次上认识原有的问题，并利用原本看起来毫不相关的数学结构来解决它们。</p>
+<p id="paragraph-e6bc46f54a25" data-reader-paragraph>而且，我觉得还有一个更关键的现象：<strong>有些数学问题，只有在相应的抽象概念被建立之后才真正 make sense。</strong></p>
+<p id="paragraph-04c0e16c575f" data-reader-paragraph>例如，我们可以向一个只会初等算术的人叙述费马大定理，但很难直接向他解释为什么要证明黎曼猜想。他不知道什么是复数、解析函数，更无法理解为什么要研究 zeta 函数的非平凡零点。在他的数学世界里，研究这样一个函数及其零点的分布，是一件完全莫名其妙的事情。即便我们能够找到黎曼猜想的某种初等表述（当然事实上也真的存在），也不意味着这种表述能够揭示问题的来源和意义。</p>
+<p id="paragraph-2cb9dc29fb31" data-reader-paragraph>换句话说，数学抽象不仅提供了解决问题的工具，还改变了我们能够提出什么问题，以及我们认为什么问题有意义。许多今天看起来极其自然的数学问题，在相关理论建立之前根本不会出现在数学家的视野中。</p>
+<p id="paragraph-de4f51fa5f19" data-reader-paragraph>这也让我觉得，前面提到的两种数学活动之间存在一种很有意思的关系：我们在已有框架内探索，获得新的定理和现象；这些结果又可能促使我们建立新的概念和理论框架；而新的框架不仅让过去的问题变得容易，也让我们能够发现一批原本无法提出的问题。</p>
+<p id="paragraph-924d292ff0dc" data-reader-paragraph>一些人认为人相比 AI 拥有其不具有的直觉。但我认为 AI 同样具有某种数学直觉，只不过它的直觉可能与人类有显著差异，这一点可以在要求它解释某个概念的动机等情景下瞥见一点，AI给出的解释可能与人类习惯的方式大相径庭。但即便如此，抽象仍然具有非常现实的意义：它能够压缩知识，组织推理，使得原本极其复杂的问题能够在新的理论框架下被处理。</p>
+<p id="paragraph-a299f09bcce4" data-reader-paragraph>毕竟 AI 的推理也是有成本的。上下文窗口、计算资源、agent 之间的通信，以及庞大的搜索空间，都会限制它能够直接处理的问题规模。<strong>好的数学抽象本身就是一种降低推理成本的方法。</strong> 从这个角度看，抽象对于 AI 可能同样重要，甚至可能比过去更加重要。</p>
+<p id="paragraph-7a9cc00cbd70" data-reader-paragraph>这也引出了另一个值得研究的方向。</p>
+<p id="paragraph-24830b3195ae" data-reader-paragraph>回到计算的比喻。计算机普及之后，人们仍然需要研究怎样更高效地计算。类似地，当数学推理可以大规模自动化之后，我们也可以研究如何更高效地组织推理。不同的数学语言、不同的定义和理论结构，可能使同一类问题的推理成本产生巨大差异。我们甚至可以尝试研究，怎样的数学抽象更有利于机器进行推理。</p>
+<p id="paragraph-205b0e334c08" data-reader-paragraph>现在我们通常把相关工作称为 AI4Math，但我觉得这个叫法已经开始过时了。Use AI in math 正在逐渐成为共识。这个名称给人的感觉，似乎使用 AI 的数学与不使用 AI 的数学仍然是两个具有相当规模的平行领域，而我认为这种区分的意义会越来越小。未来真正值得研究的，应该是更具体的问题，比如如何组织大规模证明搜索、如何改善自动推理的效率、如何从机器生成的庞大证明中提取出有意义的数学结构。</p>
+<p id="paragraph-16f114c2bd81" data-reader-paragraph>以上只是我随手举出的几个例子。我相信数学中还有大量类似的活动，值得我们在新的形势下重新审视。</p>
+<p id="paragraph-71dfd0fa9d5d" data-reader-paragraph>现在有不少人觉得数学已经死了。我觉得传统的数学研究方式确实面临着存亡之秋，但我们不妨把这个问题看得更仔细一点：<strong>到底是数学的哪一部分正在死去？</strong></p>
+<p id="paragraph-12678d65d6bc" data-reader-paragraph>另一方面，我也非常理解拒绝AI的一些态度。有人仍然希望依靠自己的能力去探索数学，享受思考、发现和证明的过程，即使机器早已能够完成这些事情。这让我想起小时候满大街都是教小孩珠心算的，我家里甚至还有一本速算技巧，至今还记得里面有一节专门教你如何快速口算两位数之间的乘法。如今已经有了计算器，但我们仍然可以喜欢心算，也仍然可以欣赏那些巧妙的心算方法。我并不觉得这种坚持有什么问题。数学作为一种人类的智力活动，本身就可以具有独立于研究产出的价值。</p>
+<p id="paragraph-989f90d6f96d" data-reader-paragraph>但对于以创造新的数学知识为目标的研究工作，我们恐怕不得不认真对待正在发生的变化。</p>
+<p id="paragraph-5840fa9d4b75" data-reader-paragraph>计算机的出现让人类不再需要亲自执行大量计算，同时也让我们得以探索过去无法触及的数学问题。如今，形式推理正在经历某种类似的变化。如果我们可以把越来越多的推理任务交给机器，那么，数学研究中究竟还有哪些事情值得我们投入精力？我们应该如何利用这种新的能力，重新组织数学研究？</p>
+<p id="paragraph-2ab2b8d85aec" data-reader-paragraph>我觉得这些问题值得数学共同体认真讨论。</p>
+<p id="paragraph-d9d586d87117" data-reader-paragraph>毕竟，数学的发展从来就不只是积累更多已经证明的命题。我们还需要决定研究什么，怎样描述研究对象，以及如何把不断增长的数学知识组织成可以理解的理论。正如我前面所说，数学的进步不仅意味着我们能够回答更多问题，也将意味着我们能够提出过去无法想象的问题。</p>
+<p id="paragraph-3cde844de47b" data-reader-paragraph>当推理变得廉价，这些事情或许会比以往更加重要。</p>
+</div></article><div class="post-end"><div class="post-tags"><a href="/tags/%E8%B7%AF%E5%9C%A8%E4%BD%95%E6%96%B9/"># 路在何方</a></div></div>
+<nav class="post-navigation" aria-label="相邻文章"><a href="/2026/11/01/route-six-suno/"><span>再往过去走一点</span><strong>Route Six，再坐一站</strong></a></nav><section class="comments-section" aria-labelledby="comments-heading" data-comments data-preview="false" data-repo="Westlifers/Westlifers.github.io" data-repo-id="R_kgDOGtkQCQ" data-category="Announcements" data-category-id="DIC_kwDOGtkQCc4CA2IO" data-mapping="pathname" data-lang="zh-CN"><h2 id="comments-heading">留一点回声</h2><button type="button" data-comments-load hidden>展开评论</button><noscript><p>启用 JavaScript 后可加载评论。</p></noscript><p data-comments-status role="status"></p><div class="giscus"></div></section>
+</div></div></div>
+
+
+</main>
+  
+<footer class="site-footer nocturne-footer shell">
+  <div class="footer-main">
+    <a class="footer-wordmark" href="/">Nocturne<span>夜曲</span></a>
+    
+  </div>
+  <div class="footer-meta"><span>© 2026 杨荻</span><nav aria-label="页脚链接"><a href="/archives/?saved=1">收藏</a><a href="/atom.xml" aria-label="通过 RSS 订阅新文章">RSS</a></nav></div>
+</footer>
+
+  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title" data-index="/nocturne/search.json"><div class="dialog-top"><h2 id="search-title">在文字之间寻找</h2><button type="button" class="search-close" data-dialog-close aria-label="关闭搜索"><span>关闭</span><kbd aria-hidden="true">Esc</kbd></button></div><label class="search-field"><span class="sr-only">搜索标题、正文或标签</span><input type="search" data-search-input placeholder="一个词，一段记忆，一个定理…" autocomplete="off"></label><p class="search-status" data-search-status role="status">输入关键词，搜索全部文章。</p><div data-search-results></div><div class="search-hint">↑ ↓ 选择 <span>Enter 打开</span><span>Esc 关闭</span></div></dialog>
+  <dialog class="image-dialog" data-image-dialog aria-label="图片预览"><button data-dialog-close aria-label="关闭图片">关闭 ×</button><img alt=""><p></p></dialog>
+  <div class="toast" role="status" data-toast></div>
+  <script defer src="/nocturne/app.js"></script>
+  
+  
+  
+  
+  <script defer src="/nocturne/reading.js"></script><script defer src="/nocturne/reader-enhancements.js"></script><script defer src="/nocturne/comments.js"></script>
+</body>
+</html>
